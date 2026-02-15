@@ -3,7 +3,7 @@ import Logo from "@/../public/images/logo.png";
 import mobileLogo from "@/../public/images/logo-mobile.png";
 import Image from "next/image";
 import { Input } from "../ui/input";
-import { Menu, ShoppingCart, UserRound } from "lucide-react";
+import { Menu, Search, ShoppingCart, UserRound } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,6 +17,11 @@ import {
   SettingsIcon,
   UserIcon,
 } from "lucide-react";
+import {
+  InputGroup,
+  InputGroupAddon,
+  InputGroupInput,
+} from "@/components/ui/input-group";
 import { Button } from "../ui/button";
 
 const Header = () => {
@@ -38,11 +43,12 @@ const Header = () => {
           alt="Logo"
         />
       </div>
-      <Input
-        className="max-w-sm rounded-2xl"
-        type="search"
-        placeholder="Search..."
-      />
+      <InputGroup className="max-w-sm rounded-2xl">
+        <InputGroupInput placeholder="Search in products..." />
+        <InputGroupAddon>
+          <Search />
+        </InputGroupAddon>
+      </InputGroup>
       <div>
         <div className="hidden md:flex justify-center items-center md:gap-4">
           <UserRound strokeWidth={1.5} />
