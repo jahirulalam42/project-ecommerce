@@ -50,6 +50,29 @@ const Hero = () => {
     },
   ];
 
+  const cardItems = [
+    {
+      title: "Free Shipping",
+      description: "On orders over $50.00",
+      icon: "Test",
+    },
+    {
+      title: "Very easy to return",
+      description: "Just phone number",
+      icon: "Test",
+    },
+    {
+      title: "Worldwide delivery",
+      description: "Fast delivery worldwide",
+      icon: "Test",
+    },
+    {
+      title: "Refunds policy",
+      description: "60 days return for any reason",
+      icon: "Test",
+    },
+  ];
+
   return (
     <div className="flex flex-col gap-10">
       <div className="-mx-2 md:-mx-10 lg:-mx-20">
@@ -98,6 +121,28 @@ const Hero = () => {
       </div>
 
       {/* Card Section */}
+      <div className="h-[98px] bordered border-2 border-yellow-600 flex flex-row justify-between items-center">
+        {cardItems?.map((card: any, index: number) => {
+          return (
+            <div className="h-full flex flex-row items-center" key={index}>
+              {index !== 0 && (
+                <div className="w-0.5 h-1/2 bg-neutral-200 dark:bg-white/10 my-auto"></div>
+              )}
+              <div className="flex flex-row gap-2 md:gap-4 items-center px-4 lg:px-6 shrink-0">
+                <span>{card?.icon}</span>
+                <div className="flex flex-col md:gap-2">
+                  <h4 className="text-base md:text-lg font-semibold">
+                    {card?.title}
+                  </h4>
+                  <span className="hidden md:block text-xs lg:text-sm">
+                    {card?.description}
+                  </span>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
