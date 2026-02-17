@@ -266,6 +266,47 @@ function CarouselDots({ slideCount }: any) {
   );
 }
 
+function CarouselDotsBottom() {
+  const { api } = useCarousel();
+  const [selectedIndex, setSelectedIndex] = React.useState(0);
+  const [slideCount, setSlideCount] = React.useState(0);
+
+  React.useEffect(() => {
+    if (!api) return;
+
+    const onSelect = () => {
+      setSelectedIndex(api.selectedScrollSnap());
+    };
+
+    setSlideCount(api.scrollSnapList().length);
+    setSelectedIndex(api.selectedScrollSnap());
+
+    api.on("select", onSelect);
+
+    return () => {
+      api.off("select", onSelect);
+    };
+  }, [api]);
+
+  if (!api || slideCount === 0) return null;
+
+  return (
+    <div className="absolute -bottom-4 left-0 right-0 flex justify-center gap-2 z-20">
+      {Array.from({ length: slideCount }).map((_, index) => (
+        <button
+          key={index}
+          className={cn(
+            "h-2 rounded-full transition-all duration-300",
+            index === selectedIndex ? "bg-black w-2" : "bg-gray-400 w-2"
+          )}
+          onClick={() => api.scrollTo(index)}
+          aria-label={`Go to slide ${index + 1}`}
+        />
+      ))}
+    </div>
+  );
+}
+
 export {
   type CarouselApi,
   Carousel,
@@ -274,4 +315,5 @@ export {
   CarouselPrevious,
   CarouselNext,
   CarouselDots,
+  CarouselDotsBottom,
 };
