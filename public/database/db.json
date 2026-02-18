@@ -1,0 +1,434 @@
+{
+  "categories": [
+    { "id": 1, "name": "Men's Fashion" },
+    { "id": 2, "name": "Women's Fashion" },
+    { "id": 3, "name": "Kids and Toys" },
+    { "id": 4, "name": "Accessories" },
+    { "id": 5, "name": "Cosmetics" },
+    { "id": 6, "name": "Shoes" },
+    { "id": 7, "name": "Sports" }
+  ],
+  "shops": [
+    { "id": 1, "name": "Urban Styles" },
+    { "id": 2, "name": "Glamour Boutique" },
+    { "id": 3, "name": "Sportify" },
+    { "id": 4, "name": "Kids Kingdom" },
+    { "id": 5, "name": "Accessorize Me" }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "Slim Fit Cotton Shirt",
+      "description": "A comfortable and stylish slim fit shirt for men, made from 100% cotton.",
+      "price": 39.99,
+      "discountPrice": 29.99,
+      "images": [
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500",
+        "https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=500",
+        "https://images.unsplash.com/photo-1564584217132-2271feaeb3c5?w=500",
+        "https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.5,
+      "reviewCount": 23,
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "tax": 0.08,
+      "keywords": ["shirt", "cotton", "slim fit", "men"],
+      "sales": 150,
+      "createdAt": "2025-01-15T10:00:00Z",
+      "views": 2300,
+      "relatedProductIds": [2, 5, 8]
+    },
+    {
+      "id": 2,
+      "name": "Leather Jacket",
+      "description": "Genuine leather jacket with a classic biker style. Perfect for a rugged look.",
+      "price": 129.99,
+      "discountPrice": 99.99,
+      "images": [
+        "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
+        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500",
+        "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=500",
+        "https://images.unsplash.com/photo-1521223890158-f9f7c3d5dde6?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.8,
+      "reviewCount": 45,
+      "sizes": ["M", "L", "XL"],
+      "tax": 0.08,
+      "keywords": ["jacket", "leather", "biker", "men"],
+      "sales": 80,
+      "createdAt": "2025-02-10T14:30:00Z",
+      "views": 1800,
+      "relatedProductIds": [1, 6, 10]
+    },
+    {
+      "id": 3,
+      "name": "Floral Summer Dress",
+      "description": "Light and airy floral dress, perfect for summer outings.",
+      "price": 49.99,
+      "discountPrice": 39.99,
+      "images": [
+        "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500",
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
+        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500",
+        "https://images.unsplash.com/photo-1618354691373-d851c5c3a990?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.2,
+      "reviewCount": 12,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["dress", "floral", "summer", "women"],
+      "sales": 200,
+      "createdAt": "2025-03-01T09:15:00Z",
+      "views": 3100,
+      "relatedProductIds": [4, 7, 11]
+    },
+    {
+      "id": 4,
+      "name": "Designer Handbag",
+      "description": "Elegant handbag with premium leather and gold accents.",
+      "price": 89.99,
+      "discountPrice": null,
+      "images": [
+        "https://images.unsplash.com/photo-1584917865442-de89df76afd2?w=500",
+        "https://images.unsplash.com/photo-1591561954557-26941169b7e9?w=500",
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500",
+        "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.7,
+      "reviewCount": 31,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["handbag", "leather", "designer", "accessories"],
+      "sales": 65,
+      "createdAt": "2025-01-20T11:45:00Z",
+      "views": 1500,
+      "relatedProductIds": [5, 12, 15]
+    },
+    {
+      "id": 5,
+      "name": "Running Shoes",
+      "description": "Lightweight running shoes with cushioned sole for maximum comfort.",
+      "price": 79.99,
+      "discountPrice": 59.99,
+      "images": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+        "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500",
+        "https://images.unsplash.com/photo-1543508282-6319a3e2621f?w=500",
+        "https://images.unsplash.com/photo-1605405748313-a416a1b84491?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 3,
+      "rating": 4.6,
+      "reviewCount": 52,
+      "sizes": ["7", "8", "9", "10", "11", "12"],
+      "tax": 0.08,
+      "keywords": ["shoes", "running", "sports", "men", "women"],
+      "sales": 320,
+      "createdAt": "2025-02-05T08:20:00Z",
+      "views": 4200,
+      "relatedProductIds": [6, 13, 16]
+    },
+    {
+      "id": 6,
+      "name": "Yoga Mat",
+      "description": "Eco-friendly non-slip yoga mat with carrying strap.",
+      "price": 29.99,
+      "discountPrice": 24.99,
+      "images": [
+        "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500",
+        "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",
+        "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500",
+        "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 3,
+      "rating": 4.4,
+      "reviewCount": 28,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["yoga", "mat", "fitness", "sports"],
+      "sales": 180,
+      "createdAt": "2025-03-12T16:10:00Z",
+      "views": 2100,
+      "relatedProductIds": [7, 13, 17]
+    },
+    {
+      "id": 7,
+      "name": "Kids Building Blocks Set",
+      "description": "100-piece colorful building blocks set for creative play.",
+      "price": 24.99,
+      "discountPrice": 19.99,
+      "images": [
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.9,
+      "reviewCount": 67,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["toys", "blocks", "kids", "educational"],
+      "sales": 410,
+      "createdAt": "2025-01-28T13:30:00Z",
+      "views": 3800,
+      "relatedProductIds": [8, 14, 18]
+    },
+    {
+      "id": 8,
+      "name": "Stainless Steel Watch",
+      "description": "Elegant men's watch with stainless steel band and chronograph.",
+      "price": 149.99,
+      "discountPrice": 119.99,
+      "images": [
+        "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",
+        "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500",
+        "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500",
+        "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.3,
+      "reviewCount": 19,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["watch", "men", "accessories", "luxury"],
+      "sales": 95,
+      "createdAt": "2025-02-18T12:00:00Z",
+      "views": 1400,
+      "relatedProductIds": [1, 4, 10]
+    },
+    {
+      "id": 9,
+      "name": "Lipstick Set",
+      "description": "Set of 5 long-lasting matte lipsticks in popular shades.",
+      "price": 34.99,
+      "discountPrice": 29.99,
+      "images": [
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1599732214246-43f5f1ae2e3f?w=500",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1599732214246-43f5f1ae2e3f?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 2,
+      "rating": 4.1,
+      "reviewCount": 14,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["cosmetics", "lipstick", "makeup", "women"],
+      "sales": 220,
+      "createdAt": "2025-03-05T14:45:00Z",
+      "views": 1700,
+      "relatedProductIds": [10, 11, 15]
+    },
+    {
+      "id": 10,
+      "name": "Soccer Ball",
+      "description": "Official size and weight soccer ball, durable and weather-resistant.",
+      "price": 29.99,
+      "discountPrice": null,
+      "images": [
+        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
+        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
+        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
+        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 3,
+      "rating": 4.7,
+      "reviewCount": 33,
+      "sizes": ["Size 5"],
+      "tax": 0.08,
+      "keywords": ["soccer", "ball", "sports"],
+      "sales": 280,
+      "createdAt": "2025-02-22T10:30:00Z",
+      "views": 2900,
+      "relatedProductIds": [6, 13, 16]
+    },
+    {
+      "id": 11,
+      "name": "Women's Sneakers",
+      "description": "Fashionable sneakers with memory foam insole for all-day comfort.",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "images": [
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500",
+        "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500",
+        "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 3,
+      "rating": 4.5,
+      "reviewCount": 27,
+      "sizes": ["6", "7", "8", "9", "10"],
+      "tax": 0.08,
+      "keywords": ["sneakers", "women", "shoes", "fashion"],
+      "sales": 190,
+      "createdAt": "2025-01-30T08:00:00Z",
+      "views": 2200,
+      "relatedProductIds": [3, 5, 12]
+    },
+    {
+      "id": 12,
+      "name": "Sunglasses",
+      "description": "Polarized UV protection sunglasses with trendy design.",
+      "price": 19.99,
+      "discountPrice": 14.99,
+      "images": [
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
+        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.0,
+      "reviewCount": 9,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["sunglasses", "accessories", "summer"],
+      "sales": 340,
+      "createdAt": "2025-03-18T11:20:00Z",
+      "views": 2600,
+      "relatedProductIds": [4, 8, 15]
+    }
+  ],
+  "reviews": [
+    {
+      "id": 1,
+      "productId": 1,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Great fit and quality material!",
+      "date": "2025-03-20T14:23:00Z"
+    },
+    {
+      "id": 2,
+      "productId": 1,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice shirt but slightly large.",
+      "date": "2025-03-22T09:45:00Z"
+    },
+    {
+      "id": 3,
+      "productId": 2,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Awesome jacket! Looks even better in person.",
+      "date": "2025-03-18T16:30:00Z"
+    },
+    {
+      "id": 4,
+      "productId": 3,
+      "userId": 4,
+      "rating": 4,
+      "comment": "Beautiful dress, perfect for summer.",
+      "date": "2025-03-25T12:10:00Z"
+    },
+    {
+      "id": 5,
+      "productId": 5,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Very comfortable running shoes. Highly recommend.",
+      "date": "2025-03-21T08:15:00Z"
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "name": "John Doe",
+      "email": "john@example.com",
+      "password": "hashed_password_123",
+      "address": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zip": "10001",
+        "country": "USA"
+      }
+    },
+    {
+      "id": 2,
+      "name": "Jane Smith",
+      "email": "jane@example.com",
+      "password": "hashed_password_456",
+      "address": {
+        "street": "456 Oak Ave",
+        "city": "Los Angeles",
+        "zip": "90001",
+        "country": "USA"
+      }
+    },
+    {
+      "id": 3,
+      "name": "Mike Johnson",
+      "email": "mike@example.com",
+      "password": "hashed_password_789",
+      "address": {
+        "street": "789 Pine Rd",
+        "city": "Chicago",
+        "zip": "60601",
+        "country": "USA"
+      }
+    }
+  ],
+  "orders": [
+    {
+      "id": 1,
+      "userId": 1,
+      "items": [
+        { "productId": 1, "quantity": 2, "price": 29.99 },
+        { "productId": 5, "quantity": 1, "price": 59.99 }
+      ],
+      "total": 119.97,
+      "status": "delivered",
+      "date": "2025-03-15T10:30:00Z",
+      "shippingAddress": {
+        "street": "123 Main St",
+        "city": "New York",
+        "zip": "10001",
+        "country": "USA"
+      }
+    },
+    {
+      "id": 2,
+      "userId": 2,
+      "items": [
+        { "productId": 3, "quantity": 1, "price": 39.99 },
+        { "productId": 9, "quantity": 3, "price": 29.99 }
+      ],
+      "total": 129.96,
+      "status": "shipped",
+      "date": "2025-03-24T14:45:00Z",
+      "shippingAddress": {
+        "street": "456 Oak Ave",
+        "city": "Los Angeles",
+        "zip": "90001",
+        "country": "USA"
+      }
+    }
+  ],
+  "cart": [
+    {
+      "id": 1,
+      "userId": 3,
+      "items": [
+        { "productId": 2, "quantity": 1 },
+        { "productId": 7, "quantity": 2 }
+      ]
+    }
+  ]
+}
