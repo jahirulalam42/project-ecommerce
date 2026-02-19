@@ -18,6 +18,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { Star } from "lucide-react";
 
 const Recommendations = async () => {
   const result = await getProducts();
@@ -38,11 +39,10 @@ const Recommendations = async () => {
               >
                 <div className="p-1">
                   <Card className="relative mx-auto w-[309px] h-[448px] rounded-none pt-0">
-                    <div className="absolute inset-0 z-30 aspect-video bg-black/35" />
                     <img
                       src={item?.images[0]}
                       alt="Event cover"
-                      className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40 h-[90%]"
+                      className="relative z-20 aspect-video w-full object-cover h-[90%]"
                     />
                     <CardHeader>
                       <CardAction>
@@ -50,6 +50,9 @@ const Recommendations = async () => {
                       </CardAction>
                       <CardTitle>{item?.name}</CardTitle>
                       <CardDescription>{item?.categoryId}</CardDescription>
+                      <div className="flex flex-row gap-2">
+                        <Star strokeWidth={1.5} /> 4.9 (98)
+                      </div>
                     </CardHeader>
                   </Card>
                 </div>
