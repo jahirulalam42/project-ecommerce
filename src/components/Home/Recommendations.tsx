@@ -1,4 +1,4 @@
-import { getProducts } from "@/lib/api";
+import { getCategories, getProducts } from "@/lib/api";
 import React from "react";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -22,7 +22,16 @@ import { Star } from "lucide-react";
 
 const Recommendations = async () => {
   const result = await getProducts();
-  console.log("Products", result?.data.slice(0, 10));
+  const categories: any = await getCategories();
+
+  const getCategory = (categoryId: any) => {
+    const category = categories?.data.find(
+      (cat: any) => String(cat.id) === String(categoryId)
+    );
+    return category?.name || "Unknown";
+  };
+
+  console.log("Products", categories);
   return (
     <div className="flex flex-col gap-6">
       <h1 className="text-3xl font-bold">
@@ -32,7 +41,7 @@ const Recommendations = async () => {
       <div className="flex flex-row">
         <Carousel className="w-full">
           <CarouselContent className="-ml-1">
-            {result?.data.slice(0, 10).map((item, index) => (
+            {result?.data.slice(0, 10).map((item: any, index: any) => (
               <CarouselItem
                 key={index}
                 className="basis-1/1 pl-1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4 2xl:basis-1/5"
@@ -49,9 +58,12 @@ const Recommendations = async () => {
                         <Badge variant="secondary">{item?.discountPrice}</Badge>
                       </CardAction>
                       <CardTitle>{item?.name}</CardTitle>
-                      <CardDescription>{item?.categoryId}</CardDescription>
+                      <CardDescription>
+                        {getCategory(item?.categoryId)}
+                      </CardDescription>
                       <div className="flex flex-row gap-2">
-                        <Star strokeWidth={1.5} /> 4.9 (98)
+                        <Star strokeWidth={1.5} /> {item?.rating} (
+                        {item?.reviewCount})
                       </div>
                     </CardHeader>
                   </Card>
