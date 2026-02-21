@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 
 const CollectionItems = () => {
   return (
-    <div className="relative w-full relative h-[437px]">
+    <div className="hidden md:block relative w-full h-[437px]">
       <Image
         src={DownHomeImage}
         alt="Down home image"

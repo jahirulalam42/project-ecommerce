@@ -24,7 +24,7 @@ import { CircleDollarSign, Globe, Recycle, Search, Truck } from "lucide-react";
 
 const Hero = () => {
   const plugin = React.useRef(
-    Autoplay({ delay: 2000, stopOnInteraction: true })
+    Autoplay({ delay: 2000, stopOnInteraction: true }),
   );
 
   const imageArray = [

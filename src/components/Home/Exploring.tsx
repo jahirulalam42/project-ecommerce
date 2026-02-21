@@ -53,7 +53,10 @@ const Exploring = () => {
         <Carousel className="w-full">
           <CarouselContent className="-ml-1">
             {cardItems.map((item, index) => (
-              <CarouselItem key={index} className="basis-1/2 pl-1 lg:basis-1/3">
+              <CarouselItem
+                key={index}
+                className="basis-1/1 md:basis-1/2 pl-1 lg:basis-1/3"
+              >
                 <div className="p-1">
                   <Card>
                     <CardContent className="flex justify-between items-center">
