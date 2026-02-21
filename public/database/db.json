@@ -17,11 +17,11 @@
   ],
   "products": [
     {
-      "id": 1,
-      "name": "Slim Fit Cotton Shirt",
-      "description": "A comfortable and stylish slim fit shirt for men, made from 100% cotton.",
-      "price": 39.99,
-      "discountPrice": 29.99,
+      "id": 13,
+      "name": "Casual Linen Shirt",
+      "description": "Breathable linen shirt for casual wear, available in multiple colors.",
+      "price": 44.99,
+      "discountPrice": 34.99,
       "images": [
         "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500",
         "https://images.unsplash.com/photo-1589310243389-96a5483213a8?w=500",
@@ -30,46 +30,22 @@
       ],
       "categoryId": 1,
       "shopId": 1,
-      "rating": 4.5,
-      "reviewCount": 23,
+      "rating": 4.3,
+      "reviewCount": 5,
       "sizes": ["S", "M", "L", "XL", "2XL"],
       "tax": 0.08,
-      "keywords": ["shirt", "cotton", "slim fit", "men"],
-      "sales": 150,
-      "createdAt": "2025-01-15T10:00:00Z",
-      "views": 2300,
-      "relatedProductIds": [2, 5, 8]
-    },
-    {
-      "id": 2,
-      "name": "Leather Jacket",
-      "description": "Genuine leather jacket with a classic biker style. Perfect for a rugged look.",
-      "price": 129.99,
-      "discountPrice": 99.99,
-      "images": [
-        "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
-        "https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=500",
-        "https://images.unsplash.com/photo-1601924994987-69e26d50dc26?w=500",
-        "https://images.unsplash.com/photo-1521223890158-f9f7c3d5dde6?w=500"
-      ],
-      "categoryId": 1,
-      "shopId": 1,
-      "rating": 4.8,
-      "reviewCount": 45,
-      "sizes": ["M", "L", "XL"],
-      "tax": 0.08,
-      "keywords": ["jacket", "leather", "biker", "men"],
-      "sales": 80,
-      "createdAt": "2025-02-10T14:30:00Z",
+      "keywords": ["shirt", "linen", "casual", "men"],
+      "sales": 120,
+      "createdAt": "2025-03-01T10:00:00Z",
       "views": 1800,
-      "relatedProductIds": [1, 6, 10]
+      "relatedProductIds": [1, 2, 8]
     },
     {
-      "id": 3,
-      "name": "Floral Summer Dress",
-      "description": "Light and airy floral dress, perfect for summer outings.",
-      "price": 49.99,
-      "discountPrice": 39.99,
+      "id": 14,
+      "name": "Silk Blouse with Bow",
+      "description": "Elegant silk blouse with a delicate bow detail, perfect for office or date night.",
+      "price": 54.99,
+      "discountPrice": 44.99,
       "images": [
         "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500",
         "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
@@ -78,46 +54,94 @@
       ],
       "categoryId": 2,
       "shopId": 2,
-      "rating": 4.2,
-      "reviewCount": 12,
+      "rating": 4.5,
+      "reviewCount": 5,
       "sizes": ["XS", "S", "M", "L"],
       "tax": 0.08,
-      "keywords": ["dress", "floral", "summer", "women"],
-      "sales": 200,
-      "createdAt": "2025-03-01T09:15:00Z",
-      "views": 3100,
-      "relatedProductIds": [4, 7, 11]
+      "keywords": ["blouse", "silk", "women", "fashion"],
+      "sales": 90,
+      "createdAt": "2025-03-02T09:15:00Z",
+      "views": 1500,
+      "relatedProductIds": [3, 4, 11]
     },
     {
-      "id": 4,
-      "name": "Designer Handbag",
-      "description": "Elegant handbag with premium leather and gold accents.",
-      "price": 89.99,
-      "discountPrice": null,
+      "id": 15,
+      "name": "Superhero Printed T-shirt",
+      "description": "Fun superhero print t-shirt for kids, soft cotton fabric.",
+      "price": 14.99,
+      "discountPrice": 12.99,
       "images": [
-        "https://images.unsplash.com/photo-1584917865442-de89df76afd2?w=500",
-        "https://images.unsplash.com/photo-1591561954557-26941169b7e9?w=500",
-        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500",
-        "https://images.unsplash.com/photo-1582562124811-c09040d0a901?w=500"
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["2T", "3T", "4T", "5T", "6"],
+      "tax": 0.08,
+      "keywords": ["tshirt", "kids", "superhero", "cotton"],
+      "sales": 300,
+      "createdAt": "2025-03-03T11:30:00Z",
+      "views": 2500,
+      "relatedProductIds": [7, 13, 14]
+    },
+    {
+      "id": 16,
+      "name": "Leather Belt",
+      "description": "Genuine leather belt with a classic buckle, available in brown and black.",
+      "price": 29.99,
+      "discountPrice": 24.99,
+      "images": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+        "https://images.unsplash.com/photo-1603252111615-6c9b3c4e4d4a?w=500",
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+        "https://images.unsplash.com/photo-1603252111615-6c9b3c4e4d4a?w=500"
       ],
       "categoryId": 4,
       "shopId": 5,
-      "rating": 4.7,
-      "reviewCount": 31,
-      "sizes": [],
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": ["30", "32", "34", "36", "38"],
       "tax": 0.08,
-      "keywords": ["handbag", "leather", "designer", "accessories"],
-      "sales": 65,
-      "createdAt": "2025-01-20T11:45:00Z",
-      "views": 1500,
-      "relatedProductIds": [5, 12, 15]
+      "keywords": ["belt", "leather", "accessories", "men"],
+      "sales": 150,
+      "createdAt": "2025-03-04T14:20:00Z",
+      "views": 1200,
+      "relatedProductIds": [4, 8, 12]
     },
     {
-      "id": 5,
-      "name": "Running Shoes",
-      "description": "Lightweight running shoes with cushioned sole for maximum comfort.",
-      "price": 79.99,
-      "discountPrice": 59.99,
+      "id": 17,
+      "name": "Foundation Stick",
+      "description": "Full-coverage foundation stick with natural finish, suitable for all skin types.",
+      "price": 24.99,
+      "discountPrice": 19.99,
+      "images": [
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 2,
+      "rating": 4.0,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["foundation", "makeup", "cosmetics", "women"],
+      "sales": 80,
+      "createdAt": "2025-03-05T12:00:00Z",
+      "views": 900,
+      "relatedProductIds": [9, 11, 14]
+    },
+    {
+      "id": 18,
+      "name": "Men's Running Shoes",
+      "description": "High-performance running shoes with responsive cushioning.",
+      "price": 89.99,
+      "discountPrice": 69.99,
       "images": [
         "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
         "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500",
@@ -127,224 +151,1792 @@
       "categoryId": 6,
       "shopId": 3,
       "rating": 4.6,
-      "reviewCount": 52,
-      "sizes": ["7", "8", "9", "10", "11", "12"],
+      "reviewCount": 5,
+      "sizes": ["8", "9", "10", "11", "12", "13"],
       "tax": 0.08,
-      "keywords": ["shoes", "running", "sports", "men", "women"],
-      "sales": 320,
-      "createdAt": "2025-02-05T08:20:00Z",
-      "views": 4200,
-      "relatedProductIds": [6, 13, 16]
+      "keywords": ["running", "shoes", "men", "sports"],
+      "sales": 210,
+      "createdAt": "2025-03-06T08:45:00Z",
+      "views": 3200,
+      "relatedProductIds": [5, 10, 13]
     },
     {
-      "id": 6,
-      "name": "Yoga Mat",
-      "description": "Eco-friendly non-slip yoga mat with carrying strap.",
-      "price": 29.99,
-      "discountPrice": 24.99,
+      "id": 19,
+      "name": "Basketball",
+      "description": "Official size indoor/outdoor basketball with superior grip.",
+      "price": 24.99,
+      "discountPrice": null,
       "images": [
-        "https://images.unsplash.com/photo-1592432678016-e910b452f9a2?w=500",
-        "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",
-        "https://images.unsplash.com/photo-1518611012118-696072aa579a?w=500",
-        "https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=500"
+        "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=500",
+        "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=500",
+        "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=500",
+        "https://images.unsplash.com/photo-1519861531473-9200262188bf?w=500"
       ],
       "categoryId": 7,
       "shopId": 3,
       "rating": 4.4,
-      "reviewCount": 28,
-      "sizes": [],
+      "reviewCount": 5,
+      "sizes": ["Size 7"],
       "tax": 0.08,
-      "keywords": ["yoga", "mat", "fitness", "sports"],
+      "keywords": ["basketball", "sports", "ball"],
       "sales": 180,
-      "createdAt": "2025-03-12T16:10:00Z",
-      "views": 2100,
-      "relatedProductIds": [7, 13, 17]
+      "createdAt": "2025-03-07T16:30:00Z",
+      "views": 2000,
+      "relatedProductIds": [6, 10, 18]
     },
     {
-      "id": 7,
-      "name": "Kids Building Blocks Set",
-      "description": "100-piece colorful building blocks set for creative play.",
-      "price": 24.99,
-      "discountPrice": 19.99,
+      "id": 20,
+      "name": "Slim Fit Jeans",
+      "description": "Classic slim fit jeans in dark wash, made from stretch denim.",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "images": [
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500",
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500",
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500",
+        "https://images.unsplash.com/photo-1541099649105-f69ad21f3246?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": ["30x32", "32x32", "34x32", "36x32", "38x32"],
+      "tax": 0.08,
+      "keywords": ["jeans", "denim", "slim fit", "men"],
+      "sales": 140,
+      "createdAt": "2025-03-08T10:00:00Z",
+      "views": 1700,
+      "relatedProductIds": [1, 2, 13]
+    },
+    {
+      "id": 21,
+      "name": "Maxi Dress",
+      "description": "Floral print maxi dress with ruffled sleeves, perfect for summer.",
+      "price": 69.99,
+      "discountPrice": 59.99,
+      "images": [
+        "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500",
+        "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500",
+        "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500",
+        "https://images.unsplash.com/photo-1539008835657-9e8e9680c956?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["dress", "maxi", "floral", "women"],
+      "sales": 110,
+      "createdAt": "2025-03-09T13:20:00Z",
+      "views": 2100,
+      "relatedProductIds": [3, 14, 17]
+    },
+    {
+      "id": 22,
+      "name": "Educational Puzzle",
+      "description": "Wooden puzzle with numbers and letters, helps develop cognitive skills.",
+      "price": 19.99,
+      "discountPrice": 16.99,
       "images": [
         "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
-        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",
         "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
-        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500",
+        "https://images.unsplash.com/photo-1587654780291-39c9404d746b?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.8,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["puzzle", "educational", "toys", "kids"],
+      "sales": 250,
+      "createdAt": "2025-03-10T09:45:00Z",
+      "views": 1900,
+      "relatedProductIds": [7, 15, 14]
+    },
+    {
+      "id": 23,
+      "name": "Silver Necklace",
+      "description": "Delicate silver chain necklace with a small pendant, perfect for everyday wear.",
+      "price": 39.99,
+      "discountPrice": 34.99,
+      "images": [
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500",
+        "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.1,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["necklace", "silver", "accessories", "women"],
+      "sales": 70,
+      "createdAt": "2025-03-11T15:10:00Z",
+      "views": 1100,
+      "relatedProductIds": [4, 8, 16]
+    },
+    {
+      "id": 24,
+      "name": "Mascara",
+      "description": "Volumizing mascara for longer, fuller lashes. Smudge-proof.",
+      "price": 14.99,
+      "discountPrice": 11.99,
+      "images": [
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500",
+        "https://images.unsplash.com/photo-1631730359585-38a4935cbec4?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 2,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["mascara", "makeup", "cosmetics", "eyes"],
+      "sales": 320,
+      "createdAt": "2025-03-12T11:30:00Z",
+      "views": 2300,
+      "relatedProductIds": [9, 17, 21]
+    },
+    {
+      "id": 25,
+      "name": "Women's Sandals",
+      "description": "Flat sandals with cushioned footbed, ideal for warm weather.",
+      "price": 34.99,
+      "discountPrice": 29.99,
+      "images": [
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
+        "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 3,
+      "rating": 4.0,
+      "reviewCount": 5,
+      "sizes": ["6", "7", "8", "9", "10"],
+      "tax": 0.08,
+      "keywords": ["sandals", "women", "shoes", "summer"],
+      "sales": 130,
+      "createdAt": "2025-03-13T08:00:00Z",
+      "views": 1400,
+      "relatedProductIds": [5, 11, 18]
+    },
+    {
+      "id": 26,
+      "name": "Dumbbell Set",
+      "description": "Pair of 5kg dumbbells with neoprene coating for comfortable grip.",
+      "price": 39.99,
+      "discountPrice": 34.99,
+      "images": [
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500",
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500",
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500",
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 3,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["dumbbell", "weights", "fitness", "sports"],
+      "sales": 90,
+      "createdAt": "2025-03-14T17:20:00Z",
+      "views": 1600,
+      "relatedProductIds": [6, 10, 19]
+    },
+    {
+      "id": 27,
+      "name": "Wool Overcoat",
+      "description": "Classic wool overcoat for winter, with a tailored fit.",
+      "price": 199.99,
+      "discountPrice": 169.99,
+      "images": [
+        "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500",
+        "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500",
+        "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500",
+        "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["S", "M", "L", "XL"],
+      "tax": 0.08,
+      "keywords": ["overcoat", "wool", "winter", "men"],
+      "sales": 40,
+      "createdAt": "2025-03-15T12:00:00Z",
+      "views": 900,
+      "relatedProductIds": [2, 13, 20]
+    },
+    {
+      "id": 28,
+      "name": "Leather Skirt",
+      "description": "Faux leather skirt with a high waist and zip closure.",
+      "price": 49.99,
+      "discountPrice": 39.99,
+      "images": [
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["skirt", "leather", "women", "fashion"],
+      "sales": 60,
+      "createdAt": "2025-03-16T14:30:00Z",
+      "views": 1100,
+      "relatedProductIds": [3, 14, 21]
+    },
+    {
+      "id": 29,
+      "name": "Stuffed Bear",
+      "description": "Soft and cuddly teddy bear, perfect for hugs.",
+      "price": 12.99,
+      "discountPrice": 9.99,
+      "images": [
+        "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500",
+        "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500",
+        "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500",
+        "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500"
       ],
       "categoryId": 3,
       "shopId": 4,
       "rating": 4.9,
-      "reviewCount": 67,
+      "reviewCount": 5,
       "sizes": [],
       "tax": 0.08,
-      "keywords": ["toys", "blocks", "kids", "educational"],
-      "sales": 410,
-      "createdAt": "2025-01-28T13:30:00Z",
-      "views": 3800,
-      "relatedProductIds": [8, 14, 18]
+      "keywords": ["teddy", "bear", "stuffed", "kids", "toy"],
+      "sales": 500,
+      "createdAt": "2025-03-17T10:15:00Z",
+      "views": 4000,
+      "relatedProductIds": [7, 15, 22]
     },
     {
-      "id": 8,
-      "name": "Stainless Steel Watch",
-      "description": "Elegant men's watch with stainless steel band and chronograph.",
-      "price": 149.99,
-      "discountPrice": 119.99,
+      "id": 30,
+      "name": "Leather Wallet",
+      "description": "Slim leather wallet with multiple card slots and a bill compartment.",
+      "price": 34.99,
+      "discountPrice": 29.99,
       "images": [
-        "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",
-        "https://images.unsplash.com/photo-1539874754764-5a96559165b0?w=500",
-        "https://images.unsplash.com/photo-1524805444758-089113d48a6d?w=500",
-        "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=500"
+        "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",
+        "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",
+        "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500",
+        "https://images.unsplash.com/photo-1627123424574-724758594e93?w=500"
       ],
       "categoryId": 4,
       "shopId": 5,
       "rating": 4.3,
-      "reviewCount": 19,
+      "reviewCount": 5,
       "sizes": [],
       "tax": 0.08,
-      "keywords": ["watch", "men", "accessories", "luxury"],
-      "sales": 95,
-      "createdAt": "2025-02-18T12:00:00Z",
-      "views": 1400,
-      "relatedProductIds": [1, 4, 10]
+      "keywords": ["wallet", "leather", "accessories", "men"],
+      "sales": 200,
+      "createdAt": "2025-03-18T09:00:00Z",
+      "views": 1800,
+      "relatedProductIds": [4, 16, 23]
     },
     {
-      "id": 9,
-      "name": "Lipstick Set",
-      "description": "Set of 5 long-lasting matte lipsticks in popular shades.",
-      "price": 34.99,
-      "discountPrice": 29.99,
+      "id": 31,
+      "name": "Eyeshadow Palette",
+      "description": "16-color eyeshadow palette with matte and shimmer finishes.",
+      "price": 29.99,
+      "discountPrice": 24.99,
       "images": [
-        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
-        "https://images.unsplash.com/photo-1599732214246-43f5f1ae2e3f?w=500",
-        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
-        "https://images.unsplash.com/photo-1599732214246-43f5f1ae2e3f?w=500"
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500"
       ],
       "categoryId": 5,
       "shopId": 2,
-      "rating": 4.1,
-      "reviewCount": 14,
+      "rating": 4.4,
+      "reviewCount": 5,
       "sizes": [],
       "tax": 0.08,
-      "keywords": ["cosmetics", "lipstick", "makeup", "women"],
-      "sales": 220,
-      "createdAt": "2025-03-05T14:45:00Z",
-      "views": 1700,
-      "relatedProductIds": [10, 11, 15]
+      "keywords": ["eyeshadow", "makeup", "cosmetics", "palette"],
+      "sales": 150,
+      "createdAt": "2025-03-19T13:45:00Z",
+      "views": 2100,
+      "relatedProductIds": [9, 17, 24]
     },
     {
-      "id": 10,
-      "name": "Soccer Ball",
-      "description": "Official size and weight soccer ball, durable and weather-resistant.",
-      "price": 29.99,
-      "discountPrice": null,
+      "id": 32,
+      "name": "Hiking Boots",
+      "description": "Durable waterproof hiking boots with ankle support.",
+      "price": 119.99,
+      "discountPrice": 99.99,
       "images": [
-        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
-        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
-        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500",
-        "https://images.unsplash.com/photo-1614632537197-38a17061c2bd?w=500"
-      ],
-      "categoryId": 7,
-      "shopId": 3,
-      "rating": 4.7,
-      "reviewCount": 33,
-      "sizes": ["Size 5"],
-      "tax": 0.08,
-      "keywords": ["soccer", "ball", "sports"],
-      "sales": 280,
-      "createdAt": "2025-02-22T10:30:00Z",
-      "views": 2900,
-      "relatedProductIds": [6, 13, 16]
-    },
-    {
-      "id": 11,
-      "name": "Women's Sneakers",
-      "description": "Fashionable sneakers with memory foam insole for all-day comfort.",
-      "price": 59.99,
-      "discountPrice": 49.99,
-      "images": [
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500",
-        "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500",
-        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500",
-        "https://images.unsplash.com/photo-1608231387042-66d177e8d5d1?w=500"
+        "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=500",
+        "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=500",
+        "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=500",
+        "https://images.unsplash.com/photo-1529810313688-44ea1c2d81d3?w=500"
       ],
       "categoryId": 6,
       "shopId": 3,
-      "rating": 4.5,
-      "reviewCount": 27,
-      "sizes": ["6", "7", "8", "9", "10"],
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": ["8", "9", "10", "11", "12"],
       "tax": 0.08,
-      "keywords": ["sneakers", "women", "shoes", "fashion"],
-      "sales": 190,
-      "createdAt": "2025-01-30T08:00:00Z",
-      "views": 2200,
-      "relatedProductIds": [3, 5, 12]
+      "keywords": ["hiking", "boots", "shoes", "outdoor"],
+      "sales": 70,
+      "createdAt": "2025-03-20T07:30:00Z",
+      "views": 1500,
+      "relatedProductIds": [5, 18, 26]
     },
     {
-      "id": 12,
-      "name": "Sunglasses",
-      "description": "Polarized UV protection sunglasses with trendy design.",
-      "price": 19.99,
-      "discountPrice": 14.99,
+      "id": 33,
+      "name": "Tennis Racket",
+      "description": "Lightweight tennis racket with oversized head for beginners.",
+      "price": 49.99,
+      "discountPrice": 44.99,
       "images": [
-        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
-        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
-        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
-        "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500"
+        "https://images.unsplash.com/photo-1622279457486-28f24f2b6d7b?w=500",
+        "https://images.unsplash.com/photo-1622279457486-28f24f2b6d7b?w=500",
+        "https://images.unsplash.com/photo-1622279457486-28f24f2b6d7b?w=500",
+        "https://images.unsplash.com/photo-1622279457486-28f24f2b6d7b?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 3,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["tennis", "racket", "sports"],
+      "sales": 60,
+      "createdAt": "2025-03-21T16:00:00Z",
+      "views": 1300,
+      "relatedProductIds": [6, 19, 26]
+    },
+    {
+      "id": 34,
+      "name": "Polo Shirt",
+      "description": "Classic polo shirt with embroidered logo, made from pique cotton.",
+      "price": 34.99,
+      "discountPrice": 29.99,
+      "images": [
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500",
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500",
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500",
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "tax": 0.08,
+      "keywords": ["polo", "shirt", "men", "cotton"],
+      "sales": 180,
+      "createdAt": "2025-03-22T11:00:00Z",
+      "views": 2000,
+      "relatedProductIds": [1, 13, 20]
+    },
+    {
+      "id": 35,
+      "name": "Cashmere Sweater",
+      "description": "Luxuriously soft cashmere sweater, perfect for chilly evenings.",
+      "price": 89.99,
+      "discountPrice": 79.99,
+      "images": [
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500",
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["sweater", "cashmere", "women", "winter"],
+      "sales": 50,
+      "createdAt": "2025-03-23T12:30:00Z",
+      "views": 1200,
+      "relatedProductIds": [3, 14, 28]
+    },
+    {
+      "id": 36,
+      "name": "Remote Control Car",
+      "description": "Fast and durable remote control car for kids ages 6+.",
+      "price": 39.99,
+      "discountPrice": 34.99,
+      "images": [
+        "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500",
+        "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500",
+        "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500",
+        "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["rc car", "toy", "kids", "remote control"],
+      "sales": 140,
+      "createdAt": "2025-03-24T09:45:00Z",
+      "views": 2200,
+      "relatedProductIds": [7, 15, 29]
+    },
+    {
+      "id": 37,
+      "name": "Baseball Cap",
+      "description": "Cotton twill baseball cap with adjustable strap.",
+      "price": 19.99,
+      "discountPrice": 15.99,
+      "images": [
+        "https://images.unsplash.com/photo-1588850561052-3f8c7f7c9b1b?w=500",
+        "https://images.unsplash.com/photo-1588850561052-3f8c7f7c9b1b?w=500",
+        "https://images.unsplash.com/photo-1588850561052-3f8c7f7c9b1b?w=500",
+        "https://images.unsplash.com/photo-1588850561052-3f8c7f7c9b1b?w=500"
       ],
       "categoryId": 4,
       "shopId": 5,
       "rating": 4.0,
-      "reviewCount": 9,
+      "reviewCount": 5,
+      "sizes": ["One Size"],
+      "tax": 0.08,
+      "keywords": ["cap", "hat", "accessories", "baseball"],
+      "sales": 300,
+      "createdAt": "2025-03-25T14:00:00Z",
+      "views": 2500,
+      "relatedProductIds": [4, 16, 30]
+    },
+    {
+      "id": 38,
+      "name": "Lip Gloss Set",
+      "description": "Set of 3 shiny lip glosses in nude shades.",
+      "price": 18.99,
+      "discountPrice": 14.99,
+      "images": [
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 2,
+      "rating": 4.1,
+      "reviewCount": 5,
       "sizes": [],
       "tax": 0.08,
-      "keywords": ["sunglasses", "accessories", "summer"],
-      "sales": 340,
-      "createdAt": "2025-03-18T11:20:00Z",
-      "views": 2600,
-      "relatedProductIds": [4, 8, 15]
+      "keywords": ["lip gloss", "makeup", "cosmetics", "lips"],
+      "sales": 220,
+      "createdAt": "2025-03-26T10:20:00Z",
+      "views": 1700,
+      "relatedProductIds": [9, 17, 31]
+    },
+    {
+      "id": 39,
+      "name": "Slip-On Sneakers",
+      "description": "Easy slip-on sneakers with elastic sides, comfortable for daily wear.",
+      "price": 49.99,
+      "discountPrice": 44.99,
+      "images": [
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 3,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": ["7", "8", "9", "10", "11"],
+      "tax": 0.08,
+      "keywords": ["sneakers", "slip-on", "shoes", "casual"],
+      "sales": 160,
+      "createdAt": "2025-03-27T08:15:00Z",
+      "views": 1900,
+      "relatedProductIds": [5, 11, 25]
+    },
+    {
+      "id": 40,
+      "name": "Jump Rope",
+      "description": "Adjustable jump rope with ball bearings for smooth rotation.",
+      "price": 12.99,
+      "discountPrice": 9.99,
+      "images": [
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500",
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500",
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500",
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 3,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["jump rope", "fitness", "sports", "cardio"],
+      "sales": 350,
+      "createdAt": "2025-03-28T17:30:00Z",
+      "views": 2800,
+      "relatedProductIds": [6, 19, 26]
+    },
+    {
+      "id": 41,
+      "name": "Chino Shorts",
+      "description": "Classic chino shorts in khaki, perfect for summer.",
+      "price": 29.99,
+      "discountPrice": 24.99,
+      "images": [
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500",
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500",
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500",
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": ["30", "32", "34", "36", "38"],
+      "tax": 0.08,
+      "keywords": ["shorts", "chino", "men", "summer"],
+      "sales": 200,
+      "createdAt": "2025-03-29T13:00:00Z",
+      "views": 1600,
+      "relatedProductIds": [1, 20, 34]
+    },
+    {
+      "id": 42,
+      "name": "Denim Jacket",
+      "description": "Classic denim jacket with button front and chest pockets.",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "images": [
+        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500",
+        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500",
+        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500",
+        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L", "XL"],
+      "tax": 0.08,
+      "keywords": ["denim", "jacket", "women", "fashion"],
+      "sales": 110,
+      "createdAt": "2025-03-30T15:45:00Z",
+      "views": 2000,
+      "relatedProductIds": [3, 14, 35]
     }
   ],
   "reviews": [
     {
-      "id": 1,
-      "productId": 1,
-      "userId": 2,
-      "rating": 5,
-      "comment": "Great fit and quality material!",
-      "date": "2025-03-20T14:23:00Z"
-    },
-    {
-      "id": 2,
-      "productId": 1,
-      "userId": 3,
-      "rating": 4,
-      "comment": "Nice shirt but slightly large.",
-      "date": "2025-03-22T09:45:00Z"
-    },
-    {
-      "id": 3,
-      "productId": 2,
+      "id": 6,
+      "productId": 13,
       "userId": 1,
       "rating": 5,
-      "comment": "Awesome jacket! Looks even better in person.",
-      "date": "2025-03-18T16:30:00Z"
+      "comment": "Great shirt, very comfortable.",
+      "date": "2025-03-05T12:00:00Z"
     },
     {
-      "id": 4,
-      "productId": 3,
-      "userId": 4,
+      "id": 7,
+      "productId": 13,
+      "userId": 2,
       "rating": 4,
-      "comment": "Beautiful dress, perfect for summer.",
-      "date": "2025-03-25T12:10:00Z"
+      "comment": "Nice fabric but runs a bit large.",
+      "date": "2025-03-06T14:30:00Z"
     },
     {
-      "id": 5,
-      "productId": 5,
+      "id": 8,
+      "productId": 13,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good value for money.",
+      "date": "2025-03-07T09:15:00Z"
+    },
+    {
+      "id": 9,
+      "productId": 13,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Love the color options.",
+      "date": "2025-03-08T16:45:00Z"
+    },
+    {
+      "id": 10,
+      "productId": 13,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Decent quality.",
+      "date": "2025-03-09T11:20:00Z"
+    },
+    {
+      "id": 11,
+      "productId": 14,
       "userId": 2,
       "rating": 5,
-      "comment": "Very comfortable running shoes. Highly recommend.",
-      "date": "2025-03-21T08:15:00Z"
+      "comment": "Elegant blouse, fits perfectly.",
+      "date": "2025-03-05T10:00:00Z"
+    },
+    {
+      "id": 12,
+      "productId": 14,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice but a bit sheer.",
+      "date": "2025-03-06T13:20:00Z"
+    },
+    {
+      "id": 13,
+      "productId": 14,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Love the bow detail.",
+      "date": "2025-03-07T15:30:00Z"
+    },
+    {
+      "id": 14,
+      "productId": 14,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good quality silk.",
+      "date": "2025-03-08T09:45:00Z"
+    },
+    {
+      "id": 15,
+      "productId": 14,
+      "userId": 3,
+      "rating": 5,
+      "comment": "My new favorite blouse.",
+      "date": "2025-03-09T17:00:00Z"
+    },
+    {
+      "id": 16,
+      "productId": 15,
+      "userId": 1,
+      "rating": 5,
+      "comment": "My son loves this shirt!",
+      "date": "2025-03-06T11:00:00Z"
+    },
+    {
+      "id": 17,
+      "productId": 15,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Soft and cute.",
+      "date": "2025-03-07T12:30:00Z"
+    },
+    {
+      "id": 18,
+      "productId": 15,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good quality but size runs small.",
+      "date": "2025-03-08T14:15:00Z"
+    },
+    {
+      "id": 19,
+      "productId": 15,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Bright colors, washed well.",
+      "date": "2025-03-09T10:45:00Z"
+    },
+    {
+      "id": 20,
+      "productId": 15,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Perfect for my toddler.",
+      "date": "2025-03-10T16:20:00Z"
+    },
+    {
+      "id": 21,
+      "productId": 16,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice belt, good leather.",
+      "date": "2025-03-07T09:00:00Z"
+    },
+    {
+      "id": 22,
+      "productId": 16,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Sturdy buckle.",
+      "date": "2025-03-08T11:30:00Z"
+    },
+    {
+      "id": 23,
+      "productId": 16,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Exactly as described.",
+      "date": "2025-03-09T13:45:00Z"
+    },
+    {
+      "id": 24,
+      "productId": 16,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good value.",
+      "date": "2025-03-10T15:10:00Z"
+    },
+    {
+      "id": 25,
+      "productId": 16,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Fits well.",
+      "date": "2025-03-11T10:20:00Z"
+    },
+    {
+      "id": 26,
+      "productId": 17,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good coverage, blends well.",
+      "date": "2025-03-08T12:00:00Z"
+    },
+    {
+      "id": 27,
+      "productId": 17,
+      "userId": 3,
+      "rating": 3,
+      "comment": "A bit dry for my skin.",
+      "date": "2025-03-09T14:30:00Z"
+    },
+    {
+      "id": 28,
+      "productId": 17,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Lasts all day.",
+      "date": "2025-03-10T16:45:00Z"
+    },
+    {
+      "id": 29,
+      "productId": 17,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice finish.",
+      "date": "2025-03-11T09:15:00Z"
+    },
+    {
+      "id": 30,
+      "productId": 17,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Love this foundation!",
+      "date": "2025-03-12T11:30:00Z"
+    },
+    {
+      "id": 31,
+      "productId": 18,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Best running shoes ever!",
+      "date": "2025-03-09T08:00:00Z"
+    },
+    {
+      "id": 32,
+      "productId": 18,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Comfortable but a bit narrow.",
+      "date": "2025-03-10T10:15:00Z"
+    },
+    {
+      "id": 33,
+      "productId": 18,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Great support.",
+      "date": "2025-03-11T12:30:00Z"
+    },
+    {
+      "id": 34,
+      "productId": 18,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Lightweight and fast.",
+      "date": "2025-03-12T14:45:00Z"
+    },
+    {
+      "id": 35,
+      "productId": 18,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good shoes.",
+      "date": "2025-03-13T16:00:00Z"
+    },
+    {
+      "id": 36,
+      "productId": 19,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good grip, durable.",
+      "date": "2025-03-10T09:30:00Z"
+    },
+    {
+      "id": 37,
+      "productId": 19,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Perfect for outdoor games.",
+      "date": "2025-03-11T11:45:00Z"
+    },
+    {
+      "id": 38,
+      "productId": 19,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Standard ball, no complaints.",
+      "date": "2025-03-12T13:00:00Z"
+    },
+    {
+      "id": 39,
+      "productId": 19,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Great value.",
+      "date": "2025-03-13T15:20:00Z"
+    },
+    {
+      "id": 40,
+      "productId": 19,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Holds air well.",
+      "date": "2025-03-14T17:30:00Z"
+    },
+    {
+      "id": 41,
+      "productId": 20,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice jeans, good fit.",
+      "date": "2025-03-11T10:00:00Z"
+    },
+    {
+      "id": 42,
+      "productId": 20,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Very comfortable stretch.",
+      "date": "2025-03-12T12:15:00Z"
+    },
+    {
+      "id": 43,
+      "productId": 20,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Dark wash looks great.",
+      "date": "2025-03-13T14:30:00Z"
+    },
+    {
+      "id": 44,
+      "productId": 20,
+      "userId": 2,
+      "rating": 4,
+      "comment": "True to size.",
+      "date": "2025-03-14T16:45:00Z"
+    },
+    {
+      "id": 45,
+      "productId": 20,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good quality denim.",
+      "date": "2025-03-15T09:00:00Z"
+    },
+    {
+      "id": 46,
+      "productId": 21,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Beautiful dress, fits like a dream.",
+      "date": "2025-03-12T10:00:00Z"
+    },
+    {
+      "id": 47,
+      "productId": 21,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Love the print, but a bit long.",
+      "date": "2025-03-13T11:30:00Z"
+    },
+    {
+      "id": 48,
+      "productId": 21,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Perfect for summer parties.",
+      "date": "2025-03-14T13:45:00Z"
+    },
+    {
+      "id": 49,
+      "productId": 21,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Great quality material.",
+      "date": "2025-03-15T15:20:00Z"
+    },
+    {
+      "id": 50,
+      "productId": 21,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice dress.",
+      "date": "2025-03-16T09:10:00Z"
+    },
+    {
+      "id": 51,
+      "productId": 22,
+      "userId": 3,
+      "rating": 5,
+      "comment": "My kid loves this puzzle!",
+      "date": "2025-03-13T12:00:00Z"
+    },
+    {
+      "id": 52,
+      "productId": 22,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Educational and fun.",
+      "date": "2025-03-14T14:15:00Z"
+    },
+    {
+      "id": 53,
+      "productId": 22,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Well made.",
+      "date": "2025-03-15T16:30:00Z"
+    },
+    {
+      "id": 54,
+      "productId": 22,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good but pieces are small.",
+      "date": "2025-03-16T10:45:00Z"
+    },
+    {
+      "id": 55,
+      "productId": 22,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Bright colors, sturdy.",
+      "date": "2025-03-17T13:00:00Z"
+    },
+    {
+      "id": 56,
+      "productId": 23,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Delicate and pretty.",
+      "date": "2025-03-14T09:30:00Z"
+    },
+    {
+      "id": 57,
+      "productId": 23,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice for everyday.",
+      "date": "2025-03-15T11:45:00Z"
+    },
+    {
+      "id": 58,
+      "productId": 23,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good quality silver.",
+      "date": "2025-03-16T14:00:00Z"
+    },
+    {
+      "id": 59,
+      "productId": 23,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Love it!",
+      "date": "2025-03-17T16:15:00Z"
+    },
+    {
+      "id": 60,
+      "productId": 23,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Chain could be longer.",
+      "date": "2025-03-18T10:30:00Z"
+    },
+    {
+      "id": 61,
+      "productId": 24,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good mascara, no clumps.",
+      "date": "2025-03-15T08:00:00Z"
+    },
+    {
+      "id": 62,
+      "productId": 24,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Makes lashes look full.",
+      "date": "2025-03-16T10:15:00Z"
+    },
+    {
+      "id": 63,
+      "productId": 24,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Stays on all day.",
+      "date": "2025-03-17T12:30:00Z"
+    },
+    {
+      "id": 64,
+      "productId": 24,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Easy to remove.",
+      "date": "2025-03-18T14:45:00Z"
+    },
+    {
+      "id": 65,
+      "productId": 24,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good value.",
+      "date": "2025-03-19T16:00:00Z"
+    },
+    {
+      "id": 66,
+      "productId": 25,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Comfortable sandals.",
+      "date": "2025-03-16T09:00:00Z"
+    },
+    {
+      "id": 67,
+      "productId": 25,
+      "userId": 1,
+      "rating": 3,
+      "comment": "A bit stiff at first.",
+      "date": "2025-03-17T11:15:00Z"
+    },
+    {
+      "id": 68,
+      "productId": 25,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Cute and casual.",
+      "date": "2025-03-18T13:30:00Z"
+    },
+    {
+      "id": 69,
+      "productId": 25,
+      "userId": 3,
+      "rating": 4,
+      "comment": "True to size.",
+      "date": "2025-03-19T15:45:00Z"
+    },
+    {
+      "id": 70,
+      "productId": 25,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Love these!",
+      "date": "2025-03-20T10:00:00Z"
+    },
+    {
+      "id": 71,
+      "productId": 26,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Great dumbbells, good grip.",
+      "date": "2025-03-17T12:00:00Z"
+    },
+    {
+      "id": 72,
+      "productId": 26,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice for home workouts.",
+      "date": "2025-03-18T14:15:00Z"
+    },
+    {
+      "id": 73,
+      "productId": 26,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Solid and durable.",
+      "date": "2025-03-19T16:30:00Z"
+    },
+    {
+      "id": 74,
+      "productId": 26,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good value.",
+      "date": "2025-03-20T09:45:00Z"
+    },
+    {
+      "id": 75,
+      "productId": 26,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Exactly what I needed.",
+      "date": "2025-03-21T11:00:00Z"
+    },
+    {
+      "id": 76,
+      "productId": 27,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Excellent coat, warm and stylish.",
+      "date": "2025-03-18T10:30:00Z"
+    },
+    {
+      "id": 77,
+      "productId": 27,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Beautiful fabric.",
+      "date": "2025-03-19T12:45:00Z"
+    },
+    {
+      "id": 78,
+      "productId": 27,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Runs a bit large.",
+      "date": "2025-03-20T15:00:00Z"
+    },
+    {
+      "id": 79,
+      "productId": 27,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Worth the price.",
+      "date": "2025-03-21T17:15:00Z"
+    },
+    {
+      "id": 80,
+      "productId": 27,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Love the fit.",
+      "date": "2025-03-22T09:30:00Z"
+    },
+    {
+      "id": 81,
+      "productId": 28,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice skirt, good quality faux leather.",
+      "date": "2025-03-19T11:00:00Z"
+    },
+    {
+      "id": 82,
+      "productId": 28,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Fits well, but a bit tight.",
+      "date": "2025-03-20T13:15:00Z"
+    },
+    {
+      "id": 83,
+      "productId": 28,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Love this skirt!",
+      "date": "2025-03-21T15:30:00Z"
+    },
+    {
+      "id": 84,
+      "productId": 28,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good for date night.",
+      "date": "2025-03-22T10:45:00Z"
+    },
+    {
+      "id": 85,
+      "productId": 28,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Nice design.",
+      "date": "2025-03-23T12:00:00Z"
+    },
+    {
+      "id": 86,
+      "productId": 29,
+      "userId": 2,
+      "rating": 5,
+      "comment": "So soft! My daughter loves it.",
+      "date": "2025-03-20T14:00:00Z"
+    },
+    {
+      "id": 87,
+      "productId": 29,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Adorable teddy.",
+      "date": "2025-03-21T16:15:00Z"
+    },
+    {
+      "id": 88,
+      "productId": 29,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Great quality, no loose threads.",
+      "date": "2025-03-22T09:30:00Z"
+    },
+    {
+      "id": 89,
+      "productId": 29,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Perfect gift.",
+      "date": "2025-03-23T11:45:00Z"
+    },
+    {
+      "id": 90,
+      "productId": 29,
+      "userId": 3,
+      "rating": 4,
+      "comment": "A bit smaller than expected.",
+      "date": "2025-03-24T14:00:00Z"
+    },
+    {
+      "id": 91,
+      "productId": 30,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Slim wallet, fits in pocket.",
+      "date": "2025-03-21T10:00:00Z"
+    },
+    {
+      "id": 92,
+      "productId": 30,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good leather, seems durable.",
+      "date": "2025-03-22T12:15:00Z"
+    },
+    {
+      "id": 93,
+      "productId": 30,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Nice design, plenty of slots.",
+      "date": "2025-03-23T14:30:00Z"
+    },
+    {
+      "id": 94,
+      "productId": 30,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good value.",
+      "date": "2025-03-24T16:45:00Z"
+    },
+    {
+      "id": 95,
+      "productId": 30,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Satisfied.",
+      "date": "2025-03-25T09:00:00Z"
+    },
+    {
+      "id": 96,
+      "productId": 31,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Beautiful colors, very pigmented.",
+      "date": "2025-03-22T11:30:00Z"
+    },
+    {
+      "id": 97,
+      "productId": 31,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good palette, but a bit powdery.",
+      "date": "2025-03-23T13:45:00Z"
+    },
+    {
+      "id": 98,
+      "productId": 31,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice range of shades.",
+      "date": "2025-03-24T16:00:00Z"
+    },
+    {
+      "id": 99,
+      "productId": 31,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Love the shimmers.",
+      "date": "2025-03-25T10:15:00Z"
+    },
+    {
+      "id": 100,
+      "productId": 31,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good for everyday.",
+      "date": "2025-03-26T12:30:00Z"
+    },
+    {
+      "id": 101,
+      "productId": 32,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Great hiking boots, very comfortable.",
+      "date": "2025-03-23T09:00:00Z"
+    },
+    {
+      "id": 102,
+      "productId": 32,
+      "userId": 3,
+      "rating": 4,
+      "comment": "A bit heavy but supportive.",
+      "date": "2025-03-24T11:15:00Z"
+    },
+    {
+      "id": 103,
+      "productId": 32,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Waterproof and durable.",
+      "date": "2025-03-25T13:30:00Z"
+    },
+    {
+      "id": 104,
+      "productId": 32,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Perfect fit.",
+      "date": "2025-03-26T15:45:00Z"
+    },
+    {
+      "id": 105,
+      "productId": 32,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good value.",
+      "date": "2025-03-27T10:00:00Z"
+    },
+    {
+      "id": 106,
+      "productId": 33,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good racket for beginners.",
+      "date": "2025-03-24T12:00:00Z"
+    },
+    {
+      "id": 107,
+      "productId": 33,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Lightweight, easy to swing.",
+      "date": "2025-03-25T14:15:00Z"
+    },
+    {
+      "id": 108,
+      "productId": 33,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Nice grip.",
+      "date": "2025-03-26T16:30:00Z"
+    },
+    {
+      "id": 109,
+      "productId": 33,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Decent quality.",
+      "date": "2025-03-27T09:45:00Z"
+    },
+    {
+      "id": 110,
+      "productId": 33,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good for the price.",
+      "date": "2025-03-28T11:00:00Z"
+    },
+    {
+      "id": 111,
+      "productId": 34,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Classic polo, fits great.",
+      "date": "2025-03-25T10:30:00Z"
+    },
+    {
+      "id": 112,
+      "productId": 34,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Nice color, soft fabric.",
+      "date": "2025-03-26T12:45:00Z"
+    },
+    {
+      "id": 113,
+      "productId": 34,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good for casual wear.",
+      "date": "2025-03-27T15:00:00Z"
+    },
+    {
+      "id": 114,
+      "productId": 34,
+      "userId": 3,
+      "rating": 4,
+      "comment": "True to size.",
+      "date": "2025-03-28T17:15:00Z"
+    },
+    {
+      "id": 115,
+      "productId": 34,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Washes well.",
+      "date": "2025-03-29T09:30:00Z"
+    },
+    {
+      "id": 116,
+      "productId": 35,
+      "userId": 2,
+      "rating": 5,
+      "comment": "So soft and warm!",
+      "date": "2025-03-26T11:00:00Z"
+    },
+    {
+      "id": 117,
+      "productId": 35,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Luxurious feel.",
+      "date": "2025-03-27T13:15:00Z"
+    },
+    {
+      "id": 118,
+      "productId": 35,
+      "userId": 1,
+      "rating": 4,
+      "comment": "A bit pricey but worth it.",
+      "date": "2025-03-28T15:30:00Z"
+    },
+    {
+      "id": 119,
+      "productId": 35,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Beautiful sweater.",
+      "date": "2025-03-29T10:45:00Z"
+    },
+    {
+      "id": 120,
+      "productId": 35,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Fits perfectly.",
+      "date": "2025-03-30T12:00:00Z"
+    },
+    {
+      "id": 121,
+      "productId": 36,
+      "userId": 1,
+      "rating": 5,
+      "comment": "My son loves this car!",
+      "date": "2025-03-27T14:00:00Z"
+    },
+    {
+      "id": 122,
+      "productId": 36,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Fast and durable.",
+      "date": "2025-03-28T16:15:00Z"
+    },
+    {
+      "id": 123,
+      "productId": 36,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Great remote control range.",
+      "date": "2025-03-29T09:30:00Z"
+    },
+    {
+      "id": 124,
+      "productId": 36,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Battery life could be better.",
+      "date": "2025-03-30T11:45:00Z"
+    },
+    {
+      "id": 125,
+      "productId": 36,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Fun toy.",
+      "date": "2025-03-31T14:00:00Z"
+    },
+    {
+      "id": 126,
+      "productId": 37,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Nice cap, adjustable.",
+      "date": "2025-03-28T10:00:00Z"
+    },
+    {
+      "id": 127,
+      "productId": 37,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Good quality cotton.",
+      "date": "2025-03-29T12:15:00Z"
+    },
+    {
+      "id": 128,
+      "productId": 37,
+      "userId": 2,
+      "rating": 3,
+      "comment": "A bit shallow, doesn't fit well.",
+      "date": "2025-03-30T14:30:00Z"
+    },
+    {
+      "id": 129,
+      "productId": 37,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Looks good.",
+      "date": "2025-03-31T16:45:00Z"
+    },
+    {
+      "id": 130,
+      "productId": 37,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Love it!",
+      "date": "2025-04-01T09:00:00Z"
+    },
+    {
+      "id": 131,
+      "productId": 38,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice glosses, not sticky.",
+      "date": "2025-03-29T11:30:00Z"
+    },
+    {
+      "id": 132,
+      "productId": 38,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good colors.",
+      "date": "2025-03-30T13:45:00Z"
+    },
+    {
+      "id": 133,
+      "productId": 38,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Very shiny!",
+      "date": "2025-03-31T16:00:00Z"
+    },
+    {
+      "id": 134,
+      "productId": 38,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Lasts a few hours.",
+      "date": "2025-04-01T10:15:00Z"
+    },
+    {
+      "id": 135,
+      "productId": 38,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good value set.",
+      "date": "2025-04-02T12:30:00Z"
+    },
+    {
+      "id": 136,
+      "productId": 39,
+      "userId": 1,
+      "rating": 4,
+      "comment": "Comfy and easy to put on.",
+      "date": "2025-03-30T09:00:00Z"
+    },
+    {
+      "id": 137,
+      "productId": 39,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good everyday sneakers.",
+      "date": "2025-03-31T11:15:00Z"
+    },
+    {
+      "id": 138,
+      "productId": 39,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Very comfortable!",
+      "date": "2025-04-01T13:30:00Z"
+    },
+    {
+      "id": 139,
+      "productId": 39,
+      "userId": 1,
+      "rating": 4,
+      "comment": "True to size.",
+      "date": "2025-04-02T15:45:00Z"
+    },
+    {
+      "id": 140,
+      "productId": 39,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Stylish and simple.",
+      "date": "2025-04-03T10:00:00Z"
+    },
+    {
+      "id": 141,
+      "productId": 40,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Good jump rope, smooth rotation.",
+      "date": "2025-03-31T12:00:00Z"
+    },
+    {
+      "id": 142,
+      "productId": 40,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Great for workouts.",
+      "date": "2025-04-01T14:15:00Z"
+    },
+    {
+      "id": 143,
+      "productId": 40,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Adjustable length is nice.",
+      "date": "2025-04-02T16:30:00Z"
+    },
+    {
+      "id": 144,
+      "productId": 40,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Durable.",
+      "date": "2025-04-03T09:45:00Z"
+    },
+    {
+      "id": 145,
+      "productId": 40,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Love it!",
+      "date": "2025-04-04T11:00:00Z"
+    },
+    {
+      "id": 146,
+      "productId": 41,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice shorts, good fit.",
+      "date": "2025-04-01T10:30:00Z"
+    },
+    {
+      "id": 147,
+      "productId": 41,
+      "userId": 3,
+      "rating": 4,
+      "comment": "Comfortable for summer.",
+      "date": "2025-04-02T12:45:00Z"
+    },
+    {
+      "id": 148,
+      "productId": 41,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Perfect length.",
+      "date": "2025-04-03T15:00:00Z"
+    },
+    {
+      "id": 149,
+      "productId": 41,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Good quality.",
+      "date": "2025-04-04T17:15:00Z"
+    },
+    {
+      "id": 150,
+      "productId": 41,
+      "userId": 3,
+      "rating": 4,
+      "comment": "True to size.",
+      "date": "2025-04-05T09:30:00Z"
+    },
+    {
+      "id": 151,
+      "productId": 42,
+      "userId": 1,
+      "rating": 5,
+      "comment": "Classic denim jacket, love it!",
+      "date": "2025-04-02T11:00:00Z"
+    },
+    {
+      "id": 152,
+      "productId": 42,
+      "userId": 2,
+      "rating": 4,
+      "comment": "Nice fit, good quality.",
+      "date": "2025-04-03T13:15:00Z"
+    },
+    {
+      "id": 153,
+      "productId": 42,
+      "userId": 3,
+      "rating": 5,
+      "comment": "Perfect for spring.",
+      "date": "2025-04-04T15:30:00Z"
+    },
+    {
+      "id": 154,
+      "productId": 42,
+      "userId": 1,
+      "rating": 4,
+      "comment": "A bit stiff at first but will soften.",
+      "date": "2025-04-05T10:45:00Z"
+    },
+    {
+      "id": 155,
+      "productId": 42,
+      "userId": 2,
+      "rating": 5,
+      "comment": "Great addition to wardrobe.",
+      "date": "2025-04-06T12:00:00Z"
     }
   ],
   "users": [
