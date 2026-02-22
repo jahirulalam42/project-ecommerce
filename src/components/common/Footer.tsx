@@ -134,7 +134,7 @@ const Footer = () => {
       <hr className="border-gray-300 dark:border-white -mx-2 md:-mx-10 lg:-mx-20 "></hr>
 
       <div className="py-6 flex flex-col gap-2 md:flex-row justify-between items-center">
-        <span className="flex flex-row items-center font-semibold text-gray-600 gap-2">
+        <span className="flex flex-row items-center font-semibold text-sm text-gray-600 gap-2">
           Nexton eCommerce. <Copyright size={16} strokeWidth={1.5} /> 2026
         </span>
 
