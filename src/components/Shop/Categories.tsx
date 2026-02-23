@@ -42,7 +42,7 @@ const Categories = async () => {
       </div>
       <Separator />
       <div>
-        <div className="mx-auto grid w-full max-w-xs gap-3">
+        <div className="mx-auto grid w-full  gap-3">
           <div className="flex items-center justify-between gap-2">
             <Label htmlFor="price-range" className="text-base mb-3">
               Price range
