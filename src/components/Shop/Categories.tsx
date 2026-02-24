@@ -1,4 +1,5 @@
-import React from "react";
+"use client";
+import React, { useEffect, useState } from "react";
 import { Checkbox } from "@/components/ui/checkbox";
 import {
   Field,
@@ -14,8 +15,17 @@ import { Slider } from "../ui/slider";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Separator } from "../ui/separator";
 
-const Categories = async () => {
-  const categories = await getCategories();
+const Categories = () => {
+  const [categories, setCategories] = useState<any>();
+  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const categoriesResult: any = await getCategories();
+      setCategories(categoriesResult?.data);
+    };
+    fetchData();
+  }, []);
   console.log(categories);
   return (
     <div className="flex flex-col gap-6">
@@ -23,7 +33,7 @@ const Categories = async () => {
         <FieldSet>
           <FieldLegend variant="legend">Categories</FieldLegend>
           <FieldGroup className="gap-3">
-            {categories?.data.map((category: any) => (
+            {categories?.map((category: any) => (
               <Field key={category?.id} orientation="horizontal">
                 <Checkbox
                   id="finder-pref-9k2-hard-disks-ljj-checkbox"
