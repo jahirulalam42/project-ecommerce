@@ -18,6 +18,15 @@ import { Separator } from "../ui/separator";
 const Categories = () => {
   const [categories, setCategories] = useState<any>();
   const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
+  const [priceValue, setPriceValue] = useState<number[]>([0.3]);
+
+  const handleSortChange = (value: string) => {
+    console.log("Sort change", value);
+  };
+
+  const handlePriceChange = (value: number[]) => {
+    setPriceValue(value);
+  };
 
   useEffect(() => {
     const fetchData = async () => {
@@ -26,27 +35,43 @@ const Categories = () => {
     };
     fetchData();
   }, []);
-  console.log(categories);
+
+  // console.log("Selected Category", selectedCategory);
+  console.log("priceValue", priceValue);
+
   return (
     <div className="flex flex-col gap-6">
       <div>
         <FieldSet>
           <FieldLegend variant="legend">Categories</FieldLegend>
           <FieldGroup className="gap-3">
-            {categories?.map((category: any) => (
-              <Field key={category?.id} orientation="horizontal">
-                <Checkbox
-                  id="finder-pref-9k2-hard-disks-ljj-checkbox"
-                  name={category?.name}
-                />
-                <FieldLabel
-                  htmlFor="finder-pref-9k2-hard-disks-ljj-checkbox"
-                  className="font-normal"
-                >
-                  {category?.name}
-                </FieldLabel>
-              </Field>
-            ))}
+            {categories?.map((category: any) => {
+              const isChecked = selectedCategory?.includes(category?.id);
+              return (
+                <Field key={category?.id} orientation="horizontal">
+                  <Checkbox
+                    id="finder-pref-9k2-hard-disks-ljj-checkbox"
+                    name={category?.name}
+                    checked={isChecked}
+                    onCheckedChange={(checked) => {
+                      if (checked) {
+                        setSelectedCategory((prev) => [...prev, category?.id]);
+                      } else {
+                        setSelectedCategory((prev) => {
+                          return prev?.filter((item) => item !== category?.id);
+                        });
+                      }
+                    }}
+                  />
+                  <FieldLabel
+                    htmlFor="finder-pref-9k2-hard-disks-ljj-checkbox"
+                    className="font-normal"
+                  >
+                    {category?.name}
+                  </FieldLabel>
+                </Field>
+              );
+            })}
           </FieldGroup>
         </FieldSet>
       </div>
@@ -61,8 +86,8 @@ const Categories = () => {
           </div>
           <Slider
             id="price-range"
-            value={[0.3]}
-            // onValueChange={}
+            value={priceValue}
+            onValueChange={handlePriceChange}
             min={0}
             max={1}
             step={0.1}
@@ -73,7 +98,11 @@ const Categories = () => {
       <div>
         <FieldLegend variant="legend">Sort order</FieldLegend>
         <div>
-          <RadioGroup defaultValue="mostPopular" className="w-fit">
+          <RadioGroup
+            onValueChange={handleSortChange}
+            defaultValue="mostPopular"
+            className="w-fit"
+          >
             <div className="flex items-center gap-3">
               <RadioGroupItem value="mostPopular" id="r1" />
               <LabelMd htmlFor="r1">Most Popular</LabelMd>
