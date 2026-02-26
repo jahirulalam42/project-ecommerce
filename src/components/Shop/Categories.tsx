@@ -14,18 +14,31 @@ import { Label, LabelMd } from "../ui/label";
 import { Slider } from "../ui/slider";
 import { RadioGroup, RadioGroupItem } from "../ui/radio-group";
 import { Separator } from "../ui/separator";
+import { useDispatch, useSelector } from "react-redux";
+import {
+  addSelectedCategory,
+  removeSelectedCategory,
+  setPriceValue,
+  setSortValue,
+} from "@/features/shop/categorySlice";
 
 const Categories = () => {
   const [categories, setCategories] = useState<any>();
-  const [selectedCategory, setSelectedCategory] = useState<string[]>([]);
-  const [priceValue, setPriceValue] = useState<number[]>([0.3]);
+  // const [priceValue, setPriceValue] = useState<number[]>([0.3]);
 
-  const handleSortChange = (value: string) => {
-    console.log("Sort change", value);
+  const dispatch = useDispatch();
+  const selectedCategory = useSelector(
+    (state: any) => state.category.selectedCategory
+  );
+  const priceValue = useSelector((state: any) => state.category.priceValue);
+  const sortValue = useSelector((state: any) => state.category.sortValue);
+
+  const handleSortChange = (value: any) => {
+    dispatch(setSortValue(value));
   };
 
-  const handlePriceChange = (value: number[]) => {
-    setPriceValue(value);
+  const handlePriceChange = (value: any) => {
+    dispatch(setPriceValue(value));
   };
 
   useEffect(() => {
@@ -37,7 +50,8 @@ const Categories = () => {
   }, []);
 
   // console.log("Selected Category", selectedCategory);
-  console.log("priceValue", priceValue);
+  // console.log("priceValue", priceValue);
+  console.log("sortValue", sortValue);
 
   return (
     <div className="flex flex-col gap-6">
@@ -55,11 +69,9 @@ const Categories = () => {
                     checked={isChecked}
                     onCheckedChange={(checked) => {
                       if (checked) {
-                        setSelectedCategory((prev) => [...prev, category?.id]);
+                        dispatch(addSelectedCategory(category?.id));
                       } else {
-                        setSelectedCategory((prev) => {
-                          return prev?.filter((item) => item !== category?.id);
-                        });
+                        dispatch(removeSelectedCategory(category?.id));
                       }
                     }}
                   />

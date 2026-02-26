@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
+import ReduxProvider from "@/components/common/ReduxProvider";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,7 +32,9 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-2 lg:px-10 xl:px-20`}
       >
         <Header />
-        <div>{children}</div>
+        <div>
+          <ReduxProvider>{children}</ReduxProvider>
+        </div>
         <Footer />
       </body>
     </html>
