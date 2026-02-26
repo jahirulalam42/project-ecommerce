@@ -51,7 +51,7 @@ const Categories = () => {
 
   // console.log("Selected Category", selectedCategory);
   // console.log("priceValue", priceValue);
-  console.log("sortValue", sortValue);
+  // console.log("sortValue", sortValue);
 
   return (
     <div className="flex flex-col gap-6">

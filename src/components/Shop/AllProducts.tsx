@@ -3,11 +3,18 @@ import { getCategories, getProducts } from "@/lib/api";
 import React, { useEffect, useState } from "react";
 import ProductCard from "../common/ProductCard";
 import { PaginationComp } from "../common/PaginationComp";
+import { useSelector } from "react-redux";
 
 const AllProducts = () => {
   const [product, setProduct] = useState<any>();
   const [categories, setCategories] = useState<any>();
   const [currentPage, setCurrentPage] = useState(1);
+
+  const selectedCategory = useSelector(
+    (state: any) => state.category.selectedCategory
+  );
+
+  console.log(selectedCategory, "selectedCategory");
 
   const itemsPerPage = 12;
   const totalPage = Math.ceil(product?.length / itemsPerPage);
@@ -15,6 +22,12 @@ const AllProducts = () => {
     (currentPage - 1) * itemsPerPage,
     currentPage * itemsPerPage
   );
+
+  const filteredProducts = product?.filter((item: any) =>
+    selectedCategory.map(Number).includes(item.categoryId)
+  );
+
+  console.log("Filtered", filteredProducts);
 
   useEffect(() => {
     const fetchData = async () => {
