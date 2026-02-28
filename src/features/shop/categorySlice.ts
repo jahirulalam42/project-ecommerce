@@ -4,8 +4,10 @@ export const categorySlice = createSlice({
   name: "category",
   initialState: {
     selectedCategory: <any>[],
-    priceValue: [0.3],
+    priceValue: [0],
     sortValue: "",
+    maxPrice: 0,
+    minPrice: 0,
   },
   reducers: {
     addSelectedCategory: (state, action: any) => {
@@ -22,6 +24,12 @@ export const categorySlice = createSlice({
     setSortValue: (state, action: any) => {
       state.sortValue = action.payload;
     },
+    setMaxPrice: (state, action: any) => {
+      state.maxPrice = action.payload;
+    },
+    setMinPrice: (state, action: any) => {
+      state.minPrice = action.payload;
+    },
   },
 });
 
@@ -31,6 +39,8 @@ export const {
   removeSelectedCategory,
   setPriceValue,
   setSortValue,
+  setMaxPrice,
+  setMinPrice,
 } = categorySlice.actions;
 
 export default categorySlice.reducer;

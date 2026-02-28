@@ -33,6 +33,9 @@ const Categories = () => {
   const priceValue = useSelector((state: any) => state.category.priceValue);
   const sortValue = useSelector((state: any) => state.category.sortValue);
 
+  const minPrice = useSelector((state: any) => state.category.minPrice);
+  const maxPrice = useSelector((state: any) => state.category.maxPrice);
+
   const handleSortChange = (value: any) => {
     dispatch(setSortValue(value));
   };
@@ -94,16 +97,27 @@ const Categories = () => {
             <Label htmlFor="price-range" className="text-base mb-3">
               Price range
             </Label>
-            <span className="text-muted-foreground text-sm">0.3, 0.7</span>
+            <span className="text-muted-foreground text-sm">
+              {minPrice}, {maxPrice}
+            </span>
           </div>
-          <Slider
-            id="price-range"
-            value={priceValue}
-            onValueChange={handlePriceChange}
-            min={0}
-            max={1}
-            step={0.1}
-          />
+          <div className="relative group">
+            <Slider
+              value={priceValue}
+              onValueChange={handlePriceChange}
+              min={minPrice}
+              max={maxPrice}
+              step={1}
+            />
+
+            <div
+              className="absolute -top-8 left-1/2 -translate-x-1/2 
+                  bg-black text-white text-xs px-2 py-1 rounded 
+                  opacity-0 group-hover:opacity-100 transition"
+            >
+              ${priceValue}
+            </div>
+          </div>
         </div>
       </div>
       <Separator />
@@ -133,7 +147,7 @@ const Categories = () => {
             </div>
             <div className="flex items-center gap-3">
               <RadioGroupItem value="priceHigh" id="r5" />
-              <LabelMd htmlFor="r5">Price High</LabelMd>
+              <LabelMd htmlFor="r5">Price High - Low</LabelMd>
             </div>
           </RadioGroup>
         </div>
