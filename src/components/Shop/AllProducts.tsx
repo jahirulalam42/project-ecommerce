@@ -22,10 +22,6 @@ const AllProducts = () => {
   const selectedCategory = useSelector(
     (state: any) => state.category.selectedCategory
   );
-
-  const minPrice = useSelector((state: any) => state.category.minPrice);
-  const maxPrice = useSelector((state: any) => state.category.maxPrice);
-
   const priceValue = useSelector((state: any) => state.category.priceValue);
 
   const sortValue = useSelector((state: any) => state.category.sortValue);
@@ -80,10 +76,10 @@ const AllProducts = () => {
 
     dispatch(setMinPrice(min));
     dispatch(setMaxPrice(max));
-    dispatch(setPriceValue([min]));
+    dispatch(setPriceValue([min] as any));
   }, [product, dispatch]);
 
-  const itemsPerPage = 12;
+  const itemsPerPage = useSelector((state: any) => state.category.itemsPerPage);
   const totalPage = Math.ceil(filteredProducts?.length / itemsPerPage);
   const currentPageItems = filteredProducts?.slice(
     (currentPage - 1) * itemsPerPage,
@@ -100,7 +96,7 @@ const AllProducts = () => {
       setProduct(result?.data);
     };
     fetchData();
-  }, []);
+  }, [itemsPerPage]);
 
   const getCategory = (categoryId: any) => {
     const category = categories?.find(
