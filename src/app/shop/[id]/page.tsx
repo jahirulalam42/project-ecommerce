@@ -1,3 +1,4 @@
+import Recommendations from "@/components/Home/Recommendations";
 import ProductCart from "@/components/Shop/ProductCart";
 import ProductDescription from "@/components/Shop/ProductDescription";
 import { getProducts } from "@/lib/api";
@@ -12,12 +13,18 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   console.log("Single Products", product);
 
   return (
-    <div className="w-full grid grid-cols-3 gap-4">
-      <div className="col-span-2">
-        <ProductDescription images={product?.images} />
-      </div>
-      <div className="col-span-1">
-        <ProductCart />
+    <div>
+      <div className="w-full grid grid-cols-3 gap-4">
+        <div className="col-span-2">
+          <ProductDescription
+            images={product?.images}
+            name={product?.name}
+            description={product?.description}
+          />
+        </div>
+        <div className="col-span-1">
+          <ProductCart />
+        </div>
       </div>
     </div>
   );
