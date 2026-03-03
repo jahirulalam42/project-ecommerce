@@ -14,16 +14,23 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div>
-      <div className="w-full grid grid-cols-3 gap-4">
+      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
         <div className="col-span-2">
           <ProductDescription
             images={product?.images}
             name={product?.name}
             description={product?.description}
+            keywords={product?.keywords}
           />
         </div>
         <div className="col-span-1">
-          <ProductCart />
+          <ProductCart
+            rating={product?.rating}
+            reviewCount={product?.reviewCount}
+            sizes={product?.sizes}
+            price={product?.price}
+            discountPrice={product?.discountPrice}
+          />
         </div>
       </div>
     </div>
