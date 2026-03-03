@@ -22,7 +22,11 @@ const ProductDescription = ({ images, name, description, keywords }: any) => {
                 src={image}
                 alt="Product Image"
                 fill
-                className="object-cover rounded-lg"
+                className={`object-cover rounded-lg bordered border-2 ${
+                  selectedImage === image
+                    ? "border-sky-400"
+                    : "border-transparent"
+                }`}
                 onClick={() => setSelectedImage(image)}
               />
             </div>

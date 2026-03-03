@@ -30,6 +30,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             sizes={product?.sizes}
             price={product?.price}
             discountPrice={product?.discountPrice}
+            productId={product?.id}
           />
         </div>
       </div>

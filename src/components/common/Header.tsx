@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import Logo from "@/../public/images/logo.png";
 import mobileLogo from "@/../public/images/logo-mobile.png";
@@ -23,8 +24,11 @@ import {
   InputGroupInput,
 } from "@/components/ui/input-group";
 import { Button } from "../ui/button";
+import { useSelector } from "react-redux";
 
 const Header = () => {
+  const cartItem = useSelector((state: any) => state.cart.items);
+  console.log("CartItem", cartItem);
   return (
     <div className="w-full h-fit flex flex-row gap-4 md:justify-between items-center py-2 lg:py-4">
       <div>
@@ -52,7 +56,12 @@ const Header = () => {
       <div>
         <div className="hidden md:flex justify-center items-center md:gap-4">
           <UserRound strokeWidth={1.5} />
-          <ShoppingCart strokeWidth={1.5} />
+          <div className="relative">
+            <ShoppingCart strokeWidth={1.5} />
+            <span className="absolute -top-2 left-4 rounded-full bg-sky-500 p-0.5 px-2 text-sm text-sky-50">
+              {cartItem?.length || 0}
+            </span>
+          </div>
         </div>
         <div className="md:hidden">
           <DropdownMenu>

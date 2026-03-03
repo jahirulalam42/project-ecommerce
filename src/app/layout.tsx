@@ -31,11 +31,11 @@ export default function RootLayout({
         suppressHydrationWarning
         className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 lg:px-10 xl:px-20`}
       >
-        <Header />
-        <div>
-          <ReduxProvider>{children}</ReduxProvider>
-        </div>
-        <Footer />
+        <ReduxProvider>
+          <Header />
+          <div>{children}</div>
+          <Footer />
+        </ReduxProvider>
       </body>
     </html>
   );

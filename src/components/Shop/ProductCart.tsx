@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import { Button } from "@/components/ui/button";
 import {
@@ -9,9 +10,10 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { ShoppingBag, Star } from "lucide-react";
+import { useDispatch } from "react-redux";
+import { addCartItem } from "@/features/cart/cartSlice";
 
 const ProductCart = ({
   rating,
@@ -19,7 +21,9 @@ const ProductCart = ({
   sizes,
   price,
   discountPrice,
+  productId,
 }: any) => {
+  const dispatch = useDispatch();
   return (
     <div>
       <Card className="w-full">
@@ -77,6 +81,14 @@ const ProductCart = ({
                 variant="default"
                 className="rounded-full px-2"
                 size={"sm"}
+                onClick={() =>
+                  dispatch(
+                    addCartItem({
+                      productId,
+                      quantity: 1,
+                    })
+                  )
+                }
               >
                 <ShoppingBag strokeWidth={1.5} /> Add to cart
               </Button>
