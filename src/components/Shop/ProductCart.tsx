@@ -22,8 +22,14 @@ const ProductCart = ({
   price,
   discountPrice,
   productId,
+  tax,
 }: any) => {
   const dispatch = useDispatch();
+  const [productCount, setProductCount] = React.useState(1);
+  const [selectedSize, setSelectedSize] = React.useState(sizes?.[0] || null);
+  const totalPrice = discountPrice * productCount;
+  const totalTax = tax * productCount;
+  const total = totalPrice + totalTax;
   return (
     <div>
       <Card className="w-full">
@@ -50,10 +56,20 @@ const ProductCart = ({
         <CardContent>
           <div className="flex flex-col gap-6">
             <div className="grid gap-2">
-              <Label>Size</Label>
+              <Label>Size: {selectedSize}</Label>
               <div className="grid grid-flow-col gap-2">
                 {sizes?.map((size: any, index: number) => (
-                  <Button key={index} variant="outline" size={"sm"}>
+                  <Button
+                    key={index}
+                    variant="outline"
+                    className={
+                      selectedSize === size ? "bg-sky-500 text-white" : ""
+                    }
+                    size={"sm"}
+                    onClick={() => {
+                      setSelectedSize(size);
+                    }}
+                  >
                     {size}
                   </Button>
                 ))}
@@ -65,14 +81,18 @@ const ProductCart = ({
                   variant="outline"
                   className="rounded-full"
                   size={"icon-xs"}
+                  onClick={() => {
+                    setProductCount((prev) => (prev > 1 ? prev - 1 : prev));
+                  }}
                 >
                   -
                 </Button>
-                1
+                {productCount}
                 <Button
                   variant="outline"
                   className="rounded-full"
                   size={"icon-xs"}
+                  onClick={() => setProductCount((prev) => prev + 1)}
                 >
                   +
                 </Button>
@@ -85,7 +105,8 @@ const ProductCart = ({
                   dispatch(
                     addCartItem({
                       productId,
-                      quantity: 1,
+                      size: selectedSize,
+                      quantity: productCount,
                     })
                   )
                 }
@@ -98,10 +119,10 @@ const ProductCart = ({
         <CardFooter className="flex-col gap-2">
           <span className="w-full flex justify-between">
             <span className="leading-7  text-gray-500 font-semibold">
-              $169.99 x 1
+              ${discountPrice} x {productCount}
             </span>
             <span className="leading-7  text-gray-500 font-semibold">
-              $169.99{" "}
+              ${totalPrice}{" "}
             </span>
           </span>
 
@@ -109,12 +130,14 @@ const ProductCart = ({
             <span className="leading-7  text-gray-500 font-semibold">
               Tax extimate
             </span>
-            <span className="leading-7  text-gray-500 font-semibold">$0</span>
+            <span className="leading-7  text-gray-500 font-semibold">
+              ${totalTax}
+            </span>
           </span>
 
           <span className="w-full flex justify-between">
             <span className="leading-7  font-semibold">Total</span>
-            <span className="leading-7  font-semibold">$169.99</span>
+            <span className="leading-7  font-semibold">${total}</span>
           </span>
         </CardFooter>
       </Card>

@@ -16,7 +16,7 @@ const ProductDescription = ({ images, name, description, keywords }: any) => {
           {images?.map((image: any, index: number) => (
             <div
               key={index}
-              className="relative w-35 h-[78px] md:h-28 lg:h-36 xl:h-39.5"
+              className="relative w-[140px] h-[157px] md:h-28 lg:h-36 xl:h-39.5"
             >
               <Image
                 src={image}
@@ -32,7 +32,7 @@ const ProductDescription = ({ images, name, description, keywords }: any) => {
             </div>
           ))}
         </div>
-        <div className="relative w-full h-[450px] md:h-[480px] lg:h-[600px] xl:h-[650px] overflow-hidden rounded-2xl">
+        <div className="relative w-full h-[450px] md:h-[480px] lg:h-[678px] overflow-hidden rounded-2xl">
           <Image
             src={selectedImage}
             alt="Product Image"

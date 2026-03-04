@@ -29,13 +29,15 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} antialiased px-4 lg:px-10 xl:px-20`}
+        className={`${geistSans.variable} ${geistMono.variable} w-full flex justify-center items-center antialiased px-4 lg:px-10 xl:px-20`}
       >
-        <ReduxProvider>
-          <Header />
-          <div>{children}</div>
-          <Footer />
-        </ReduxProvider>
+        <div className="w-[1296px]">
+          <ReduxProvider>
+            <Header />
+            <div>{children}</div>
+            <Footer />
+          </ReduxProvider>
+        </div>
       </body>
     </html>
   );

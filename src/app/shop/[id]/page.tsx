@@ -31,6 +31,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
             price={product?.price}
             discountPrice={product?.discountPrice}
             productId={product?.id}
+            tax={product?.tax}
           />
         </div>
       </div>
