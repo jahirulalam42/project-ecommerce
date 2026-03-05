@@ -75,7 +75,7 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="-mx-2 md:-mx-10 lg:-mx-20">
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
         <Carousel
           plugins={[plugin.current]}
           className="w-full"

@@ -29,9 +29,9 @@ export default function RootLayout({
     <html lang="en">
       <body
         suppressHydrationWarning
-        className={`${geistSans.variable} ${geistMono.variable} w-full flex justify-center items-center antialiased px-4 lg:px-10 xl:px-20`}
+        className={`${geistSans.variable} ${geistMono.variable} w-full flex justify-center items-center antialiased `}
       >
-        <div className="w-[1296px]">
+        <div className="w-full max-w-[1296px] mx-auto px-4 sm:px-6 lg:px-8">
           <ReduxProvider>
             <Header />
             <div>{children}</div>
