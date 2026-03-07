@@ -11,8 +11,8 @@ const ProductDescription = ({ images, name, description, keywords }: any) => {
   );
   return (
     <div className="flex flex-col gap-10">
-      <div className="w-full flex md:flex-row flex-col-reverse  gap-4">
-        <div className=" flex md:flex-col flex-row gap-2">
+      <div className="w-full flex lg:flex-row flex-col-reverse  gap-4">
+        <div className=" flex lg:flex-col flex-row gap-2">
           {images?.map((image: any, index: number) => (
             <div
               key={index}

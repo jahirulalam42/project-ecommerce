@@ -8,7 +8,7 @@ export const categorySlice = createSlice({
     sortValue: "",
     maxPrice: 0,
     minPrice: 0,
-    itemsPerPage: 12,
+    itemsPerPage: 9,
   },
   reducers: {
     addSelectedCategory: (state, action: any) => {

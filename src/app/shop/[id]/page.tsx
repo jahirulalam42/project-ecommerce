@@ -14,7 +14,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
 
   return (
     <div>
-      <div className="w-full grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div className="w-full grid grid-cols-1 lg:grid-cols-3 gap-4">
         <div className="col-span-2">
           <ProductDescription
             images={product?.images}
