@@ -25,10 +25,15 @@ import {
 } from "@/components/ui/input-group";
 import { Button } from "../ui/button";
 import { useSelector } from "react-redux";
+import { useMounted } from "@/hooks/useMounted";
 
 const Header = () => {
+  const mounted = useMounted();
   const cartItem = useSelector((state: any) => state.cart.items);
-  console.log("CartItem", cartItem);
+
+  console.log("Cart Item", cartItem);
+
+  const cartCount = mounted ? cartItem?.length || 0 : 0;
   return (
     <div className="w-full h-fit flex flex-row gap-4 md:justify-between items-center py-2 lg:py-4">
       <div>
@@ -59,7 +64,7 @@ const Header = () => {
           <div className="relative">
             <ShoppingCart strokeWidth={1.5} />
             <span className="absolute -top-2 left-4 rounded-full bg-sky-500 p-0.5 px-2 text-sm text-sky-50">
-              {cartItem?.length || 0}
+              {cartCount}
             </span>
           </div>
         </div>
