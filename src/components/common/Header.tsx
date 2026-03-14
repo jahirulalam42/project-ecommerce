@@ -31,7 +31,7 @@ const Header = () => {
   const mounted = useMounted();
   const cartItem = useSelector((state: any) => state.cart.items);
 
-  console.log("Cart Item", cartItem);
+  // console.log("Cart Item", cartItem);
 
   const cartCount = mounted ? cartItem?.length || 0 : 0;
   return (

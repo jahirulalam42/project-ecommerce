@@ -25,10 +25,24 @@ export const cartSlice = createSlice({
       state.items.push(action.payload);
       localStorage.setItem("cartItem", JSON.stringify(state.items));
     },
+    increaseQuantity: (state, action) => {
+      const item = state.items.find((p) => p.productId === action.payload);
+      if (item) {
+        item.quantity += 1;
+      }
+    },
+
+    decreaseQuantity: (state, action) => {
+      const item = state.items.find((p) => p.productId === action.payload);
+      if (item && item.quantity > 1) {
+        item.quantity -= 1;
+      }
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addCartItem } = cartSlice.actions;
+export const { addCartItem, increaseQuantity, decreaseQuantity } =
+  cartSlice.actions;
 
 export default cartSlice.reducer;
