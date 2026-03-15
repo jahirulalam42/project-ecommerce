@@ -8,6 +8,9 @@ interface CartItem {
 
 interface CartState {
   items: CartItem[];
+  subtotal: Number;
+  taxtotal: Number;
+  ordertotal: Number;
 }
 
 const initialState: CartState = {
@@ -15,6 +18,9 @@ const initialState: CartState = {
     typeof window !== "undefined"
       ? JSON.parse(localStorage.getItem("cartItem") || "[]")
       : [],
+  subtotal: 0,
+  taxtotal: 0,
+  ordertotal: 0,
 };
 
 export const cartSlice = createSlice({
@@ -38,11 +44,38 @@ export const cartSlice = createSlice({
         item.quantity -= 1;
       }
     },
+
+    makeSubtotal: (state, action) => {
+      const products = action.payload;
+      state.subtotal =
+        products?.reduce((total: number, product: any) => {
+          const price = product.discountPrice;
+          return total + price * product.quantity;
+        }, 0) || 0;
+    },
+
+    makeTaxtotal: (state, action) => {
+      state.taxtotal =
+        action.payload?.reduce((total: number, product: any) => {
+          const tax = product.tax;
+          return total + tax * product.quantity;
+        }, 0) || 0;
+    },
+
+    makeOrdertotal: (state, action) => {
+      state.ordertotal = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { addCartItem, increaseQuantity, decreaseQuantity } =
-  cartSlice.actions;
+export const {
+  addCartItem,
+  increaseQuantity,
+  decreaseQuantity,
+  makeSubtotal,
+  makeTaxtotal,
+  makeOrdertotal,
+} = cartSlice.actions;
 
 export default cartSlice.reducer;

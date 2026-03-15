@@ -17,12 +17,21 @@ import Image from "next/image";
 import globe from "@/../public/globe.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts, getSingleProduct } from "@/lib/api";
-import { decreaseQuantity, increaseQuantity } from "@/features/cart/cartSlice";
+import {
+  decreaseQuantity,
+  increaseQuantity,
+  makeOrdertotal,
+  makeSubtotal,
+  makeTaxtotal,
+} from "@/features/cart/cartSlice";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cart.items);
   const [summaryProducts, setSummaryProducts] = useState<any>();
+  const subtotal = useSelector((state: any) => state.cart.subtotal);
+  const taxtotal = useSelector((state: any) => state.cart.taxtotal);
+  const ordertotal = useSelector((state: any) => state.cart.ordertotal);
   console.log("CartProducts", cartProducts);
 
   useEffect(() => {
@@ -40,17 +49,22 @@ const OrderSummary = () => {
       );
       console.log("Summary Products", summaryProducts);
       setSummaryProducts(result);
+      dispatch(makeSubtotal(result));
+      dispatch(makeTaxtotal(result));
     };
     if (cartProducts) {
       fetchData();
     }
   }, [cartProducts]);
 
-  console.log(summaryProducts);
+  useEffect(() => {
+    dispatch(makeOrdertotal(subtotal + 5 + taxtotal));
+  }, [subtotal, taxtotal]);
+  console.log("SubTotal", subtotal);
   return (
     <div>
-      <Card className="w-full border-none shadow-none">
-        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+      <Card className="w-full ">
+        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight px-6">
           Order summary
         </h4>
         <Separator />
@@ -112,10 +126,10 @@ const OrderSummary = () => {
                         </div>
 
                         <div className="col-span-1 flex flex-col items-end">
-                          <span className="font-semibold line-through">
+                          <span className="font-semibold">
                             ${discountPrice}
                           </span>
-                          <span className="text-sm text-gray-500">
+                          <span className="text-sm text-gray-500 line-through">
                             ${price}
                           </span>
                         </div>
@@ -125,23 +139,23 @@ const OrderSummary = () => {
                   );
                 })}
             </div>
-            <div className="w-full">
+            <div className="w-full hidden md:block">
               <div className="flex justify-between text-gray-500">
-                <span>Subtotal</span> <span>price</span>
+                <span>Subtotal</span> <span>${subtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between text-gray-500">
-                <span>Shipping estimate</span> <span>price</span>
+                <span>Shipping estimate</span> <span>$5.00</span>
               </div>
               <div className="flex justify-between text-gray-500">
-                <span>Tax estimate</span> <span>price</span>
+                <span>Tax estimate</span> <span>${taxtotal.toFixed(2)}</span>
               </div>
               <div className="flex justify-between py-2 font-semibold">
-                <span>Order total</span> <span>price</span>
+                <span>Order total</span> <span>${ordertotal.toFixed(2)}</span>
               </div>
             </div>
           </div>
         </CardContent>
-        <CardFooter className="flex-col gap-2">
+        <CardFooter className="flex-col gap-2 hidden md:block">
           <Button type="submit" className="w-full rounded-full">
             Confirm order
           </Button>

@@ -8,8 +8,13 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
+import { useSelector } from "react-redux";
 
 const CheckoutInfo = () => {
+  const subtotal = useSelector((state: any) => state.cart.subtotal);
+  const taxtotal = useSelector((state: any) => state.cart.taxtotal);
+  const ordertotal = useSelector((state: any) => state.cart.ordertotal);
+
   const formSchema = z.object({
     emails: z
       .array(
@@ -46,7 +51,7 @@ const CheckoutInfo = () => {
     },
   });
   return (
-    <div>
+    <div className="flex flex-col gap-6">
       {/* Contact Info */}
       <Card className="w-full">
         <CardHeader className="border-b">
@@ -177,6 +182,28 @@ const CheckoutInfo = () => {
           </form>
         </CardContent>
       </Card>
+
+      <div className="w-full md:hidden">
+        <h4 className="scroll-m-20 text-xl font-semibold tracking-tight py-4">
+          Confirm your order
+        </h4>
+        <div className="flex justify-between text-gray-500">
+          <span>Subtotal</span> <span>${subtotal.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between text-gray-500">
+          <span>Shipping estimate</span> <span>$5.00</span>
+        </div>
+        <div className="flex justify-between text-gray-500">
+          <span>Tax estimate</span> <span>${taxtotal.toFixed(2)}</span>
+        </div>
+        <div className="flex justify-between py-2 font-semibold">
+          <span>Order total</span> <span>${ordertotal.toFixed(2)}</span>
+        </div>
+      </div>
+
+      <Button type="submit" className="w-full rounded-full mb-10">
+        Confirm order
+      </Button>
     </div>
   );
 };

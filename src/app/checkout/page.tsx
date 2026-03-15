@@ -26,11 +26,11 @@ const page = () => {
         </span>
       </div>
 
-      <div className="w-full flex flex-row gap-6">
-        <div className="w-[50%] flex-1 bordered border-2 border-amber-800 flex flex-col gap-6">
+      <div className="w-full flex flex-col-reverse md:flex-row gap-6">
+        <div className="w-full md:w-[50%] flex-1  flex flex-col gap-6">
           <CheckoutInfo />
         </div>
-        <div className="w-[50%] flex-1 bordered border-2 border-amber-800">
+        <div className="w-full md:w-[50%] flex-1 ">
           <OrderSummary />
         </div>
       </div>
