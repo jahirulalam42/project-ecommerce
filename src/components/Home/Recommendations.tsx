@@ -33,7 +33,7 @@ const Recommendations = async () => {
       </h1>
       <div className="flex flex-row">
         <Carousel className="w-full">
-          <CarouselContent className="-ml-1">
+          <CarouselContent className="gap-1 md:gap-2 lg:gap-4 xl:gap-6">
             {result?.data.slice(0, 10).map((item: any, index: any) => (
               <CarouselItem
                 key={index}

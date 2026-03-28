@@ -75,7 +75,7 @@ const Hero = () => {
 
   return (
     <div className="flex flex-col gap-10">
-      <div className="relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw]">
+      <div className="relative w-screen left-1/2 right-1/2 -ml-[50.5vw] -mr-[50vw]">
         <Carousel
           plugins={[plugin.current]}
           className="w-full"
@@ -98,7 +98,7 @@ const Hero = () => {
                 />
 
                 {/* Text Content */}
-                <div className="absolute inset-0 flex flex-col gap-4 items-start justify-center px-8 md:px-16 lg:px-22 z-10">
+                <div className="absolute inset-0 flex flex-col gap-4 items-start justify-center px-8 md:px-16 lg:px-22 xl:px-40 z-10">
                   <p className="text-gray-600 font-semibold text-lg">
                     Starting from $49.99
                   </p>
