@@ -11,6 +11,7 @@ interface CartState {
   subtotal: Number;
   taxtotal: Number;
   ordertotal: Number;
+  summaryProducts: any;
 }
 
 const initialState: CartState = {
@@ -21,6 +22,7 @@ const initialState: CartState = {
   subtotal: 0,
   taxtotal: 0,
   ordertotal: 0,
+  summaryProducts: "",
 };
 
 export const cartSlice = createSlice({
@@ -65,6 +67,10 @@ export const cartSlice = createSlice({
     makeOrdertotal: (state, action) => {
       state.ordertotal = action.payload;
     },
+
+    makeSummaryProducts: (state, action) => {
+      state.summaryProducts = action.payload;
+    },
   },
 });
 
@@ -76,6 +82,7 @@ export const {
   makeSubtotal,
   makeTaxtotal,
   makeOrdertotal,
+  makeSummaryProducts,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;

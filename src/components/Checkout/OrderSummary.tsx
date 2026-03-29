@@ -22,16 +22,20 @@ import {
   increaseQuantity,
   makeOrdertotal,
   makeSubtotal,
+  makeSummaryProducts,
   makeTaxtotal,
 } from "@/features/cart/cartSlice";
 
 const OrderSummary = () => {
   const dispatch = useDispatch();
   const cartProducts = useSelector((state: any) => state.cart.items);
-  const [summaryProducts, setSummaryProducts] = useState<any>();
+  // const [summaryProducts, setSummaryProducts] = useState<any>();
   const subtotal = useSelector((state: any) => state.cart.subtotal);
   const taxtotal = useSelector((state: any) => state.cart.taxtotal);
   const ordertotal = useSelector((state: any) => state.cart.ordertotal);
+  const summaryProducts = useSelector(
+    (state: any) => state.cart.summaryProducts
+  );
   console.log("CartProducts", cartProducts);
 
   useEffect(() => {
@@ -48,7 +52,7 @@ const OrderSummary = () => {
         })
       );
       console.log("Summary Products", summaryProducts);
-      setSummaryProducts(result);
+      dispatch(makeSummaryProducts(result));
       dispatch(makeSubtotal(result));
       dispatch(makeTaxtotal(result));
     };

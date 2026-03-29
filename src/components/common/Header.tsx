@@ -23,9 +23,21 @@ import {
   InputGroupAddon,
   InputGroupInput,
 } from "@/components/ui/input-group";
+import {
+  Drawer,
+  DrawerClose,
+  DrawerContent,
+  DrawerDescription,
+  DrawerFooter,
+  DrawerHeader,
+  DrawerTitle,
+  DrawerTrigger,
+} from "@/components/ui/drawer";
 import { Button } from "../ui/button";
 import { useSelector } from "react-redux";
 import { useMounted } from "@/hooks/useMounted";
+import Link from "next/link";
+import CartOrderSummary from "../Checkout/CartOrderSummary";
 
 const Header = () => {
   const mounted = useMounted();
@@ -37,20 +49,22 @@ const Header = () => {
   return (
     <div className="w-full h-fit flex flex-row gap-4 md:justify-between items-center py-2 lg:py-4">
       <div>
-        <Image
-          className="hidden md:block"
-          src={Logo}
-          height={100}
-          width={100}
-          alt="Logo"
-        />
-        <Image
-          className="md:hidden block"
-          src={mobileLogo}
-          height={50}
-          width={50}
-          alt="Logo"
-        />
+        <Link href={"/"}>
+          <Image
+            className="hidden md:block"
+            src={Logo}
+            height={100}
+            width={100}
+            alt="Logo"
+          />
+          <Image
+            className="md:hidden block"
+            src={mobileLogo}
+            height={50}
+            width={50}
+            alt="Logo"
+          />
+        </Link>
       </div>
       <InputGroup className="max-w-sm rounded-2xl">
         <InputGroupInput placeholder="Search in products..." />
@@ -62,10 +76,35 @@ const Header = () => {
         <div className="hidden md:flex justify-center items-center md:gap-4">
           <UserRound strokeWidth={1.5} />
           <div className="relative">
-            <ShoppingCart strokeWidth={1.5} />
-            <span className="absolute -top-2 left-4 rounded-full bg-sky-500 p-0.5 px-2 text-sm text-sky-50">
-              {cartCount}
-            </span>
+            <Drawer direction="right">
+              <DrawerTrigger asChild>
+                <div>
+                  <ShoppingCart strokeWidth={1.5} />
+                  <span className="absolute -top-2 left-4 rounded-full bg-sky-500 p-0.5 px-2 text-sm text-sky-50">
+                    {cartCount}
+                  </span>
+                </div>
+              </DrawerTrigger>
+              <DrawerContent>
+                <DrawerHeader>
+                  <DrawerTitle className="flex flex-row justify-between pb-2">
+                    <span className="scroll-m-20 text-xl font-semibold tracking-tight">
+                      Cart
+                    </span>
+                    <ShoppingCart strokeWidth={1.5} />
+                  </DrawerTitle>
+                </DrawerHeader>
+                <div className="no-scrollbar overflow-y-auto px-4">
+                  <CartOrderSummary />
+                </div>
+                <DrawerFooter>
+                  <Button>Submit</Button>
+                  <DrawerClose asChild>
+                    <Button variant="outline">Cancel</Button>
+                  </DrawerClose>
+                </DrawerFooter>
+              </DrawerContent>
+            </Drawer>
           </div>
         </div>
         <div className="md:hidden">
