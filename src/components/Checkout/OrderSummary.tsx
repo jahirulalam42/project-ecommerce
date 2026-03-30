@@ -19,11 +19,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getProducts, getSingleProduct } from "@/lib/api";
 import {
   decreaseQuantity,
+  fetchCart,
   increaseQuantity,
   makeOrdertotal,
-  makeSubtotal,
-  makeSummaryProducts,
-  makeTaxtotal,
 } from "@/features/cart/cartSlice";
 
 const OrderSummary = () => {
@@ -39,27 +37,8 @@ const OrderSummary = () => {
   console.log("CartProducts", cartProducts);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await Promise.all(
-        cartProducts.map(async (product: any) => {
-          const res: any = await getSingleProduct(product.productId);
-
-          return {
-            ...res.data,
-            quantity: product.quantity,
-            size: product.size,
-          };
-        })
-      );
-      console.log("Summary Products", summaryProducts);
-      dispatch(makeSummaryProducts(result));
-      dispatch(makeSubtotal(result));
-      dispatch(makeTaxtotal(result));
-    };
-    if (cartProducts) {
-      fetchData();
-    }
-  }, [cartProducts]);
+    dispatch(fetchCart());
+  }, []);
 
   useEffect(() => {
     dispatch(makeOrdertotal(subtotal + 5 + taxtotal));

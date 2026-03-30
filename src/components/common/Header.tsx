@@ -98,10 +98,12 @@ const Header = () => {
                   <CartOrderSummary />
                 </div>
                 <DrawerFooter>
-                  <Button>Submit</Button>
-                  <DrawerClose asChild>
+                  <Link href={"/checkout"}>
+                    <Button className="w-full">Checkout</Button>
+                  </Link>
+                  {/* <DrawerClose asChild>
                     <Button variant="outline">Cancel</Button>
-                  </DrawerClose>
+                  </DrawerClose> */}
                 </DrawerFooter>
               </DrawerContent>
             </Drawer>

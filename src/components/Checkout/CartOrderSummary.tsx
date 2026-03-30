@@ -1,9 +1,13 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardDescription, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
 import Image from "next/image";
-import { decreaseQuantity, increaseQuantity } from "@/features/cart/cartSlice";
+import {
+  decreaseQuantity,
+  fetchCart,
+  increaseQuantity,
+} from "@/features/cart/cartSlice";
 import { Separator } from "../ui/separator";
 
 const CartOrderSummary = () => {
@@ -12,7 +16,10 @@ const CartOrderSummary = () => {
     (state: any) => state.cart.summaryProducts
   );
 
-  console.log("Summary Products", summaryProducts);
+  useEffect(() => {
+    dispatch(fetchCart());
+  }, []);
+
   return (
     <div>
       <div>
