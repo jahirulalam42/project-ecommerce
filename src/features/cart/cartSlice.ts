@@ -9,9 +9,9 @@ interface CartItem {
 
 interface CartState {
   items: CartItem[];
-  subtotal: Number;
-  taxtotal: Number;
-  ordertotal: Number;
+  subtotal: number;
+  taxtotal: number;
+  ordertotal: number;
   summaryProducts: any;
   loading: String;
 }

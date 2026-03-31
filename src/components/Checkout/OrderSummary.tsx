@@ -23,9 +23,10 @@ import {
   increaseQuantity,
   makeOrdertotal,
 } from "@/features/cart/cartSlice";
+import { AppDispatch } from "@/store/store";
 
 const OrderSummary = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const cartProducts = useSelector((state: any) => state.cart.items);
   // const [summaryProducts, setSummaryProducts] = useState<any>();
   const subtotal = useSelector((state: any) => state.cart.subtotal);

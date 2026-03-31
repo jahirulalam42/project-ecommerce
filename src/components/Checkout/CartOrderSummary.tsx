@@ -9,9 +9,10 @@ import {
   increaseQuantity,
 } from "@/features/cart/cartSlice";
 import { Separator } from "../ui/separator";
+import { AppDispatch } from "@/store/store";
 
 const CartOrderSummary = () => {
-  const dispatch = useDispatch();
+  const dispatch = useDispatch<AppDispatch>();
   const summaryProducts = useSelector(
     (state: any) => state.cart.summaryProducts
   );
