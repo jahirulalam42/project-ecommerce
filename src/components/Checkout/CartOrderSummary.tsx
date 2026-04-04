@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { CardDescription, CardTitle } from "../ui/card";
 import { Button } from "../ui/button";
@@ -7,11 +7,13 @@ import {
   decreaseQuantity,
   fetchCart,
   increaseQuantity,
+  removeCartItem,
 } from "@/features/cart/cartSlice";
 import { Separator } from "../ui/separator";
 import { AppDispatch } from "@/store/store";
 
 const CartOrderSummary = () => {
+  const [isHovered, setIsHovered] = useState(false);
   const dispatch = useDispatch<AppDispatch>();
   const summaryProducts = useSelector(
     (state: any) => state.cart.summaryProducts
@@ -19,7 +21,7 @@ const CartOrderSummary = () => {
 
   useEffect(() => {
     dispatch(fetchCart());
-  }, []);
+  }, [dispatch]);
 
   return (
     <div>
@@ -29,8 +31,13 @@ const CartOrderSummary = () => {
             const { name, id, price, size, quantity, discountPrice, images } =
               product;
             return (
-              <div key={id} className="h-[108px] flex flex-col gap-4">
-                <div className="w-full h-full grid grid-cols-5 gap-2">
+              <div
+                key={id}
+                onMouseEnter={() => setIsHovered(true)}
+                onMouseLeave={() => setIsHovered(false)}
+                className="h-[108px] flex flex-col gap-4"
+              >
+                <div className="relative w-full h-full grid grid-cols-5 gap-2">
                   <div className="col-span-1 relative h-full w-full">
                     <Image
                       src={images[0]}
@@ -77,6 +84,21 @@ const CartOrderSummary = () => {
                       ${price}
                     </span>
                   </div>
+                  {isHovered && (
+                    <div className="absolute top-[30%] right-0">
+                      <Button
+                        onClick={() => {
+                          dispatch(
+                            removeCartItem({ productId: id, size: size })
+                          );
+                        }}
+                        variant={"destructive"}
+                        size={"xs"}
+                      >
+                        X
+                      </Button>
+                    </div>
+                  )}
                 </div>
                 <Separator className="mb-6" />
               </div>
