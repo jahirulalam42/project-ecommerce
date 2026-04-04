@@ -54,7 +54,18 @@ export const cartSlice = createSlice({
   initialState,
   reducers: {
     addCartItem: (state, action: PayloadAction<CartItem>) => {
-      state.items.push(action.payload);
+      const existingIndex = state.items.findIndex(
+        (item) =>
+          item.productId === action.payload.productId &&
+          item.size === action.payload.size
+      );
+
+      if (existingIndex !== -1) {
+        state.items[existingIndex].quantity += action.payload.quantity;
+      } else {
+        state.items.push(action.payload);
+      }
+
       localStorage.setItem("cartItem", JSON.stringify(state.items));
     },
     increaseQuantity: (state, action) => {
