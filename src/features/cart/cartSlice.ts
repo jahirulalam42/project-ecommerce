@@ -68,7 +68,7 @@ export const cartSlice = createSlice({
 
       localStorage.setItem("cartItem", JSON.stringify(state.items));
     },
-    removeCartItem: (state, action: PayloadAction<CartItem>) => {
+    removeCartItem: (state, action: PayloadAction<any>) => {
       const existingIndex = state.items.findIndex(
         (item) =>
           item.productId === action.payload.productId &&
