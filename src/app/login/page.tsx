@@ -9,6 +9,7 @@ import {
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
 import { Field, useForm } from "@tanstack/react-form";
+import { signIn } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { toast } from "sonner";
@@ -22,8 +23,8 @@ const page = () => {
       .max(32, "Bug title must be at most 32 characters."),
     password: z
       .string()
-      .min(20, "Description must be at least 20 characters.")
-      .max(100, "Description must be at most 100 characters."),
+      .min(6, "Password must be at least 6 characters.")
+      .max(50, "Password must be at most 50 characters."),
   });
 
   const form = useForm({
@@ -35,22 +36,27 @@ const page = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
-        description: (
-          <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
-            <code>{JSON.stringify(value, null, 2)}</code>
-          </pre>
-        ),
-        position: "bottom-right",
-        classNames: {
-          content: "flex flex-col gap-2",
-        },
-        style: {
-          "--border-radius": "calc(var(--radius)  + 4px)",
-        } as React.CSSProperties,
+      console.log("Submitted value", value);
+
+      const res = await signIn("credentials", {
+        email: value.email,
+        password: value.password,
+        redirect: false, // important for handling response manually
       });
+
+      if (res?.error) {
+        toast("Login failed", {
+          description: res.error,
+        });
+        console.log(res?.error);
+      } else {
+        toast("Login successful");
+        // router.push("/dashboard") (optional)
+      }
     },
   });
+
+  console.log("Form", form.state.values);
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-[440px] h-[450px]">
