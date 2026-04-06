@@ -3,6 +3,7 @@ import Credentials from "next-auth/providers/credentials";
 import { verifyPassword } from "@/utils/password";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  secret: process.env.NEXT_AUTH_SECRET,
   providers: [
     Credentials({
       // You can specify which fields should be submitted, by adding keys to the `credentials` object.

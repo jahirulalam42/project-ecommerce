@@ -11,11 +11,13 @@ import { Input } from "@/components/ui/input";
 import { Field, useForm } from "@tanstack/react-form";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
 import z from "zod";
 
 const page = () => {
+  const router = useRouter();
   const formSchema = z.object({
     email: z
       .string()
@@ -51,7 +53,7 @@ const page = () => {
         console.log(res?.error);
       } else {
         toast("Login successful");
-        // router.push("/dashboard") (optional)
+        router.push("/");
       }
     },
   });
