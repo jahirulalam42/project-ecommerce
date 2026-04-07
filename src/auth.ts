@@ -1,6 +1,7 @@
 import NextAuth from "next-auth";
 import Credentials from "next-auth/providers/credentials";
 import { verifyPassword } from "@/utils/password";
+import { loginUser } from "./lib/api";
 
 export const { handlers, signIn, signOut, auth } = NextAuth({
   secret: process.env.NEXT_AUTH_SECRET,
@@ -32,17 +33,25 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       // },
 
       authorize: async (credentials) => {
-        if (
-          credentials.email === "admin@gmail.com" &&
-          credentials.password === "123456"
-        ) {
-          return {
-            id: "1",
-            email: "admin@gmail.com",
-          };
+        console.log("Credentials", credentials);
+        let user = null;
+
+        // logic to salt and hash password
+        // const pwHash = saltAndHashPassword(credentials.password)
+
+        // logic to verify if the user exists
+        user = await loginUser(credentials);
+
+        console.log("User", user);
+
+        if (!user) {
+          // No user found, so this is their first attempt to login
+          // Optionally, this is also the place you could do a user registration
+          throw new Error("Invalid credentials.");
         }
 
-        throw new Error("Invalid credentials");
+        // return user object with their profile data
+        return user;
       },
     }),
   ],

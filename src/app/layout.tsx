@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/common/Header";
 import Footer from "@/components/common/Footer";
 import ReduxProvider from "@/components/common/ReduxProvider";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,6 +37,7 @@ export default function RootLayout({
             <Header />
             <div>{children}</div>
             <Footer />
+            <Toaster />
           </ReduxProvider>
         </div>
       </body>

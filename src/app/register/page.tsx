@@ -8,6 +8,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { registerUser } from "@/lib/api";
 import { Field, useForm } from "@tanstack/react-form";
 import Link from "next/link";
 import React from "react";
@@ -22,12 +23,12 @@ const page = () => {
       .max(32, "Bug title must be at most 32 characters."),
     password: z
       .string()
-      .min(20, "Description must be at least 20 characters.")
-      .max(100, "Description must be at most 100 characters."),
+      .min(6, "Password must be at least 6 characters.")
+      .max(20, "Password must be at most 20 characters."),
     password_again: z
       .string()
-      .min(20, "Description must be at least 20 characters.")
-      .max(100, "Description must be at most 100 characters."),
+      .min(6, "Description must be at least 20 characters.")
+      .max(20, "Description must be at most 100 characters."),
   });
 
   const form = useForm({
@@ -40,20 +41,38 @@ const page = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
-      toast("You submitted the following values:", {
-        description: (
-          <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
-            <code>{JSON.stringify(value, null, 2)}</code>
-          </pre>
-        ),
-        position: "bottom-right",
-        classNames: {
-          content: "flex flex-col gap-2",
-        },
-        style: {
-          "--border-radius": "calc(var(--radius)  + 4px)",
-        } as React.CSSProperties,
-      });
+      try {
+        const res = await registerUser(value);
+        console.log("Register", res);
+        // ✅ Only success (201) reaches here
+        toast.success(res?.data.message, {
+          position: "top-right",
+          style: {
+            backgroundColor: "#4ade80",
+          } as React.CSSProperties,
+        });
+      } catch (error: any) {
+        const status = error.response?.status;
+        const message = error.response?.data.message;
+
+        if (status === 409) {
+          toast.warning(message, {
+            position: "top-right",
+            style: {
+              backgroundColor: "yellow",
+            } as React.CSSProperties,
+          });
+        } else if (status === 500) {
+          toast.error("Registration failed. Please try again.", {
+            position: "top-right",
+            style: {
+              backgroundColor: "red",
+            } as React.CSSProperties,
+          });
+        } else {
+          toast.error("Something went wrong");
+        }
+      }
     },
   });
   return (
