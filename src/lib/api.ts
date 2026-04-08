@@ -2,7 +2,7 @@ import axios from "axios";
 
 export async function getProducts() {
   try {
-    const response = await axios.get("http://localhost:5000/products");
+    const response = await axios.get("http://localhost:3000/api/products");
     return response;
     // console.log(response);
   } catch (error) {
@@ -12,7 +12,7 @@ export async function getProducts() {
 
 export async function getSingleProduct(id: string) {
   try {
-    const response = await axios.get(`http://localhost:5000/products/${id}`);
+    const response = await axios.get(`http://localhost:3000/products/${id}`);
     return response;
     // console.log(response);
   } catch (error) {
@@ -22,7 +22,7 @@ export async function getSingleProduct(id: string) {
 
 export async function getCategories() {
   try {
-    const response = await axios.get("http://localhost:5000/categories");
+    const response = await axios.get("http://localhost:3000/api/categories");
     return response;
     // console.log(response);
   } catch (error) {

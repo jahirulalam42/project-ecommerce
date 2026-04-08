@@ -5,12 +5,12 @@ export async function GET() {
   try {
     const client = await clientPromise;
     const db = client.db("ecommerce_db");
-    const restaurants = await db.collection("users").find({}).toArray();
+    const users = await db.collection("users").find({}).toArray();
 
-    return NextResponse.json(restaurants);
+    return NextResponse.json(users);
   } catch {
     return NextResponse.json(
-      { error: "Failed to fetch restaurants" },
+      { error: "Failed to fetch users" },
       { status: 500 }
     );
   }
