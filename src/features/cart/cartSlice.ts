@@ -80,6 +80,28 @@ export const cartSlice = createSlice({
       }
 
       localStorage.setItem("cartItem", JSON.stringify(state.items));
+
+      if (state.summaryProducts) {
+        state.summaryProducts = state.summaryProducts.filter(
+          (product: any) =>
+            !(
+              product.id === action.payload.productId &&
+              product.size === action.payload.size
+            )
+        );
+
+        state.subtotal = state.summaryProducts.reduce(
+          (total: number, product: any) =>
+            total + product.discountPrice * product.quantity,
+          0
+        );
+        state.taxtotal = state.summaryProducts.reduce(
+          (total: number, product: any) =>
+            total + (product.tax || 0) * product.quantity,
+          0
+        );
+        state.ordertotal = state.subtotal + 5 + state.taxtotal;
+      }
     },
     increaseQuantity: (state, action) => {
       const item = state.items.find((p) => p.productId === action.payload);

@@ -12,7 +12,9 @@ export async function getProducts() {
 
 export async function getSingleProduct(id: string) {
   try {
-    const response = await axios.get(`http://localhost:3000/products/${id}`);
+    const response = await axios.get(
+      `http://localhost:3000/api/products/${id}`
+    );
     return response;
     // console.log(response);
   } catch (error) {
