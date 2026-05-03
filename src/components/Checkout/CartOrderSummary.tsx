@@ -27,12 +27,12 @@ const CartOrderSummary = () => {
     <div>
       <div>
         {summaryProducts &&
-          summaryProducts?.map((product: any) => {
+          summaryProducts?.map((product: any, index: number) => {
             const { name, id, price, size, quantity, discountPrice, images } =
               product;
             return (
               <div
-                key={id}
+                key={`${id}-${size}-${index}`}
                 onMouseEnter={() => setIsHovered(true)}
                 onMouseLeave={() => setIsHovered(false)}
                 className="h-[108px] flex flex-col gap-4"
@@ -60,7 +60,9 @@ const CartOrderSummary = () => {
                           className="rounded-full"
                           size={"icon-xs"}
                           onClick={() => {
-                            dispatch(decreaseQuantity(id));
+                            dispatch(
+                              decreaseQuantity({ productId: id, size: size })
+                            );
                           }}
                         >
                           -
@@ -70,7 +72,11 @@ const CartOrderSummary = () => {
                           variant="outline"
                           className="rounded-full"
                           size={"icon-xs"}
-                          onClick={() => dispatch(increaseQuantity(id))}
+                          onClick={() =>
+                            dispatch(
+                              increaseQuantity({ productId: id, size: size })
+                            )
+                          }
                         >
                           +
                         </Button>

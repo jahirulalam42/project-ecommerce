@@ -9,7 +9,9 @@ export async function GET(
   try {
     const client = await clientPromise;
     const db = client.db("ecommerce_db");
-    const products = await db.collection("products").findOne({ id });
+    const products = await db
+      .collection("products")
+      .findOne({ id: parseInt(id, 10) });
 
     return NextResponse.json(products);
   } catch {

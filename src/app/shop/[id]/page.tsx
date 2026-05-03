@@ -1,16 +1,16 @@
 import Recommendations from "@/components/Home/Recommendations";
 import ProductCart from "@/components/Shop/ProductCart";
 import ProductDescription from "@/components/Shop/ProductDescription";
-import { getProducts } from "@/lib/api";
+import { getSingleProduct } from "@/lib/api";
 import React from "react";
 
 const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const { id } = await params;
 
-  const result = await getProducts();
-  const product = result?.data?.find((item: any) => item.id === id);
+  const result = await getSingleProduct(id);
+  const product = result?.data;
 
-  console.log("Single Products", product);
+  console.log("Single Products", result);
 
   return (
     <div>

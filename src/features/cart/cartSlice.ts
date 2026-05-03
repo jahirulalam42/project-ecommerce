@@ -103,19 +103,26 @@ export const cartSlice = createSlice({
         state.ordertotal = state.subtotal + 5 + state.taxtotal;
       }
     },
-    increaseQuantity: (state, action) => {
-      const item = state.items.find((p) => p.productId === action.payload);
+    increaseQuantity: (
+      state,
+      action: PayloadAction<{ productId: string; size: string }>
+    ) => {
+      const { productId, size } = action.payload;
+      // Find cart item by both productId and size
+      const item = state.items.find(
+        (p) => p.productId === productId && p.size === size
+      );
       if (item) {
         item.quantity += 1;
 
-        // Update summaryProducts if it exists
+        // Update summaryProducts (if already loaded)
         const summaryItem = state.summaryProducts?.find(
-          (p: any) => p.id === action.payload
+          (p: any) => p.id === productId && p.size === size
         );
         if (summaryItem) {
           summaryItem.quantity += 1;
 
-          // Recalculate subtotal and taxtotal from updated summaryProducts
+          // Recalculate totals from updated summaryProducts
           state.subtotal = state.summaryProducts.reduce(
             (total: number, product: any) =>
               total + product.discountPrice * product.quantity,
@@ -131,18 +138,23 @@ export const cartSlice = createSlice({
       }
     },
 
-    decreaseQuantity: (state, action) => {
-      const item = state.items.find((p) => p.productId === action.payload);
+    decreaseQuantity: (
+      state,
+      action: PayloadAction<{ productId: string; size: string }>
+    ) => {
+      const { productId, size } = action.payload;
+      const item = state.items.find(
+        (p) => p.productId === productId && p.size === size
+      );
       if (item && item.quantity > 1) {
         item.quantity -= 1;
 
         const summaryItem = state.summaryProducts?.find(
-          (p: any) => p.id === action.payload
+          (p: any) => p.id === productId && p.size === size
         );
         if (summaryItem) {
           summaryItem.quantity -= 1;
 
-          // Recalculate totals similarly
           state.subtotal = state.summaryProducts.reduce(
             (total: number, product: any) =>
               total + product.discountPrice * product.quantity,
