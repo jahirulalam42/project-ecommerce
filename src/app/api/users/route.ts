@@ -1,49 +1,41 @@
+import bcrypt from "bcrypt";
 import { NextResponse } from "next/server";
 import clientPromise from "@/lib/db";
 
-export async function GET() {
-  try {
-    const client = await clientPromise;
-    const db = client.db("ecommerce_db");
-    const users = await db.collection("users").find({}).toArray();
+export async function POST(request: Request) {
+  const { email, password } = await request.json();
 
-    return NextResponse.json(users);
-  } catch {
+  // Basic validation
+  if (!email || !password || password.length < 8) {
     return NextResponse.json(
-      { error: "Failed to fetch users" },
-      { status: 500 }
+      { message: "Invalid input – password must be at least 8 characters" },
+      { status: 400 }
     );
   }
-}
-
-export async function POST(request: Request) {
-  // Parse the request body
-  const body = await request.json();
-  const { email, password } = body;
-
-  // e.g. Insert new user into your DB
-  const newUser = { email, password };
 
   const client = await clientPromise;
   const db = client.db("ecommerce_db");
-  const checkUser = await db.collection("users").findOne({ email });
-  if (checkUser) {
-    return new Response(
-      JSON.stringify({ message: "The user already exists!" }),
-      {
-        status: 409,
-        headers: { "Content-Type": "application/json" },
-      }
-    );
-  } else {
-    await db.collection("users").insertOne(newUser);
+  const existingUser = await db.collection("users").findOne({ email });
 
-    return new Response(
-      JSON.stringify({ message: "You have successfully registered!" }),
-      {
-        status: 201,
-        headers: { "Content-Type": "application/json" },
-      }
+  if (existingUser) {
+    return NextResponse.json(
+      { message: "User already exists" },
+      { status: 409 }
     );
   }
+
+  // Hash the password
+  const saltRounds = 10;
+  const hashedPassword = await bcrypt.hash(password, saltRounds);
+
+  await db.collection("users").insertOne({
+    email,
+    password: hashedPassword,
+    createdAt: new Date(),
+  });
+
+  return NextResponse.json(
+    { message: "Successfully registered!" },
+    { status: 201 }
+  );
 }

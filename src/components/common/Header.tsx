@@ -38,8 +38,10 @@ import { useSelector } from "react-redux";
 import { useMounted } from "@/hooks/useMounted";
 import Link from "next/link";
 import CartOrderSummary from "../Checkout/CartOrderSummary";
+import { usePathname } from "next/navigation";
 
 const Header = () => {
+  const pathname = usePathname();
   const mounted = useMounted();
   const cartItem = useSelector((state: any) => state.cart.items);
 
@@ -66,12 +68,16 @@ const Header = () => {
           />
         </Link>
       </div>
-      <InputGroup className="max-w-sm rounded-2xl">
-        <InputGroupInput placeholder="Search in products..." />
-        <InputGroupAddon>
-          <Search />
-        </InputGroupAddon>
-      </InputGroup>
+      {pathname !== "/checkout" &&
+        pathname !== "/login" &&
+        pathname !== "/register" && (
+          <InputGroup className="hidden md:flex w-full max-w-sm">
+            <InputGroupInput placeholder="Search products..." />
+            <InputGroupAddon>
+              <Search strokeWidth={1.5} />
+            </InputGroupAddon>
+          </InputGroup>
+        )}
       <div>
         <div className="hidden md:flex justify-center items-center md:gap-4">
           <UserRound strokeWidth={1.5} />

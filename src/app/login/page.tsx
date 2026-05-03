@@ -47,12 +47,21 @@ const page = () => {
       });
 
       if (res?.error) {
-        toast("Login failed", {
+        toast.error("Login failed", {
           description: res.error,
+          position: "top-right",
+          style: {
+            backgroundColor: "red",
+          } as React.CSSProperties,
         });
         console.log(res?.error);
       } else {
-        toast("Login successful");
+        toast.success("Login successful", {
+          position: "top-right",
+          style: {
+            backgroundColor: "#4ade80",
+          } as React.CSSProperties,
+        });
         router.push("/");
       }
     },
