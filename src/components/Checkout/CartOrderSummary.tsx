@@ -11,6 +11,8 @@ import {
 } from "@/features/cart/cartSlice";
 import { Separator } from "../ui/separator";
 import { AppDispatch } from "@/store/store";
+import SkeletonCartOrderSummary from "./SkeletonCartOrderSummary";
+import { Spinner } from "../ui/spinner";
 
 const CartOrderSummary = () => {
   const [isHovered, setIsHovered] = useState(false);
@@ -26,7 +28,11 @@ const CartOrderSummary = () => {
   return (
     <div>
       <div>
-        {summaryProducts &&
+        {summaryProducts.length === 0 ? (
+          <div className="h-full w-full flex items-center justify-center gap-4">
+            <Spinner />
+          </div>
+        ) : (
           summaryProducts?.map((product: any, index: number) => {
             const { name, id, price, size, quantity, discountPrice, images } =
               product;
@@ -109,7 +115,8 @@ const CartOrderSummary = () => {
                 <Separator className="mb-6" />
               </div>
             );
-          })}
+          })
+        )}
       </div>
     </div>
   );
