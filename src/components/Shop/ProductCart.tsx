@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -14,6 +14,10 @@ import { Label } from "@/components/ui/label";
 import { ShoppingBag, Star } from "lucide-react";
 import { useDispatch } from "react-redux";
 import { addCartItem } from "@/features/cart/cartSlice";
+import { auth } from "@/auth";
+import { Session } from "next-auth";
+import { toast } from "sonner";
+import { useSession } from "next-auth/react";
 
 const ProductCart = ({
   rating,
@@ -24,12 +28,43 @@ const ProductCart = ({
   productId,
   tax,
 }: any) => {
+  const { data: session } = useSession();
   const dispatch = useDispatch();
   const [productCount, setProductCount] = React.useState(1);
   const [selectedSize, setSelectedSize] = React.useState(sizes?.[0] || null);
   const totalPrice = discountPrice * productCount;
   const totalTax = tax * productCount;
   const total = totalPrice + totalTax;
+
+  const handleAddToCart = () => {
+    if (session === undefined || session === null) {
+      toast.error("Please login to add items to your cart.", {
+        position: "top-right",
+        style: {
+          backgroundColor: "red",
+          color: "white",
+        } as React.CSSProperties,
+      });
+      return;
+    } else {
+      dispatch(
+        addCartItem({
+          productId,
+          size: selectedSize,
+          quantity: productCount,
+        })
+      );
+      toast.success("Item added to cart!", {
+        position: "top-right",
+        style: {
+          backgroundColor: "#4ade80",
+        } as React.CSSProperties,
+      });
+    }
+  };
+
+  // console.log(session, "session");
+
   return (
     <div>
       <Card className="w-full">
@@ -101,15 +136,7 @@ const ProductCart = ({
                 variant="default"
                 className="rounded-full px-2"
                 size={"sm"}
-                onClick={() =>
-                  dispatch(
-                    addCartItem({
-                      productId,
-                      size: selectedSize,
-                      quantity: productCount,
-                    })
-                  )
-                }
+                onClick={handleAddToCart}
               >
                 <ShoppingBag strokeWidth={1.5} /> Add to cart
               </Button>

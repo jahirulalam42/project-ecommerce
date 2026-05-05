@@ -10,7 +10,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const result = await getSingleProduct(id);
   const product = result?.data;
 
-  console.log("Single Products", result);
+  // console.log("Single Products", result);
 
   return (
     <div>

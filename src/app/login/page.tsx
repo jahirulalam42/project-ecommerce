@@ -8,6 +8,7 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { LoginSpinner } from "@/components/ui/spinner";
 import { Field, useForm } from "@tanstack/react-form";
 import { signIn } from "next-auth/react";
 import Link from "next/link";
@@ -18,6 +19,7 @@ import z from "zod";
 
 const page = () => {
   const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
   const formSchema = z.object({
     email: z
       .string()
@@ -39,6 +41,8 @@ const page = () => {
     },
     onSubmit: async ({ value }) => {
       console.log("Submitted value", value);
+
+      setLoading(true);
 
       const res = await signIn("credentials", {
         email: value.email,
@@ -62,8 +66,10 @@ const page = () => {
             backgroundColor: "#4ade80",
           } as React.CSSProperties,
         });
+
         router.push("/");
       }
+      setLoading(false);
     },
   });
 
@@ -74,6 +80,11 @@ const page = () => {
         <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-center py-6">
           Login
         </h2>
+        {loading && (
+          <div className="w-full flex justify-center items-center py-2">
+            <LoginSpinner className="text-xl" />
+          </div>
+        )}
         <div>
           <form
             onSubmit={(e) => {

@@ -8,8 +8,11 @@ import { Menu, Search, ShoppingCart, UserRound } from "lucide-react";
 import {
   DropdownMenu,
   DropdownMenuContent,
+  DropdownMenuGroup,
   DropdownMenuItem,
+  DropdownMenuLabel,
   DropdownMenuSeparator,
+  DropdownMenuShortcut,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import {
@@ -34,20 +37,30 @@ import {
   DrawerTrigger,
 } from "@/components/ui/drawer";
 import { Button } from "../ui/button";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { useMounted } from "@/hooks/useMounted";
 import Link from "next/link";
 import CartOrderSummary from "../Checkout/CartOrderSummary";
 import { usePathname } from "next/navigation";
+import { signOut, useSession } from "next-auth/react";
+import { removeAllCartItem } from "@/features/cart/cartSlice";
 
 const Header = () => {
+  const { data: session } = useSession();
   const pathname = usePathname();
   const mounted = useMounted();
   const cartItem = useSelector((state: any) => state.cart.items);
+  const dispatch = useDispatch();
 
   // console.log("Cart Item", cartItem);
 
   const cartCount = mounted ? cartItem?.length || 0 : 0;
+
+  const handleLogout = () => {
+    signOut({ callbackUrl: "/login" });
+    dispatch(removeAllCartItem());
+  };
+
   return (
     <div className="w-full h-fit flex flex-row gap-4 md:justify-between items-center py-2 lg:py-4">
       <div>
@@ -80,7 +93,33 @@ const Header = () => {
         )}
       <div>
         <div className="hidden md:flex justify-center items-center md:gap-4">
-          <UserRound strokeWidth={1.5} />
+          <DropdownMenu>
+            <DropdownMenuTrigger asChild>
+              <UserRound strokeWidth={1.5} />
+            </DropdownMenuTrigger>
+            <DropdownMenuContent>
+              {/* <DropdownMenuGroup>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuItem>
+                  Profile
+                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  Billing
+                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                </DropdownMenuItem>
+                <DropdownMenuItem>
+                  Settings
+                  <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                </DropdownMenuItem>
+              </DropdownMenuGroup>
+              <DropdownMenuSeparator /> */}
+              <DropdownMenuItem onClick={handleLogout}>
+                Log out
+                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+              </DropdownMenuItem>
+            </DropdownMenuContent>
+          </DropdownMenu>
           <div className="relative">
             <Drawer direction="right">
               <DrawerTrigger asChild>
@@ -103,14 +142,13 @@ const Header = () => {
                 <div className="no-scrollbar overflow-y-auto px-4">
                   <CartOrderSummary />
                 </div>
-                <DrawerFooter>
-                  <Link href={"/checkout"}>
-                    <Button className="w-full">Checkout</Button>
-                  </Link>
-                  {/* <DrawerClose asChild>
-                    <Button variant="outline">Cancel</Button>
-                  </DrawerClose> */}
-                </DrawerFooter>
+                {cartCount > 0 && session && (
+                  <DrawerFooter>
+                    <Link href={"/checkout"}>
+                      <Button className="w-full">Checkout</Button>
+                    </Link>
+                  </DrawerFooter>
+                )}
               </DrawerContent>
             </Drawer>
           </div>

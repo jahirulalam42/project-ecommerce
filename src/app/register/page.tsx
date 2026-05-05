@@ -8,14 +8,18 @@ import {
   FieldLabel,
 } from "@/components/ui/field";
 import { Input } from "@/components/ui/input";
+import { LoginSpinner } from "@/components/ui/spinner";
 import { registerUser } from "@/lib/api";
 import { Field, useForm } from "@tanstack/react-form";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { toast } from "sonner";
 import z from "zod";
 
 const page = () => {
+  const router = useRouter();
+  const [loading, setLoading] = React.useState(false);
   const formSchema = z.object({
     email: z
       .string()
@@ -41,6 +45,7 @@ const page = () => {
       onSubmit: formSchema,
     },
     onSubmit: async ({ value }) => {
+      setLoading(true);
       try {
         const res = await registerUser(value);
         console.log("Register", res);
@@ -51,6 +56,7 @@ const page = () => {
             backgroundColor: "#4ade80",
           } as React.CSSProperties,
         });
+        router.push("/login");
       } catch (error: any) {
         const status = error.response?.status;
         const message = error.response?.data.message;
@@ -73,6 +79,7 @@ const page = () => {
           toast.error("Something went wrong");
         }
       }
+      setLoading(false);
     },
   });
   return (
@@ -81,6 +88,11 @@ const page = () => {
         <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-center py-6">
           Register
         </h2>
+        {loading && (
+          <div className="w-full flex justify-center items-center py-2">
+            <LoginSpinner className="text-xl" />
+          </div>
+        )}
         <div>
           <form
             onSubmit={(e) => {

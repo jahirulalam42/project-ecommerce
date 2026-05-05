@@ -103,6 +103,10 @@ export const cartSlice = createSlice({
         state.ordertotal = state.subtotal + 5 + state.taxtotal;
       }
     },
+    removeAllCartItem: (state) => {
+      state.items = [];
+      localStorage.removeItem("cartItem");
+    },
     increaseQuantity: (
       state,
       action: PayloadAction<{ productId: string; size: string }>
@@ -205,6 +209,7 @@ export const {
   decreaseQuantity,
   makeOrdertotal,
   removeCartItem,
+  removeAllCartItem,
 } = cartSlice.actions;
 
 export default cartSlice.reducer;
