@@ -1,39 +1,87 @@
 "use client";
 import React from "react";
 import { useForm } from "@tanstack/react-form";
-import { XIcon } from "lucide-react";
 import { toast } from "sonner";
-import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Label } from "@/components/ui/label";
 import { Input } from "@/components/ui/input";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { setCurrentOrder } from "@/features/order/orderSlice";
+import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
+import { submitOrder } from "@/lib/api";
 
 const CheckoutInfo = () => {
+  const { data: session } = useSession();
   const subtotal = useSelector((state: any) => state.cart.subtotal);
   const taxtotal = useSelector((state: any) => state.cart.taxtotal);
   const ordertotal = useSelector((state: any) => state.cart.ordertotal);
-
-  const formSchema = z.object({
-    emails: z
-      .array(
-        z.object({
-          address: z.string().email("Enter a valid email address."),
-        })
-      )
-      .min(1, "Add at least one email address.")
-      .max(5, "You can add up to 5 email addresses."),
-  });
+  const cartItem = useSelector((state: any) => state.cart.summaryProducts);
+  console.log("Session", session);
+  const dispatch = useDispatch();
+  const router = useRouter();
 
   const form = useForm({
     defaultValues: {
-      emails: [{ address: "" }],
-    },
-    validators: {
-      onBlur: formSchema,
+      orderId: "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
+      date: new Date().toLocaleDateString(),
+      userId: session?.user?.id,
+      phone: "",
+      email: "",
+      fname: "",
+      lname: "",
+      address1: "",
+      address2: "",
+      apt: "",
+      city: "",
+      country: "",
+      state: "",
+      postal: "",
+      card: "",
+      nameCard: "",
+      exp_date: "",
+      cvc: "",
     },
     onSubmit: async ({ value }) => {
+      const {
+        phone,
+        email,
+        fname,
+        lname,
+        address1,
+        address2,
+        apt,
+        city,
+        country,
+        state,
+        postal,
+      } = value;
+      const Order = {
+        orderId: "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
+        date: new Date().toLocaleDateString(),
+        contact: {
+          phone: phone, // you'd collect from form refs or state
+          email: email,
+        },
+        shipping: {
+          firstName: fname,
+          lastName: lname,
+          address1: address1,
+          city: city,
+          country: country,
+          state: state,
+          postal: postal,
+        },
+        payment: { last4: "4242" },
+        items: cartItem, // from Redux
+        subtotal,
+        shippingCost: 5.0,
+        tax: taxtotal,
+        total: ordertotal,
+        estimatedDelivery: "March 15, 2025",
+      };
+      await submitOrder(Order);
       toast("You submitted the following values:", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
@@ -48,30 +96,55 @@ const CheckoutInfo = () => {
           "--border-radius": "calc(var(--radius)  + 4px)",
         } as React.CSSProperties,
       });
+      console.log("Checkout form", value);
     },
   });
+  console.log("CartItem", cartItem);
+
   return (
-    <div className="flex flex-col gap-6">
+    <form
+      onSubmit={(e) => {
+        e.preventDefault();
+        form.handleSubmit();
+      }}
+      className="flex flex-col gap-6"
+    >
       {/* Contact Info */}
       <Card className="w-full">
         <CardHeader className="border-b">
           <CardTitle className="text-gray-600">CONTACT INFO</CardTitle>
         </CardHeader>
         <CardContent>
-          <form>
-            <div className="w-full flex flex-row gap-6">
-              <div className="flex-1 grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="phone">Your phone number</Label>
+          <div className="w-full flex flex-row gap-6">
+            <form.Field name="phone">
+              {(field) => (
+                <div className="flex-1 grid gap-2">
+                  <Label htmlFor={field.name}>Your phone number</Label>
+                  <Input
+                    id={field.name}
+                    type="text"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    required
+                  />
                 </div>
-                <Input id="phone" type="text" required />
-              </div>
-              <div className="flex-1 grid gap-2">
-                <Label htmlFor="email">Email address</Label>
-                <Input id="email" type="email" required />
-              </div>
-            </div>
-          </form>
+              )}
+            </form.Field>
+            <form.Field name="email">
+              {(field) => (
+                <div className="flex-1 grid gap-2">
+                  <Label htmlFor={field.name}>Email address</Label>
+                  <Input
+                    id={field.name}
+                    type="email"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    required
+                  />
+                </div>
+              )}
+            </form.Field>
+          </div>
         </CardContent>
       </Card>
 
@@ -81,68 +154,147 @@ const CheckoutInfo = () => {
           <CardTitle className="text-gray-600">SHIPPING ADDRESS</CardTitle>
         </CardHeader>
         <CardContent>
-          <form className="flex flex-col gap-4">
+          <div className="flex flex-col gap-4">
             <div className="w-full flex flex-row gap-4">
-              <div className="flex-1 grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="fname">First name</Label>
-                </div>
-                <Input id="fname" type="text" required />
-              </div>
-              <div className="flex-1 grid gap-2">
-                <Label htmlFor="lname">Last name</Label>
-                <Input id="lname" type="text" required />
-              </div>
+              <form.Field name="fname">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>First name</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="lname">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>Last name</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
 
             <div className="w-full flex flex-row gap-4">
-              <div className="w-[70%] flex-auto grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="address1">Address line 1</Label>
-                </div>
-                <Input id="address1" type="text" required />
-              </div>
-              <div className="w-[30%] flex-auto grid gap-2">
-                <Label htmlFor="apt">Apt, Suite</Label>
-                <Input id="apt" type="text" required />
-              </div>
+              <form.Field name="address1">
+                {(field) => (
+                  <div className="w-[70%] flex-auto grid gap-2">
+                    <Label htmlFor={field.name}>Address line 1</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="apt">
+                {(field) => (
+                  <div className="w-[30%] flex-auto grid gap-2">
+                    <Label htmlFor={field.name}>Apt, Suite</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
 
             <div className="w-full">
-              <div className="w-full flex-auto grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="address1">Address line 2</Label>
-                </div>
-                <Input id="address2" type="text" required />
-              </div>
+              <form.Field name="address2">
+                {(field) => (
+                  <div className="w-full flex-auto grid gap-2">
+                    <Label htmlFor={field.name}>Address line 2</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
 
             <div className="w-full flex flex-row gap-6">
-              <div className="flex-1 grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="city">City</Label>
-                </div>
-                <Input id="city" type="text" required />
-              </div>
-              <div className="flex-1 grid gap-2">
-                <Label htmlFor="country">Country</Label>
-                <Input id="country" type="text" required />
-              </div>
+              <form.Field name="city">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>City</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="country">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>Country</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
 
             <div className="w-full flex flex-row gap-6">
-              <div className="flex-1 grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="state">State/Province</Label>
-                </div>
-                <Input id="state" type="text" required />
-              </div>
-              <div className="flex-1 grid gap-2">
-                <Label htmlFor="postal">Postal code</Label>
-                <Input id="postal" type="text" required />
-              </div>
+              <form.Field name="state">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>State/Province</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="postal">
+                {(field) => (
+                  <div className="flex-1 grid gap-2">
+                    <Label htmlFor={field.name}>Postal code</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
-          </form>
+          </div>
         </CardContent>
       </Card>
 
@@ -152,34 +304,68 @@ const CheckoutInfo = () => {
           <CardTitle className="text-gray-600">PAYMENT</CardTitle>
         </CardHeader>
         <CardContent>
-          <form className="flex flex-col gap-4">
-            <div className="w-full grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="card">Card number</Label>
-              </div>
-              <Input id="card" type="text" required />
-            </div>
+          <div className="flex flex-col gap-4">
+            <form.Field name="card">
+              {(field) => (
+                <div className="w-full grid gap-2">
+                  <Label htmlFor={field.name}>Card number</Label>
+                  <Input
+                    id={field.name}
+                    type="text"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    required
+                  />
+                </div>
+              )}
+            </form.Field>
 
-            <div className="w-full grid gap-2">
-              <div className="flex items-center">
-                <Label htmlFor="nameCard">Name on the card</Label>
-              </div>
-              <Input id="nameCard" type="text" required />
-            </div>
+            <form.Field name="nameCard">
+              {(field) => (
+                <div className="w-full grid gap-2">
+                  <Label htmlFor={field.name}>Name on the card</Label>
+                  <Input
+                    id={field.name}
+                    type="text"
+                    value={field.state.value}
+                    onChange={(e) => field.handleChange(e.target.value)}
+                    required
+                  />
+                </div>
+              )}
+            </form.Field>
 
             <div className="w-full flex flex-row gap-4">
-              <div className="w-[70%] flex-auto grid gap-2">
-                <div className="flex items-center">
-                  <Label htmlFor="exp_date">Expiration date (MM/YY)</Label>
-                </div>
-                <Input id="exp_date" type="text" required />
-              </div>
-              <div className="w-[30%] flex-auto grid gap-2">
-                <Label htmlFor="cvc">CVC</Label>
-                <Input id="cvc" type="text" required />
-              </div>
+              <form.Field name="exp_date">
+                {(field) => (
+                  <div className="w-[70%] flex-auto grid gap-2">
+                    <Label htmlFor={field.name}>Expiration date (MM/YY)</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
+              <form.Field name="cvc">
+                {(field) => (
+                  <div className="w-[30%] flex-auto grid gap-2">
+                    <Label htmlFor={field.name}>CVC</Label>
+                    <Input
+                      id={field.name}
+                      type="text"
+                      value={field.state.value}
+                      onChange={(e) => field.handleChange(e.target.value)}
+                      required
+                    />
+                  </div>
+                )}
+              </form.Field>
             </div>
-          </form>
+          </div>
         </CardContent>
       </Card>
 
@@ -204,7 +390,7 @@ const CheckoutInfo = () => {
       <Button type="submit" className="w-full rounded-full mb-10">
         Confirm order
       </Button>
-    </div>
+    </form>
   );
 };
 

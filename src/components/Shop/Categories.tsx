@@ -21,9 +21,11 @@ import {
   setPriceValue,
   setSortValue,
 } from "@/features/shop/categorySlice";
+import { LoginSpinner } from "../ui/spinner";
 
 const Categories = () => {
   const [categories, setCategories] = useState<any>();
+  const [loader, setLoader] = useState(false);
   // const [priceValue, setPriceValue] = useState<number[]>([0.3]);
 
   const dispatch = useDispatch();
@@ -46,8 +48,10 @@ const Categories = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoader(true);
       const categoriesResult: any = await getCategories();
       setCategories(categoriesResult?.data);
+      setLoader(false);
     };
     fetchData();
   }, []);
@@ -61,13 +65,18 @@ const Categories = () => {
       <div>
         <FieldSet>
           <FieldLegend variant="legend">Categories</FieldLegend>
+          {loader && (
+            <div>
+              <LoginSpinner />
+            </div>
+          )}
           <FieldGroup className="gap-3">
             {categories?.map((category: any) => {
               const isChecked = selectedCategory?.includes(category?.id);
               return (
                 <Field key={category?.id} orientation="horizontal">
                   <Checkbox
-                    id="finder-pref-9k2-hard-disks-ljj-checkbox"
+                    id={`category-${category?.id}`}
                     name={category?.name}
                     checked={isChecked}
                     onCheckedChange={(checked) => {
@@ -79,7 +88,7 @@ const Categories = () => {
                     }}
                   />
                   <FieldLabel
-                    htmlFor="finder-pref-9k2-hard-disks-ljj-checkbox"
+                    htmlFor={`category-${category?.id}`}
                     className="font-normal"
                   >
                     {category?.name}
@@ -121,7 +130,7 @@ const Categories = () => {
         </div>
       </div>
       <Separator />
-      <div>
+      <div className="pb-6">
         <FieldLegend variant="legend">Sort order</FieldLegend>
         <div>
           <RadioGroup

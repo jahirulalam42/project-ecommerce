@@ -2,6 +2,7 @@ import React from "react";
 import DownHomeImage from "@/../public/images/down-home.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
+import Link from "next/link";
 
 const CollectionItems = () => {
   return (
@@ -23,7 +24,9 @@ const CollectionItems = () => {
         <p className="text-gray-600 font-semibold text-lg">
           Starting from: $59.99
         </p>
-        <Button className="rounded-3xl w-1/2">Shop Now</Button>
+        <Link href={"/shop"}>
+          <Button className="rounded-3xl w-1/2">Shop Now</Button>
+        </Link>
       </div>
     </div>
   );

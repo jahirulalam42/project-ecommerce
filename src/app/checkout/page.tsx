@@ -7,6 +7,7 @@ import { z } from "zod";
 import { Button } from "@/components/ui/button";
 import CheckoutInfo from "@/components/Checkout/CheckoutInfo";
 import OrderSummary from "@/components/Checkout/OrderSummary";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -16,9 +17,11 @@ const page = () => {
           Checkout
         </h2>
         <span>
-          <Button variant={"link"} size={"sm"}>
-            Homepage
-          </Button>{" "}
+          <Link href={"/"}>
+            <Button variant={"link"} size={"sm"}>
+              Homepage
+            </Button>{" "}
+          </Link>
           /{" "}
           <Button variant={"link"} size={"sm"}>
             Checkout

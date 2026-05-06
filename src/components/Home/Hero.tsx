@@ -21,6 +21,7 @@ import HeroImage from "@/../public/images/hero-image.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { CircleDollarSign, Globe, Recycle, Search, Truck } from "lucide-react";
+import Link from "next/link";
 
 const Hero = () => {
   const plugin = React.useRef(
@@ -106,12 +107,14 @@ const Hero = () => {
                     Exclusive collection <br />
                     for everyone
                   </h2>
-                  <Button className="rounded-2xl">
-                    Explore now{" "}
-                    <span>
-                      <Search strokeWidth={1.5} />
-                    </span>
-                  </Button>
+                  <Link href={"/shop"}>
+                    <Button className="rounded-2xl">
+                      Explore now{" "}
+                      <span>
+                        <Search strokeWidth={1.5} />
+                      </span>
+                    </Button>
+                  </Link>
                 </div>
               </CarouselItem>
             ))}

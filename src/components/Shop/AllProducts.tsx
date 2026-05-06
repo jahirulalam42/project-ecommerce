@@ -9,11 +9,14 @@ import {
   setMinPrice,
   setPriceValue,
 } from "@/features/shop/categorySlice";
+import { set } from "zod";
+import { ProductSpinner } from "../ui/spinner";
 
 const AllProducts = () => {
   const [product, setProduct] = useState<any>();
   const [categories, setCategories] = useState<any>();
   const [currentPage, setCurrentPage] = useState(1);
+  const [loader, setLoader] = useState(false);
   // const [minPrice, setMinPrice] = useState<any>(0);
   // const [maxPrice, setMaxPrice] = useState<any>(1000);
 
@@ -90,10 +93,12 @@ const AllProducts = () => {
 
   useEffect(() => {
     const fetchData = async () => {
+      setLoader(true);
       const result = await getProducts();
       const categoriesResult: any = await getCategories();
       setCategories(categoriesResult?.data);
       setProduct(result?.data);
+      setLoader(false);
     };
     fetchData();
   }, [itemsPerPage]);
@@ -107,6 +112,11 @@ const AllProducts = () => {
   // console.log("Result", product);
   return (
     <div>
+      {loader && (
+        <div className="h-[50vh] w-full flex justify-center items-center">
+          <ProductSpinner />
+        </div>
+      )}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
         {currentPageItems?.map((item: any, index: any) => (
           <ProductCard key={index} item={item} getCategory={getCategory} />

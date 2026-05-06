@@ -81,3 +81,22 @@ export async function loginUser({
     throw error;
   }
 }
+
+export async function submitOrder({ formData }: { formData: any }) {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_URL}/api/orders`,
+      formData,
+      {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      }
+    );
+    return response;
+    // console.log(response);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}

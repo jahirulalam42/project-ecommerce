@@ -14,6 +14,9 @@ export const categorySlice = createSlice({
     addSelectedCategory: (state, action: any) => {
       state.selectedCategory.push(action.payload);
     },
+    addSelectedCategoryFromExploring: (state, action: any) => {
+      state.selectedCategory = [action.payload];
+    },
     removeSelectedCategory: (state, action: any) => {
       state.selectedCategory = state.selectedCategory.filter(
         (item: any) => item !== action.payload
@@ -40,6 +43,7 @@ export const categorySlice = createSlice({
 // Action creators are generated for each case reducer function
 export const {
   addSelectedCategory,
+  addSelectedCategoryFromExploring,
   removeSelectedCategory,
   setPriceValue,
   setSortValue,

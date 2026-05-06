@@ -35,7 +35,7 @@ const OrderSummary = () => {
   const summaryProducts = useSelector(
     (state: any) => state.cart.summaryProducts
   );
-  console.log("CartProducts", cartProducts);
+  // console.log("CartProducts", cartProducts);
 
   useEffect(() => {
     dispatch(fetchCart());
@@ -139,11 +139,11 @@ const OrderSummary = () => {
             </div>
           </div>
         </CardContent>
-        <CardFooter className="flex-col gap-2 hidden md:block">
+        {/* <CardFooter className="flex-col gap-2 hidden md:block">
           <Button type="submit" className="w-full rounded-full">
             Confirm order
           </Button>
-        </CardFooter>
+        </CardFooter> */}
       </Card>
     </div>
   );
