@@ -23,7 +23,7 @@ export async function POST(request: Request) {
   const client = await clientPromise;
   const db = client.db("ecommerce_db");
 
-  await db.collection("orders").insertMany(body);
+  await db.collection("orders").insertOne(body);
 
   return new Response(
     JSON.stringify({ message: "You have successfully entered the orders" }),

@@ -1,7 +1,7 @@
 // app/order-confirmation/page.tsx
 "use client";
 
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -10,7 +10,16 @@ import { useSelector } from "react-redux";
 import { CheckCircle2 } from "lucide-react";
 
 const OrderConfirmationPage = () => {
-  const order = useSelector((state: any) => state.order?.currentOrder);
+  const [orderId, setOrderId] = useState<string | null>();
+
+  useEffect(() => {
+    const sessionOrder = sessionStorage.getItem("orderId");
+    setOrderId(sessionOrder);
+  }, []);
+
+  const order = null;
+
+  console.log("Current Order", orderId);
 
   //   if (!order) {
   //     return (

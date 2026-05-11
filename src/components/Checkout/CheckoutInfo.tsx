@@ -58,10 +58,11 @@ const CheckoutInfo = () => {
         postal,
       } = value;
       const Order = {
+        userId: session?.user?.id,
         orderId: "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
         date: new Date().toLocaleDateString(),
         contact: {
-          phone: phone, // you'd collect from form refs or state
+          phone: phone,
           email: email,
         },
         shipping: {
@@ -74,7 +75,7 @@ const CheckoutInfo = () => {
           postal: postal,
         },
         payment: { last4: "4242" },
-        items: cartItem, // from Redux
+        items: cartItem,
         subtotal,
         shippingCost: 5.0,
         tax: taxtotal,
@@ -82,6 +83,7 @@ const CheckoutInfo = () => {
         estimatedDelivery: "March 15, 2025",
       };
       await submitOrder(Order);
+      sessionStorage.setItem("orderId", Order?.orderId);
       toast("You submitted the following values:", {
         description: (
           <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">

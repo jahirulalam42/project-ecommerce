@@ -82,19 +82,28 @@ export async function loginUser({
   }
 }
 
-export async function submitOrder({ formData }: { formData: any }) {
+export async function submitOrder(orderData: any) {
   try {
     const response = await axios.post(
       `${process.env.NEXT_PUBLIC_URL}/api/orders`,
-      formData,
+      orderData,
       {
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
       }
     );
     return response;
-    // console.log(response);
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
+export async function getOrder(orderId: any) {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL}/api/orders/${orderId}`
+    );
+    return response;
   } catch (error) {
     console.error(error);
     throw error;
