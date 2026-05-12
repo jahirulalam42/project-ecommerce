@@ -109,3 +109,15 @@ export async function getOrder(orderId: any) {
     throw error;
   }
 }
+
+export async function getMyOrders(userId: any) {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL}/api/orders/user/${userId}`
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}

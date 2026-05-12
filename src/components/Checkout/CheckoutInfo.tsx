@@ -11,6 +11,7 @@ import { setCurrentOrder } from "@/features/order/orderSlice";
 import { useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
 import { submitOrder } from "@/lib/api";
+import { removeAllCartItem, removeCartItem } from "@/features/cart/cartSlice";
 
 const CheckoutInfo = () => {
   const { data: session } = useSession();
@@ -42,6 +43,7 @@ const CheckoutInfo = () => {
       nameCard: "",
       exp_date: "",
       cvc: "",
+      status: "",
     },
     onSubmit: async ({ value }) => {
       const {
@@ -56,6 +58,7 @@ const CheckoutInfo = () => {
         country,
         state,
         postal,
+        status,
       } = value;
       const Order = {
         userId: session?.user?.id,
@@ -81,27 +84,24 @@ const CheckoutInfo = () => {
         tax: taxtotal,
         total: ordertotal,
         estimatedDelivery: "March 15, 2025",
+        status: "pending",
       };
-      await submitOrder(Order);
-      sessionStorage.setItem("orderId", Order?.orderId);
-      toast("You submitted the following values:", {
-        description: (
-          <pre className="mt-2 w-[320px] overflow-x-auto rounded-md bg-code p-4 text-code-foreground">
-            <code>{JSON.stringify(value, null, 2)}</code>
-          </pre>
-        ),
-        position: "bottom-right",
-        classNames: {
-          content: "flex flex-col gap-2",
-        },
-        style: {
-          "--border-radius": "calc(var(--radius)  + 4px)",
-        } as React.CSSProperties,
-      });
-      console.log("Checkout form", value);
+      const orderResult = await submitOrder(Order);
+      if (orderResult.status === 200 || orderResult.status === 201) {
+        dispatch(removeAllCartItem());
+        router.push(`/order-confirmation`);
+        // console.log("Order Result", orderResult);
+        sessionStorage.setItem("orderId", Order?.orderId);
+        toast.success(orderResult?.data?.message, {
+          position: "top-right",
+          style: {
+            backgroundColor: "#4ade80",
+          } as React.CSSProperties,
+        });
+      }
     },
   });
-  console.log("CartItem", cartItem);
+  // console.log("CartItem", cartItem);
 
   return (
     <form

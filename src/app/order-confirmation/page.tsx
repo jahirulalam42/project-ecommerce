@@ -1,36 +1,58 @@
 // app/order-confirmation/page.tsx
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
 import { useSelector } from "react-redux";
 import { CheckCircle2 } from "lucide-react";
+import { getOrder } from "@/lib/api";
+import { LoginSpinner } from "@/components/ui/spinner";
 
 const OrderConfirmationPage = () => {
-  const [orderId, setOrderId] = useState<string | null>();
+  const [order, setOrder] = useState<any>({});
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const sessionOrder = sessionStorage.getItem("orderId");
-    setOrderId(sessionOrder);
+
+    const fetchOrder = async () => {
+      if (sessionOrder) {
+        try {
+          const response = await getOrder(sessionOrder);
+          setOrder(response?.data);
+        } catch (error) {
+          console.error("Error fetching order:", error);
+        }
+      }
+      setLoading(false);
+    };
+
+    fetchOrder();
   }, []);
 
-  const order = null;
+  console.log("Current Order", order);
 
-  console.log("Current Order", orderId);
+  if (loading) {
+    return (
+      <div className="py-12 text-center">
+        <LoginSpinner className="mx-auto" />
+      </div>
+    );
+  }
 
-  //   if (!order) {
-  //     return (
-  //       <div className="py-12 text-center">
-  //         <p className="text-lg text-gray-500">No order found.</p>
-  //         <Link href="/">
-  //           <Button variant="link">Continue shopping</Button>
-  //         </Link>
-  //       </div>
-  //     );
-  //   }
+  if (Object.keys(order).length === 0 && loading === false) {
+    return (
+      <div className="py-12 text-center">
+        <p className="text-lg text-gray-500">No order found.</p>
+        <Link href="/">
+          <Button variant="link">Continue shopping</Button>
+        </Link>
+      </div>
+    );
+  }
 
   return (
     <div>
