@@ -125,7 +125,7 @@ const OrderDetailsPage = () => {
           >
             {getStatusIcon(order.status)}
             <span className="capitalize">
-              {order.status.replace(/_/g, " ")}
+              {order?.status?.replace(/_/g, " ")}
             </span>
           </span>
           <p className="text-sm text-gray-500">
@@ -235,12 +235,12 @@ const OrderDetailsPage = () => {
             Back to My Orders
           </Button>
         </Link>
-        <Link href={`/order-tracking?orderId=${order._id || order.orderId}`}>
+        <Link href={`/order-tracking?orderId=${order.orderId}`}>
           <Button className="rounded-full w-full sm:w-auto">Track Order</Button>
         </Link>
         {/* If status allows, add a Return/Exchange button */}
         {order.status === "delivered" && (
-          <Link href={`/return?orderId=${order._id || order.orderId}`}>
+          <Link href={`/return?orderId=${order.orderId}`}>
             <Button variant="outline" className="rounded-full w-full sm:w-auto">
               Return / Exchange
             </Button>

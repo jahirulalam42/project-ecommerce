@@ -121,3 +121,26 @@ export async function getMyOrders(userId: any) {
     throw error;
   }
 }
+
+export const createReturn = async (data: {
+  orderId: string;
+  items: string[];
+  type: string;
+  reason: string;
+  notes?: string;
+}) => {
+  try {
+    const response = await axios.post(
+      `${process.env.NEXT_PUBLIC_URL}/api/returns`,
+      data,
+      {
+        headers: { "Content-Type": "application/json" },
+        withCredentials: true,
+      }
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+};
