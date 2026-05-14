@@ -238,6 +238,11 @@ const OrderDetailsPage = () => {
         <Link href={`/order-tracking?orderId=${order.orderId}`}>
           <Button className="rounded-full w-full sm:w-auto">Track Order</Button>
         </Link>
+        <Link href={`/invoice?orderId=${order.orderId}`}>
+          <Button variant="outline" className="rounded-full w-full sm:w-auto">
+            View Invoice
+          </Button>
+        </Link>
         {/* If status allows, add a Return/Exchange button */}
         {order.status === "delivered" && (
           <Link href={`/return?orderId=${order.orderId}`}>

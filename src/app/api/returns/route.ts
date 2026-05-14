@@ -11,29 +11,30 @@ export async function POST(req: NextRequest) {
 
   try {
     const client = await clientPromise;
-    const db = client.db();
+    const db = client.db("ecommerce_db");
 
     const body = await req.json();
     const { orderId, items, type, reason, notes } = body;
 
-    // 2. Basic validation
-    // if (
-    //   !orderId ||
-    //   !items ||
-    //   !Array.isArray(items) ||
-    //   items.length === 0 ||
-    //   !type ||
-    //   !reason
-    // ) {
-    //   return NextResponse.json(
-    //     {
-    //       message:
-    //         "Missing required fields. Order ID, items, type, and reason are required.",
-    //     },
-    //     { status: 400 }
-    //   );
-    // }
+    // 1. Basic validation (uncommented and improved)
+    if (
+      !orderId ||
+      !items ||
+      !Array.isArray(items) ||
+      items.length === 0 ||
+      !type ||
+      !reason
+    ) {
+      return NextResponse.json(
+        {
+          message:
+            "Missing required fields. Order ID, items, type, and reason are required.",
+        },
+        { status: 400 }
+      );
+    }
 
+    // 2. Validate return type
     if (!["refund", "exchange"].includes(type)) {
       return NextResponse.json(
         { message: "Invalid return type. Must be 'refund' or 'exchange'." },
@@ -41,32 +42,22 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 3. Convert orderId to ObjectId
-    // let orderObjectId: ObjectId;
-    // try {
-    //   orderObjectId = new ObjectId(orderId);
-    // } catch {
-    //   return NextResponse.json(
-    //     { message: "Invalid order ID format." },
-    //     { status: 400 }
-    //   );
-    // }
-
     const ordersCollection = db.collection("orders");
 
-    // 4. Find the order and verify ownership
+    // 3. Find the order using the string orderId field
     const order = await ordersCollection.findOne({
       orderId: orderId,
-      //   userId: session.user.id, // string comparison – ensure userId is stored as string
+      userId: session.user.id,
     });
 
     if (!order) {
       return NextResponse.json(
-        { message: "Order not found." },
+        { message: "Order not found or does not belong to you." },
         { status: 404 }
       );
     }
 
+    // 4. Check order status
     if (order.status !== "delivered") {
       return NextResponse.json(
         { message: "Returns can only be requested for delivered orders." },
@@ -75,7 +66,8 @@ export async function POST(req: NextRequest) {
     }
 
     // 5. Verify all requested items exist in the order
-    const orderItemIds = order.items.map((item: any) => item._id.toString());
+    //    Order items have an `_id` field (string, e.g., "69f715d5d9edfbdc17690d42")
+    const orderItemIds = order.items.map((item: any) => item._id);
     const invalidItems = items.filter(
       (itemId: string) => !orderItemIds.includes(itemId)
     );
@@ -87,24 +79,25 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 6. Build the return document
-    // const returnItems = items.map((itemId: string) => {
-    //   const orderItem = order.items.find(
-    //     (i: any) => i._id.toString() === itemId
-    //   );
-    //   return {
-    //     productId: orderItem.productId,
-    //     name: orderItem.name,
-    //     price: orderItem.discountPrice || orderItem.price,
-    //     reason,
-    //     itemId: orderItem._id,
-    //   };
-    // });
+    // 6. Build the return items array with full product info
+    const returnItems = items.map((itemId: string) => {
+      const orderItem = order.items.find((i: any) => i._id === itemId);
+      return {
+        productId: orderItem.id, // your numeric product id (field "id")
+        name: orderItem.name,
+        price: orderItem.discountPrice || orderItem.price,
+        reason: reason,
+        itemId: orderItem._id, // original item _id from order
+        quantity: orderItem.quantity, // optional, good to store
+        size: orderItem.size, // if applicable
+      };
+    });
 
+    // 7. Prepare the return document
     const returnDoc = {
       userId: session.user.id,
       orderId: orderId,
-      items: "test",
+      items: returnItems, // now an array, not "test"
       type,
       reason,
       notes: notes || "",
@@ -113,7 +106,7 @@ export async function POST(req: NextRequest) {
       updatedAt: new Date(),
     };
 
-    // 7. Insert into `returns` collection
+    // 8. Insert into `returns` collection
     const returnsCollection = db.collection("returns");
     const result = await returnsCollection.insertOne(returnDoc);
 
