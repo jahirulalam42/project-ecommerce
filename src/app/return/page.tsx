@@ -165,7 +165,7 @@ const ReturnExchangePage = () => {
         </span>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pb-6">
         {/* Left: Item selection */}
         <Card>
           <CardHeader className="border-b">

@@ -97,31 +97,44 @@ const Header = () => {
             <DropdownMenuTrigger asChild>
               <UserRound strokeWidth={1.5} />
             </DropdownMenuTrigger>
-            <DropdownMenuContent>
-              {/* <DropdownMenuGroup>
-                <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                <DropdownMenuItem>
-                  Profile
-                  <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+            {session === null ? (
+              <DropdownMenuContent>
+                <Link href={"/login"}>
+                  {" "}
+                  <DropdownMenuItem>
+                    Log In
+                    <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </Link>
+              </DropdownMenuContent>
+            ) : (
+              <DropdownMenuContent>
+                {/* <DropdownMenuGroup>
+                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                  <DropdownMenuItem>
+                    Profile
+                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Billing
+                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem>
+                    Settings
+                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
+                  </DropdownMenuItem>
+                </DropdownMenuGroup>
+                <DropdownMenuSeparator /> */}
+                <Link href={"/my-orders"}>
+                  {" "}
+                  <DropdownMenuItem>My Orders</DropdownMenuItem>
+                </Link>
+                <DropdownMenuItem onClick={handleLogout}>
+                  Log out
+                  <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Billing
-                  <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                </DropdownMenuItem>
-                <DropdownMenuItem>
-                  Settings
-                  <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                </DropdownMenuItem>
-              </DropdownMenuGroup>
-              <DropdownMenuSeparator /> */}
-              <DropdownMenuItem
-                onClick={handleLogout}
-                disabled={session ? false : true}
-              >
-                Log out
-                <DropdownMenuShortcut>⇧⌘Q</DropdownMenuShortcut>
-              </DropdownMenuItem>
-            </DropdownMenuContent>
+              </DropdownMenuContent>
+            )}
           </DropdownMenu>
           <div className="relative">
             <Drawer direction="right">

@@ -1,4 +1,5 @@
 "use client";
+
 import { Button } from "@/components/ui/button";
 import {
   FieldContent,
@@ -20,20 +21,25 @@ import z from "zod";
 const page = () => {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
-  const formSchema = z.object({
-    email: z
-      .string()
-      .min(5, "Bug title must be at least 5 characters.")
-      .max(32, "Bug title must be at most 32 characters."),
-    password: z
-      .string()
-      .min(6, "Password must be at least 6 characters.")
-      .max(20, "Password must be at most 20 characters."),
-    password_again: z
-      .string()
-      .min(6, "Description must be at least 20 characters.")
-      .max(20, "Description must be at most 100 characters."),
-  });
+
+  // Updated schema with password confirmation validation
+  const formSchema = z
+    .object({
+      email: z
+        .string()
+        .min(5, "Email must be at least 5 characters.")
+        .max(32, "Email must be at most 32 characters.")
+        .email("Please enter a valid email address."),
+      password: z
+        .string()
+        .min(6, "Password must be at least 6 characters.")
+        .max(20, "Password must be at most 20 characters."),
+      password_again: z.string(),
+    })
+    .refine((data) => data.password === data.password_again, {
+      message: "Passwords do not match.",
+      path: ["password_again"],
+    });
 
   const form = useForm({
     defaultValues: {
@@ -47,10 +53,11 @@ const page = () => {
     onSubmit: async ({ value }) => {
       setLoading(true);
       try {
-        const res = await registerUser(value);
+        // Only send email and password to the API
+        const { email, password } = value;
+        const res = await registerUser({ email, password });
         console.log("Register", res);
-        // ✅ Only success (201) reaches here
-        toast.success(res?.data.message, {
+        toast.success(res?.data?.message || "Registration successful!", {
           position: "top-right",
           style: {
             backgroundColor: "#4ade80",
@@ -59,10 +66,10 @@ const page = () => {
         router.push("/login");
       } catch (error: any) {
         const status = error.response?.status;
-        const message = error.response?.data.message;
+        const message = error.response?.data?.message;
 
         if (status === 409) {
-          toast.warning(message, {
+          toast.warning(message || "User already exists.", {
             position: "top-right",
             style: {
               backgroundColor: "yellow",
@@ -76,16 +83,18 @@ const page = () => {
             } as React.CSSProperties,
           });
         } else {
-          toast.error("Something went wrong");
+          toast.error(message || "Something went wrong");
         }
+      } finally {
+        setLoading(false);
       }
-      setLoading(false);
     },
   });
+
   return (
     <div className="w-full flex justify-center items-center">
       <div className="w-[440px] h-fit">
-        <h2 className="scroll-m-20  pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-center py-6">
+        <h2 className="scroll-m-20 pb-2 text-3xl font-semibold tracking-tight first:mt-0 text-center py-6">
           Register
         </h2>
         {loading && (
@@ -138,6 +147,7 @@ const page = () => {
                       <Input
                         id={field.name}
                         name={field.name}
+                        type="password"
                         value={field.state.value}
                         onBlur={field.handleBlur}
                         onChange={(e) => field.handleChange(e.target.value)}
@@ -165,6 +175,7 @@ const page = () => {
                       <Input
                         id={field.name}
                         name={field.name}
+                        type="password"
                         value={field.state.value}
                         onBlur={field.handleBlur}
                         onChange={(e) => field.handleChange(e.target.value)}
@@ -188,7 +199,7 @@ const page = () => {
             OR
           </div>
 
-          <div className="w-fulll flex flex-row justify-center gap-1 my-6">
+          <div className="w-full flex flex-row justify-center gap-1 my-6">
             <p className="text-sm text-muted-foreground">Already a member?</p>{" "}
             <span className="text-sm text-sky-600 hover:underline">
               <Link href={"/login"}>Login</Link>

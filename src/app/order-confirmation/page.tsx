@@ -205,10 +205,15 @@ const OrderConfirmationPage = () => {
       </div>
 
       {/* Call-to-action buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center pb-6">
         <Link href="/">
           <Button variant="outline" className="rounded-full w-full sm:w-auto">
             Continue Shopping
+          </Button>
+        </Link>
+        <Link href={`/invoice?orderId=${order.orderId}`}>
+          <Button className="rounded-full w-full sm:w-auto">
+            View Invoice
           </Button>
         </Link>
         <Link href="/order-tracking">

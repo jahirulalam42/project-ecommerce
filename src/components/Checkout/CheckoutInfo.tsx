@@ -13,6 +13,15 @@ import { useSession } from "next-auth/react";
 import { submitOrder } from "@/lib/api";
 import { removeAllCartItem, removeCartItem } from "@/features/cart/cartSlice";
 
+// Helper to format date as "Month Day, Year"
+const formatDeliveryDate = (date: Date) => {
+  return date.toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+  });
+};
+
 const CheckoutInfo = () => {
   const { data: session } = useSession();
   const subtotal = useSelector((state: any) => state.cart.subtotal);
@@ -60,6 +69,11 @@ const CheckoutInfo = () => {
         postal,
         status,
       } = value;
+
+      const deliveryDate = new Date();
+      deliveryDate.setDate(deliveryDate.getDate() + 7);
+      const estimatedDelivery = formatDeliveryDate(deliveryDate);
+
       const Order = {
         userId: session?.user?.id,
         orderId: "ORD-" + Math.random().toString(36).substr(2, 9).toUpperCase(),
@@ -83,7 +97,7 @@ const CheckoutInfo = () => {
         shippingCost: 5.0,
         tax: taxtotal,
         total: ordertotal,
-        estimatedDelivery: "March 15, 2025",
+        estimatedDelivery,
         status: "pending",
       };
       const orderResult = await submitOrder(Order);
@@ -344,7 +358,7 @@ const CheckoutInfo = () => {
                     <Label htmlFor={field.name}>Expiration date (MM/YY)</Label>
                     <Input
                       id={field.name}
-                      type="text"
+                      type="date"
                       value={field.state.value}
                       onChange={(e) => field.handleChange(e.target.value)}
                       required

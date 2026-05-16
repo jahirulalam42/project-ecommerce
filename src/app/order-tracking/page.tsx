@@ -227,7 +227,7 @@ const OrderTrackingPage = () => {
       </div>
 
       {/* Action buttons */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center pb-6">
         <Link href="/order-confirmation">
           <Button variant="outline" className="rounded-full w-full sm:w-auto">
             Back to Confirmation

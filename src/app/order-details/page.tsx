@@ -229,7 +229,7 @@ const OrderDetailsPage = () => {
       </div>
 
       {/* Actions */}
-      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center">
+      <div className="flex flex-col sm:flex-row gap-4 mt-8 justify-center pb-6">
         <Link href="/my-orders">
           <Button variant="outline" className="rounded-full w-full sm:w-auto">
             Back to My Orders
@@ -239,14 +239,14 @@ const OrderDetailsPage = () => {
           <Button className="rounded-full w-full sm:w-auto">Track Order</Button>
         </Link>
         <Link href={`/invoice?orderId=${order.orderId}`}>
-          <Button variant="outline" className="rounded-full w-full sm:w-auto">
+          <Button className="rounded-full w-full sm:w-auto">
             View Invoice
           </Button>
         </Link>
         {/* If status allows, add a Return/Exchange button */}
         {order.status === "delivered" && (
           <Link href={`/return?orderId=${order.orderId}`}>
-            <Button variant="outline" className="rounded-full w-full sm:w-auto">
+            <Button className="rounded-full w-full sm:w-auto">
               Return / Exchange
             </Button>
           </Link>
