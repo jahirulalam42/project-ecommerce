@@ -72,6 +72,10 @@ const AllProducts = () => {
   }, [product, selectedCategory, priceValue, sortValue]);
 
   useEffect(() => {
+    setCurrentPage(1);
+  }, [selectedCategory, priceValue, sortValue]);
+
+  useEffect(() => {
     if (!filteredProducts.length) return;
 
     const min: any = Math.min(...filteredProducts.map((p: any) => p.price));
