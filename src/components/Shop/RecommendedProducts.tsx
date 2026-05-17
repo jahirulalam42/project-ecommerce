@@ -13,7 +13,7 @@ import {
 import { Star } from "lucide-react";
 import ProductCard from "../common/ProductCard";
 
-const RecommendedProducts = async () => {
+const RecommendedProducts = async ({ relatedProducts }: any) => {
   const result = await getProducts();
   const categories: any = await getCategories();
 
@@ -24,11 +24,13 @@ const RecommendedProducts = async () => {
     return category?.name || "Unknown";
   };
 
-  const recommendedResult = result?.data.map((item: any) => {return(
-    {
-      const result = result?.data.find((p: any) => p.id === item.id);
-    }
-  )});
+  const recommendedResult = relatedProducts.map((item: any) => {
+    const updatedResult = result?.data.find((p: any) => p.id === item);
+
+    return updatedResult;
+  });
+
+  console.log("Recommended result", recommendedResult);
 
   // console.log("Products", categories);
   return (
@@ -37,7 +39,7 @@ const RecommendedProducts = async () => {
       <div className="flex flex-row">
         <Carousel className="w-full">
           <CarouselContent className="gap-1 md:gap-2 lg:gap-4 xl:gap-6">
-            {result?.data.slice(0, 10).map((item: any, index: any) => (
+            {recommendedResult.map((item: any, index: any) => (
               <CarouselItem
                 key={index}
                 className="basis-1/1 pl-1 md:basis-1/2 lg:basis-1/3 xl:basis-1/4"

@@ -163,7 +163,7 @@
       "sales": 85,
       "createdAt": "2025-04-01T10:00:00Z",
       "views": 2400,
-      "relatedProductIds": [27, 34, 20, 44, 45]
+      "relatedProductIds": [50, 57, 64, 44, 45]
     },
     {
       "id": 44,
@@ -187,7 +187,7 @@
       "sales": 145,
       "createdAt": "2025-04-02T11:30:00Z",
       "views": 2800,
-      "relatedProductIds": [21, 28, 42, 45, 46]
+      "relatedProductIds": [51, 58, 65, 45, 46]
     },
     {
       "id": 45,
@@ -211,7 +211,7 @@
       "sales": 410,
       "createdAt": "2025-04-03T09:15:00Z",
       "views": 3500,
-      "relatedProductIds": [22, 29, 36, 46, 47]
+      "relatedProductIds": [52, 59, 66, 46, 47]
     },
     {
       "id": 46,
@@ -235,7 +235,7 @@
       "sales": 320,
       "createdAt": "2025-04-04T14:20:00Z",
       "views": 2900,
-      "relatedProductIds": [16, 23, 37, 47, 48]
+      "relatedProductIds": [53, 60, 67, 47, 48]
     },
     {
       "id": 47,
@@ -259,7 +259,7 @@
       "sales": 480,
       "createdAt": "2025-04-05T12:00:00Z",
       "views": 3100,
-      "relatedProductIds": [24, 31, 38, 48, 49]
+      "relatedProductIds": [54, 61, 68, 48, 49]
     },
     {
       "id": 48,
@@ -283,7 +283,7 @@
       "sales": 95,
       "createdAt": "2025-04-06T15:30:00Z",
       "views": 1800,
-      "relatedProductIds": [25, 39, 44, 49, 50]
+      "relatedProductIds": [55, 62, 69, 49, 50]
     },
     {
       "id": 49,
@@ -307,7 +307,7 @@
       "sales": 210,
       "createdAt": "2025-04-07T08:45:00Z",
       "views": 2200,
-      "relatedProductIds": [26, 33, 40, 50, 51]
+      "relatedProductIds": [56, 63, 70, 50, 51]
     },
     {
       "id": 50,
@@ -331,7 +331,7 @@
       "sales": 290,
       "createdAt": "2025-04-08T10:15:00Z",
       "views": 3200,
-      "relatedProductIds": [13, 34, 41, 51, 52]
+      "relatedProductIds": [43, 57, 71, 51, 52]
     },
     {
       "id": 51,
@@ -355,7 +355,7 @@
       "sales": 65,
       "createdAt": "2025-04-09T13:45:00Z",
       "views": 1600,
-      "relatedProductIds": [14, 42, 44, 52, 53]
+      "relatedProductIds": [58, 65, 44, 52, 53]
     },
     {
       "id": 52,
@@ -379,7 +379,7 @@
       "sales": 180,
       "createdAt": "2025-04-10T09:30:00Z",
       "views": 1400,
-      "relatedProductIds": [15, 36, 45, 53, 54]
+      "relatedProductIds": [59, 66, 45, 53, 54]
     },
     {
       "id": 53,
@@ -403,7 +403,7 @@
       "sales": 140,
       "createdAt": "2025-04-11T16:20:00Z",
       "views": 2500,
-      "relatedProductIds": [16, 30, 46, 54, 55]
+      "relatedProductIds": [60, 67, 46, 54, 55]
     },
     {
       "id": 54,
@@ -427,7 +427,7 @@
       "sales": 390,
       "createdAt": "2025-04-12T10:00:00Z",
       "views": 2600,
-      "relatedProductIds": [17, 24, 47, 55, 56]
+      "relatedProductIds": [61, 68, 47, 55, 56]
     },
     {
       "id": 55,
@@ -451,7 +451,7 @@
       "sales": 120,
       "createdAt": "2025-04-13T12:30:00Z",
       "views": 1900,
-      "relatedProductIds": [18, 32, 39, 56, 57]
+      "relatedProductIds": [48, 62, 69, 56, 57]
     },
     {
       "id": 56,
@@ -475,7 +475,7 @@
       "sales": 450,
       "createdAt": "2025-04-14T15:15:00Z",
       "views": 3400,
-      "relatedProductIds": [26, 40, 49, 57, 58]
+      "relatedProductIds": [63, 70, 49, 57, 58]
     },
     {
       "id": 57,
@@ -499,7 +499,7 @@
       "sales": 175,
       "createdAt": "2025-04-15T09:45:00Z",
       "views": 2100,
-      "relatedProductIds": [20, 41, 50, 58, 59]
+      "relatedProductIds": [43, 64, 50, 58, 59]
     },
     {
       "id": 58,
@@ -523,7 +523,7 @@
       "sales": 95,
       "createdAt": "2025-04-16T11:00:00Z",
       "views": 1500,
-      "relatedProductIds": [21, 28, 51, 59, 60]
+      "relatedProductIds": [44, 65, 51, 59, 60]
     },
     {
       "id": 59,
@@ -547,7 +547,7 @@
       "sales": 120,
       "createdAt": "2025-04-17T14:30:00Z",
       "views": 1800,
-      "relatedProductIds": [22, 45, 52, 60, 61]
+      "relatedProductIds": [66, 45, 52, 60, 61]
     },
     {
       "id": 60,
@@ -571,7 +571,7 @@
       "sales": 110,
       "createdAt": "2025-04-18T16:15:00Z",
       "views": 1300,
-      "relatedProductIds": [23, 46, 53, 61, 62]
+      "relatedProductIds": [67, 46, 53, 61, 62]
     },
     {
       "id": 61,
@@ -595,7 +595,7 @@
       "sales": 260,
       "createdAt": "2025-04-19T09:00:00Z",
       "views": 2200,
-      "relatedProductIds": [31, 47, 54, 62, 63]
+      "relatedProductIds": [68, 47, 54, 62, 63]
     },
     {
       "id": 62,
@@ -619,7 +619,7 @@
       "sales": 310,
       "createdAt": "2025-04-20T10:45:00Z",
       "views": 2700,
-      "relatedProductIds": [39, 48, 55, 63, 64]
+      "relatedProductIds": [69, 48, 55, 63, 64]
     },
     {
       "id": 63,
@@ -643,7 +643,7 @@
       "sales": 180,
       "createdAt": "2025-04-21T12:30:00Z",
       "views": 1700,
-      "relatedProductIds": [49, 56, 40, 64, 65]
+      "relatedProductIds": [49, 56, 70, 64, 65]
     },
     {
       "id": 64,
@@ -667,7 +667,7 @@
       "sales": 160,
       "createdAt": "2025-04-22T15:00:00Z",
       "views": 1900,
-      "relatedProductIds": [13, 34, 43, 65, 66]
+      "relatedProductIds": [50, 71, 43, 65, 66]
     },
     {
       "id": 65,
@@ -691,7 +691,7 @@
       "sales": 85,
       "createdAt": "2025-04-23T09:20:00Z",
       "views": 1200,
-      "relatedProductIds": [35, 42, 51, 66, 67]
+      "relatedProductIds": [44, 72, 51, 66, 67]
     },
     {
       "id": 66,
@@ -715,7 +715,7 @@
       "sales": 220,
       "createdAt": "2025-04-24T11:45:00Z",
       "views": 2400,
-      "relatedProductIds": [29, 45, 59, 67, 68]
+      "relatedProductIds": [52, 45, 59, 67, 68]
     },
     {
       "id": 67,
@@ -739,7 +739,7 @@
       "sales": 95,
       "createdAt": "2025-04-25T14:10:00Z",
       "views": 2100,
-      "relatedProductIds": [30, 53, 60, 68, 69]
+      "relatedProductIds": [46, 53, 60, 68, 69]
     },
     {
       "id": 68,
@@ -763,7 +763,7 @@
       "sales": 190,
       "createdAt": "2025-04-26T16:30:00Z",
       "views": 2000,
-      "relatedProductIds": [31, 47, 61, 69, 70]
+      "relatedProductIds": [54, 47, 61, 69, 70]
     },
     {
       "id": 69,
@@ -787,7 +787,7 @@
       "sales": 110,
       "createdAt": "2025-04-27T09:15:00Z",
       "views": 2300,
-      "relatedProductIds": [32, 55, 62, 70, 71]
+      "relatedProductIds": [48, 55, 62, 70, 71]
     },
     {
       "id": 70,
@@ -835,7 +835,7 @@
       "sales": 130,
       "createdAt": "2025-04-29T13:30:00Z",
       "views": 1800,
-      "relatedProductIds": [27, 50, 64, 72, 43]
+      "relatedProductIds": [57, 50, 64, 72, 43]
     },
     {
       "id": 72,
@@ -859,7 +859,7 @@
       "sales": 75,
       "createdAt": "2025-04-30T15:45:00Z",
       "views": 1400,
-      "relatedProductIds": [35, 51, 65, 43, 44]
+      "relatedProductIds": [58, 51, 65, 43, 44]
     }
   ],
   "reviews": [

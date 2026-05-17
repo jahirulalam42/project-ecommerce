@@ -1,6 +1,7 @@
 import Recommendations from "@/components/Home/Recommendations";
 import ProductCart from "@/components/Shop/ProductCart";
 import ProductDescription from "@/components/Shop/ProductDescription";
+import RecommendedProducts from "@/components/Shop/RecommendedProducts";
 import { getSingleProduct } from "@/lib/api";
 import React from "react";
 
@@ -10,7 +11,7 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
   const result = await getSingleProduct(id);
   const product = result?.data;
 
-  // console.log("Single Products", result);
+  console.log("Single Products", product?.relatedProductIds);
 
   return (
     <div>
@@ -35,6 +36,8 @@ const page = async ({ params }: { params: Promise<{ id: string }> }) => {
           />
         </div>
       </div>
+
+      <RecommendedProducts relatedProducts={product?.relatedProductIds} />
     </div>
   );
 };
