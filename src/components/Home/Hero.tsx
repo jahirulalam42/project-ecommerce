@@ -22,8 +22,11 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { CircleDollarSign, Globe, Recycle, Search, Truck } from "lucide-react";
 import Link from "next/link";
+import { useDispatch } from "react-redux";
+import { removeAllSelectedCategory } from "@/features/shop/categorySlice";
 
 const Hero = () => {
+  const dispatch = useDispatch();
   const plugin = React.useRef(
     Autoplay({ delay: 2000, stopOnInteraction: true })
   );
@@ -108,7 +111,12 @@ const Hero = () => {
                     for everyone
                   </h2>
                   <Link href={"/shop"}>
-                    <Button className="rounded-2xl">
+                    <Button
+                      className="rounded-2xl"
+                      onClick={() => {
+                        dispatch(removeAllSelectedCategory());
+                      }}
+                    >
                       Explore now{" "}
                       <span>
                         <Search strokeWidth={1.5} />

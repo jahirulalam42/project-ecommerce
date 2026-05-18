@@ -149,7 +149,7 @@
       "discountPrice": 199.99,
       "images": [
         "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500",
-        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500",
+        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=500",
         "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?w=500",
         "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500"
       ],
@@ -163,7 +163,7 @@
       "sales": 85,
       "createdAt": "2025-04-01T10:00:00Z",
       "views": 2400,
-      "relatedProductIds": [50, 57, 64, 44, 45]
+      "relatedProductIds": [50, 57, 64, 71, 73]
     },
     {
       "id": 44,
@@ -173,9 +173,9 @@
       "discountPrice": 54.99,
       "images": [
         "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=500",
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500",
-        "https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?w=500",
-        "https://images.unsplash.com/photo-1595777457583-95e059d581b8?w=500"
+        "https://images.unsplash.com/photo-1558171813-4c088753af8f?w=500",
+        "https://images.unsplash.com/photo-1612336307429-8a898d10e223?w=500",
+        "https://images.unsplash.com/photo-1572804013429-31ce5c7461f2?w=500"
       ],
       "categoryId": 2,
       "shopId": 2,
@@ -187,7 +187,7 @@
       "sales": 145,
       "createdAt": "2025-04-02T11:30:00Z",
       "views": 2800,
-      "relatedProductIds": [51, 58, 65, 45, 46]
+      "relatedProductIds": [51, 58, 65, 72, 76]
     },
     {
       "id": 45,
@@ -199,7 +199,7 @@
         "https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=500",
         "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500",
         "https://images.unsplash.com/photo-1515488045131-2be6a2379b30?w=500",
-        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"
+        "https://images.unsplash.com/photo-15893910a8230-7bdff8db0625?w=500"
       ],
       "categoryId": 3,
       "shopId": 4,
@@ -211,7 +211,7 @@
       "sales": 410,
       "createdAt": "2025-04-03T09:15:00Z",
       "views": 3500,
-      "relatedProductIds": [52, 59, 66, 46, 47]
+      "relatedProductIds": [52, 59, 66, 79, 80]
     },
     {
       "id": 46,
@@ -223,7 +223,7 @@
         "https://images.unsplash.com/photo-1572635196237-14b3f281503f?w=500",
         "https://images.unsplash.com/photo-1511499767150-a48a237f0083?w=500",
         "https://images.unsplash.com/photo-1577803645773-f96470509666?w=500",
-        "https://images.unsplash.com/photo-1473496169904-658ba7c44d8a?w=500"
+        "https://images.unsplash.com/photo-1574258495973-f010dfbb5371?w=500"
       ],
       "categoryId": 4,
       "shopId": 5,
@@ -235,7 +235,7 @@
       "sales": 320,
       "createdAt": "2025-04-04T14:20:00Z",
       "views": 2900,
-      "relatedProductIds": [53, 60, 67, 47, 48]
+      "relatedProductIds": [53, 60, 67, 82, 83]
     },
     {
       "id": 47,
@@ -259,7 +259,7 @@
       "sales": 480,
       "createdAt": "2025-04-05T12:00:00Z",
       "views": 3100,
-      "relatedProductIds": [54, 61, 68, 48, 49]
+      "relatedProductIds": [54, 61, 68, 85, 86]
     },
     {
       "id": 48,
@@ -270,7 +270,7 @@
       "images": [
         "https://images.unsplash.com/photo-1543163521-1bf539c55dd2?w=500",
         "https://images.unsplash.com/photo-1515347619252-60a4bf4fff4f?w=500",
-        "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500",
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d77?w=500",
         "https://images.unsplash.com/photo-1560343090-f0409e92791a?w=500"
       ],
       "categoryId": 6,
@@ -283,7 +283,7 @@
       "sales": 95,
       "createdAt": "2025-04-06T15:30:00Z",
       "views": 1800,
-      "relatedProductIds": [55, 62, 69, 49, 50]
+      "relatedProductIds": [55, 62, 69, 88, 89]
     },
     {
       "id": 49,
@@ -307,7 +307,7 @@
       "sales": 210,
       "createdAt": "2025-04-07T08:45:00Z",
       "views": 2200,
-      "relatedProductIds": [56, 63, 70, 50, 51]
+      "relatedProductIds": [56, 63, 70, 91, 92]
     },
     {
       "id": 50,
@@ -319,7 +319,7 @@
         "https://images.unsplash.com/photo-1556821840-3a63f95609a7?w=500",
         "https://images.unsplash.com/photo-1578768079470-9e3fda1fdf1f?w=500",
         "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?w=500",
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500"
+        "https://images.unsplash.com/photo-1618354691438-25bc04584c23?w=500"
       ],
       "categoryId": 1,
       "shopId": 1,
@@ -331,7 +331,7 @@
       "sales": 290,
       "createdAt": "2025-04-08T10:15:00Z",
       "views": 3200,
-      "relatedProductIds": [43, 57, 71, 51, 52]
+      "relatedProductIds": [43, 57, 64, 71, 74]
     },
     {
       "id": 51,
@@ -340,7 +340,7 @@
       "price": 89.99,
       "discountPrice": 74.99,
       "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
+        "https://images.unsplash.com/photo-1594039663886-6a0e6e5c7be2?w=500",
         "https://images.unsplash.com/photo-1548624313-0396c75e4b1a?w=500",
         "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
         "https://images.unsplash.com/photo-1551163428-1d8e8ef5e0c8?w=500"
@@ -355,7 +355,7 @@
       "sales": 65,
       "createdAt": "2025-04-09T13:45:00Z",
       "views": 1600,
-      "relatedProductIds": [58, 65, 44, 52, 53]
+      "relatedProductIds": [44, 58, 65, 72, 77]
     },
     {
       "id": 52,
@@ -379,7 +379,7 @@
       "sales": 180,
       "createdAt": "2025-04-10T09:30:00Z",
       "views": 1400,
-      "relatedProductIds": [59, 66, 45, 53, 54]
+      "relatedProductIds": [45, 59, 66, 79, 81]
     },
     {
       "id": 53,
@@ -391,7 +391,7 @@
         "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500",
         "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500",
         "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=500",
-        "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=500"
+        "https://images.unsplash.com/photo-1509048191080-d2984bad6ae5?w=500"
       ],
       "categoryId": 4,
       "shopId": 5,
@@ -403,7 +403,7 @@
       "sales": 140,
       "createdAt": "2025-04-11T16:20:00Z",
       "views": 2500,
-      "relatedProductIds": [60, 67, 46, 54, 55]
+      "relatedProductIds": [46, 60, 67, 82, 84]
     },
     {
       "id": 54,
@@ -427,7 +427,7 @@
       "sales": 390,
       "createdAt": "2025-04-12T10:00:00Z",
       "views": 2600,
-      "relatedProductIds": [61, 68, 47, 55, 56]
+      "relatedProductIds": [47, 61, 68, 85, 87]
     },
     {
       "id": 55,
@@ -438,8 +438,8 @@
       "images": [
         "https://images.unsplash.com/photo-1582897085656-c636d006a246?w=500",
         "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=500",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
-        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500"
+        "https://images.unsplash.com/photo-1614252235316-8c857d37b8de?w=500",
+        "https://images.unsplash.com/photo-1595950653106-6c9ebd614d77?w=500"
       ],
       "categoryId": 6,
       "shopId": 7,
@@ -451,7 +451,7 @@
       "sales": 120,
       "createdAt": "2025-04-13T12:30:00Z",
       "views": 1900,
-      "relatedProductIds": [48, 62, 69, 56, 57]
+      "relatedProductIds": [48, 62, 69, 88, 90]
     },
     {
       "id": 56,
@@ -475,7 +475,7 @@
       "sales": 450,
       "createdAt": "2025-04-14T15:15:00Z",
       "views": 3400,
-      "relatedProductIds": [63, 70, 49, 57, 58]
+      "relatedProductIds": [49, 63, 70, 91, 93]
     },
     {
       "id": 57,
@@ -499,7 +499,7 @@
       "sales": 175,
       "createdAt": "2025-04-15T09:45:00Z",
       "views": 2100,
-      "relatedProductIds": [43, 64, 50, 58, 59]
+      "relatedProductIds": [43, 50, 64, 71, 75]
     },
     {
       "id": 58,
@@ -508,8 +508,8 @@
       "price": 39.99,
       "discountPrice": 34.99,
       "images": [
-        "https://images.unsplash.com/photo-1509631179647-0177331693ae?w=500",
-        "https://images.unsplash.com/photo-1594938298603-c8148c4dae35?w=500",
+        "https://images.unsplash.com/photo-1594633312681-425c7b97ccd1?w=500",
+        "https://images.unsplash.com/photo-1551854838-212c50b4c184?w=500",
         "https://images.unsplash.com/photo-1551163428-1d8e8ef5e0c8?w=500",
         "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500"
       ],
@@ -523,7 +523,7 @@
       "sales": 95,
       "createdAt": "2025-04-16T11:00:00Z",
       "views": 1500,
-      "relatedProductIds": [44, 65, 51, 59, 60]
+      "relatedProductIds": [44, 51, 65, 72, 78]
     },
     {
       "id": 59,
@@ -547,7 +547,7 @@
       "sales": 120,
       "createdAt": "2025-04-17T14:30:00Z",
       "views": 1800,
-      "relatedProductIds": [66, 45, 52, 60, 61]
+      "relatedProductIds": [45, 52, 66, 80, 81]
     },
     {
       "id": 60,
@@ -571,7 +571,7 @@
       "sales": 110,
       "createdAt": "2025-04-18T16:15:00Z",
       "views": 1300,
-      "relatedProductIds": [67, 46, 53, 61, 62]
+      "relatedProductIds": [46, 53, 67, 83, 84]
     },
     {
       "id": 61,
@@ -595,7 +595,7 @@
       "sales": 260,
       "createdAt": "2025-04-19T09:00:00Z",
       "views": 2200,
-      "relatedProductIds": [68, 47, 54, 62, 63]
+      "relatedProductIds": [47, 54, 68, 86, 87]
     },
     {
       "id": 62,
@@ -619,7 +619,7 @@
       "sales": 310,
       "createdAt": "2025-04-20T10:45:00Z",
       "views": 2700,
-      "relatedProductIds": [69, 48, 55, 63, 64]
+      "relatedProductIds": [48, 55, 69, 89, 90]
     },
     {
       "id": 63,
@@ -643,7 +643,7 @@
       "sales": 180,
       "createdAt": "2025-04-21T12:30:00Z",
       "views": 1700,
-      "relatedProductIds": [49, 56, 70, 64, 65]
+      "relatedProductIds": [49, 56, 70, 92, 93]
     },
     {
       "id": 64,
@@ -667,7 +667,7 @@
       "sales": 160,
       "createdAt": "2025-04-22T15:00:00Z",
       "views": 1900,
-      "relatedProductIds": [50, 71, 43, 65, 66]
+      "relatedProductIds": [43, 50, 57, 71, 73]
     },
     {
       "id": 65,
@@ -676,7 +676,7 @@
       "price": 54.99,
       "discountPrice": 49.99,
       "images": [
-        "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?w=500",
+        "https://images.unsplash.com/photo-1611312449408-fcece27cdbb7?w=500",
         "https://images.unsplash.com/photo-1544923246-77307dd628b5?w=500",
         "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500",
         "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500"
@@ -691,7 +691,7 @@
       "sales": 85,
       "createdAt": "2025-04-23T09:20:00Z",
       "views": 1200,
-      "relatedProductIds": [44, 72, 51, 66, 67]
+      "relatedProductIds": [44, 51, 58, 72, 76]
     },
     {
       "id": 66,
@@ -715,7 +715,7 @@
       "sales": 220,
       "createdAt": "2025-04-24T11:45:00Z",
       "views": 2400,
-      "relatedProductIds": [52, 45, 59, 67, 68]
+      "relatedProductIds": [45, 52, 59, 79, 80]
     },
     {
       "id": 67,
@@ -739,7 +739,7 @@
       "sales": 95,
       "createdAt": "2025-04-25T14:10:00Z",
       "views": 2100,
-      "relatedProductIds": [46, 53, 60, 68, 69]
+      "relatedProductIds": [46, 53, 60, 82, 84]
     },
     {
       "id": 68,
@@ -763,7 +763,7 @@
       "sales": 190,
       "createdAt": "2025-04-26T16:30:00Z",
       "views": 2000,
-      "relatedProductIds": [54, 47, 61, 69, 70]
+      "relatedProductIds": [47, 54, 61, 85, 86]
     },
     {
       "id": 69,
@@ -775,7 +775,7 @@
         "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500",
         "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=500",
         "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500",
-        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500"
+        "https://images.unsplash.com/photo-1608211475887-246c5b9b5a51?w=500"
       ],
       "categoryId": 6,
       "shopId": 7,
@@ -787,7 +787,7 @@
       "sales": 110,
       "createdAt": "2025-04-27T09:15:00Z",
       "views": 2300,
-      "relatedProductIds": [48, 55, 62, 70, 71]
+      "relatedProductIds": [48, 55, 62, 88, 90]
     },
     {
       "id": 70,
@@ -811,7 +811,7 @@
       "sales": 560,
       "createdAt": "2025-04-28T11:00:00Z",
       "views": 3800,
-      "relatedProductIds": [49, 56, 63, 71, 72]
+      "relatedProductIds": [49, 56, 63, 91, 93]
     },
     {
       "id": 71,
@@ -835,7 +835,7 @@
       "sales": 130,
       "createdAt": "2025-04-29T13:30:00Z",
       "views": 1800,
-      "relatedProductIds": [57, 50, 64, 72, 43]
+      "relatedProductIds": [43, 50, 57, 64, 74]
     },
     {
       "id": 72,
@@ -847,7 +847,7 @@
         "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500",
         "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500",
         "https://images.unsplash.com/photo-1552374196-1ab2a45a05c8?w=500",
-        "https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?w=500"
+        "https://images.unsplash.com/photo-1603252111615-6c9b3c4e4d4a?w=500"
       ],
       "categoryId": 2,
       "shopId": 2,
@@ -859,7 +859,511 @@
       "sales": 75,
       "createdAt": "2025-04-30T15:45:00Z",
       "views": 1400,
-      "relatedProductIds": [58, 51, 65, 43, 44]
+      "relatedProductIds": [44, 51, 58, 65, 77]
+    },
+    {
+      "id": 73,
+      "name": "Classic Chino Pants",
+      "description": "Versatile straight-fit chino pants crafted from premium stretch cotton twill.",
+      "price": 54.99,
+      "discountPrice": 44.99,
+      "images": [
+        "https://images.unsplash.com/photo-1473966968600-fa801b869a1a?w=500",
+        "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=500",
+        "https://images.unsplash.com/photo-1591195853828-11db59a44f6b?w=500",
+        "https://images.unsplash.com/photo-1507680434567-5739c80be1ac?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "tax": 0.08,
+      "keywords": ["chino", "pants", "men", "casual"],
+      "sales": 200,
+      "createdAt": "2025-05-01T10:00:00Z",
+      "views": 2100,
+      "relatedProductIds": [43, 50, 57, 74, 75]
+    },
+    {
+      "id": 74,
+      "name": "Quilted Puffer Jacket",
+      "description": "Lightweight quilted puffer jacket with water-resistant shell and warm insulation.",
+      "price": 89.99,
+      "discountPrice": 74.99,
+      "images": [
+        "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=500",
+        "https://images.unsplash.com/photo-1544923246-77307dd628b5?w=500",
+        "https://images.unsplash.com/photo-1539533018447-63fcce2678e3?w=500",
+        "https://images.unsplash.com/photo-1576995853123-5a10305d93c0?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["S", "M", "L", "XL"],
+      "tax": 0.08,
+      "keywords": ["puffer", "jacket", "quilted", "men"],
+      "sales": 165,
+      "createdAt": "2025-05-02T11:30:00Z",
+      "views": 2400,
+      "relatedProductIds": [43, 50, 64, 71, 75]
+    },
+    {
+      "id": 75,
+      "name": "Polo Shirt",
+      "description": "Classic piqué polo shirt with ribbed collar and breathable cotton fabric.",
+      "price": 34.99,
+      "discountPrice": 29.99,
+      "images": [
+        "https://images.unsplash.com/photo-1625910513413-5fc421e0e2f0?w=500",
+        "https://images.unsplash.com/photo-1586363104862-3a5e2ab60d99?w=500",
+        "https://images.unsplash.com/photo-1581655353564-df123a1eb820?w=500",
+        "https://images.unsplash.com/photo-1598032895397-b9472444bf93?w=500"
+      ],
+      "categoryId": 1,
+      "shopId": 1,
+      "rating": 4.4,
+      "reviewCount": 5,
+      "sizes": ["S", "M", "L", "XL", "2XL"],
+      "tax": 0.08,
+      "keywords": ["polo", "shirt", "men", "casual"],
+      "sales": 230,
+      "createdAt": "2025-05-03T09:15:00Z",
+      "views": 1950,
+      "relatedProductIds": [43, 57, 64, 73, 74]
+    },
+    {
+      "id": 76,
+      "name": "Pleated Midi Skirt",
+      "description": "Elegant pleated midi skirt with a flattering high waist and flowing silhouette.",
+      "price": 49.99,
+      "discountPrice": 39.99,
+      "images": [
+        "https://images.unsplash.com/photo-1583496661160-fb5886a0aaaa?w=500",
+        "https://images.unsplash.com/photo-1590401974604-7c35f7081892?w=500",
+        "https://images.unsplash.com/photo-1577900232427-18219b9166a0?w=500",
+        "https://images.unsplash.com/photo-1617137968427-85924c800a22?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["skirt", "pleated", "midi", "women"],
+      "sales": 110,
+      "createdAt": "2025-05-04T14:20:00Z",
+      "views": 1700,
+      "relatedProductIds": [44, 51, 65, 77, 78]
+    },
+    {
+      "id": 77,
+      "name": "Cashmere Cardigan",
+      "description": "Luxuriously soft cashmere cardigan with pearl buttons and relaxed fit.",
+      "price": 119.99,
+      "discountPrice": 99.99,
+      "images": [
+        "https://images.unsplash.com/photo-1576566588028-4147f3842f27?w=500",
+        "https://images.unsplash.com/photo-1434389677669-e08b4cac3105?w=500",
+        "https://images.unsplash.com/photo-1552374196-1ab2a45a05c8?w=500",
+        "https://images.unsplash.com/photo-1544923246-77307dd628b5?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.8,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["cardigan", "cashmere", "women", "knitwear"],
+      "sales": 70,
+      "createdAt": "2025-05-05T12:00:00Z",
+      "views": 1300,
+      "relatedProductIds": [44, 51, 58, 76, 78]
+    },
+    {
+      "id": 78,
+      "name": "Silk Camisole Top",
+      "description": "Delicate silk camisole with lace trim, perfect for layering or wearing solo.",
+      "price": 44.99,
+      "discountPrice": 36.99,
+      "images": [
+        "https://images.unsplash.com/photo-1564257631407-4deb1f99d992?w=500",
+        "https://images.unsplash.com/photo-1604575396805-52c7e7e66eee?w=500",
+        "https://images.unsplash.com/photo-1585487000160-6ebcfceb0d44?w=500",
+        "https://images.unsplash.com/photo-1618354691438-25bc04584c23?w=500"
+      ],
+      "categoryId": 2,
+      "shopId": 2,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": ["XS", "S", "M", "L"],
+      "tax": 0.08,
+      "keywords": ["camisole", "silk", "lace", "women"],
+      "sales": 88,
+      "createdAt": "2025-05-06T15:30:00Z",
+      "views": 1550,
+      "relatedProductIds": [44, 51, 65, 76, 77]
+    },
+    {
+      "id": 79,
+      "name": "Action Figure Playset",
+      "description": "Articulated action figure set with accessories and themed play arena.",
+      "price": 27.99,
+      "discountPrice": 22.99,
+      "images": [
+        "https://images.unsplash.com/photo-1559454403-b8fb88521f11?w=500",
+        "https://images.unsplash.com/photo-1535572290543-960a8046f5af?w=500",
+        "https://images.unsplash.com/photo-1587654780291-39c9404d7dd0?w=500",
+        "https://images.unsplash.com/photo-1596461404969-9ae70f2830c1?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["action figure", "playset", "kids", "toy"],
+      "sales": 340,
+      "createdAt": "2025-05-07T08:45:00Z",
+      "views": 2800,
+      "relatedProductIds": [45, 52, 59, 66, 81]
+    },
+    {
+      "id": 80,
+      "name": "Art Supply Kit",
+      "description": "Complete 80-piece art supply kit with crayons, markers, colored pencils, and paper.",
+      "price": 29.99,
+      "discountPrice": 24.99,
+      "images": [
+        "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500",
+        "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500",
+        "https://images.unsplash.com/photo-1515488045131-2be6a2379b30?w=500",
+        "https://images.unsplash.com/photo-1560421683-6856ea585c78?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["art", "supplies", "creative", "kids"],
+      "sales": 290,
+      "createdAt": "2025-05-08T10:15:00Z",
+      "views": 2200,
+      "relatedProductIds": [45, 52, 59, 66, 81]
+    },
+    {
+      "id": 81,
+      "name": "Plush Teddy Bear",
+      "description": "Super soft 18-inch plush teddy bear made from hypoallergenic materials.",
+      "price": 19.99,
+      "discountPrice": 15.99,
+      "images": [
+        "https://images.unsplash.com/photo-1559715541-5daf8a0296d0?w=500",
+        "https://images.unsplash.com/photo-1541888787-bae7a2e7b096?w=500",
+        "https://images.unsplash.com/photo-1583121270074-59b6bc4b08d6?w=500",
+        "https://images.unsplash.com/photo-1594787318286-3d835c1d207f?w=500"
+      ],
+      "categoryId": 3,
+      "shopId": 4,
+      "rating": 4.8,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["teddy bear", "plush", "stuffed", "kids"],
+      "sales": 380,
+      "createdAt": "2025-05-09T13:45:00Z",
+      "views": 3100,
+      "relatedProductIds": [45, 52, 59, 66, 79]
+    },
+    {
+      "id": 82,
+      "name": "Leather Belt",
+      "description": "Handcrafted genuine leather belt with brushed metal buckle.",
+      "price": 39.99,
+      "discountPrice": 32.99,
+      "images": [
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+        "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500",
+        "https://images.unsplash.com/photo-1594534475808-8834023da3c2?w=500",
+        "https://images.unsplash.com/photo-1603252111615-6c9b3c4e4d4a?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": ["30", "32", "34", "36", "38"],
+      "tax": 0.08,
+      "keywords": ["belt", "leather", "accessories", "men"],
+      "sales": 175,
+      "createdAt": "2025-05-10T09:30:00Z",
+      "views": 1800,
+      "relatedProductIds": [46, 53, 60, 67, 83]
+    },
+    {
+      "id": 83,
+      "name": "Knit Beanie Hat",
+      "description": "Warm ribbed knit beanie hat made from soft acrylic yarn.",
+      "price": 14.99,
+      "discountPrice": 11.99,
+      "images": [
+        "https://images.unsplash.com/photo-1576871337632-b9aef4c17ab9?w=500",
+        "https://images.unsplash.com/photo-1510598969022-c4c6c5d05769?w=500",
+        "https://images.unsplash.com/photo-1517423738875-5ce310acd3da?w=500",
+        "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["beanie", "hat", "knit", "accessories"],
+      "sales": 260,
+      "createdAt": "2025-05-11T16:20:00Z",
+      "views": 2000,
+      "relatedProductIds": [46, 53, 60, 67, 84]
+    },
+    {
+      "id": 84,
+      "name": "Crossbody Bag",
+      "description": "Compact crossbody bag with adjustable strap and multiple compartments.",
+      "price": 49.99,
+      "discountPrice": 42.99,
+      "images": [
+        "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=500",
+        "https://images.unsplash.com/photo-1553062407-98eeb64c6a62?w=500",
+        "https://images.unsplash.com/photo-1624222247344-550fb60583dc?w=500",
+        "https://images.unsplash.com/photo-1603252111615-6c9b3c4e4d4a?w=500"
+      ],
+      "categoryId": 4,
+      "shopId": 5,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["crossbody", "bag", "accessories", "women"],
+      "sales": 145,
+      "createdAt": "2025-05-12T10:00:00Z",
+      "views": 1900,
+      "relatedProductIds": [46, 53, 60, 67, 82]
+    },
+    {
+      "id": 85,
+      "name": "Matte Foundation",
+      "description": "Full-coverage matte foundation with SPF 30, available in 20 shades.",
+      "price": 22.99,
+      "discountPrice": 18.99,
+      "images": [
+        "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500",
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",
+        "https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=500",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 6,
+      "rating": 4.4,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["foundation", "matte", "makeup", "SPF"],
+      "sales": 350,
+      "createdAt": "2025-05-13T12:30:00Z",
+      "views": 2700,
+      "relatedProductIds": [47, 54, 61, 68, 87]
+    },
+    {
+      "id": 86,
+      "name": "Smoky Eyeshadow Palette",
+      "description": "12-pan eyeshadow palette with matte and shimmer shades for smoky eye looks.",
+      "price": 32.99,
+      "discountPrice": 27.99,
+      "images": [
+        "https://images.unsplash.com/photo-1512496015851-a90fb38ba796?w=500",
+        "https://images.unsplash.com/photo-1596704017254-9b121068fb31?w=500",
+        "https://images.unsplash.com/photo-1591017403286-fd8493524e1e?w=500",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 6,
+      "rating": 4.6,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["eyeshadow", "palette", "smoky", "makeup"],
+      "sales": 220,
+      "createdAt": "2025-05-14T15:15:00Z",
+      "views": 2100,
+      "relatedProductIds": [47, 54, 61, 68, 87]
+    },
+    {
+      "id": 87,
+      "name": "Lip Gloss Set",
+      "description": "Set of 4 high-shine lip glosses with vitamin E and non-sticky formula.",
+      "price": 19.99,
+      "discountPrice": 15.99,
+      "images": [
+        "https://images.unsplash.com/photo-1586495777744-4413f21062fa?w=500",
+        "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=500",
+        "https://images.unsplash.com/photo-1583241800698-eab8ab01830a?w=500",
+        "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=500"
+      ],
+      "categoryId": 5,
+      "shopId": 6,
+      "rating": 4.4,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["lip gloss", "set", "shine", "cosmetics"],
+      "sales": 310,
+      "createdAt": "2025-05-15T09:45:00Z",
+      "views": 2300,
+      "relatedProductIds": [47, 54, 61, 68, 85]
+    },
+    {
+      "id": 88,
+      "name": "Running Sneakers",
+      "description": "Lightweight mesh running sneakers with responsive cushioning and arch support.",
+      "price": 94.99,
+      "discountPrice": 79.99,
+      "images": [
+        "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500",
+        "https://images.unsplash.com/photo-1606107557195-0e29a4b5b4aa?w=500",
+        "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500",
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 7,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["7", "8", "9", "10", "11", "12"],
+      "tax": 0.08,
+      "keywords": ["running", "sneakers", "athletic", "shoes"],
+      "sales": 275,
+      "createdAt": "2025-05-16T11:00:00Z",
+      "views": 3200,
+      "relatedProductIds": [48, 55, 62, 69, 89]
+    },
+    {
+      "id": 89,
+      "name": "Suede Ankle Boots",
+      "description": "Chic suede ankle boots with stacked heel and side zip closure.",
+      "price": 84.99,
+      "discountPrice": 69.99,
+      "images": [
+        "https://images.unsplash.com/photo-1608256246200-53e635b5b65f?w=500",
+        "https://images.unsplash.com/photo-1608211475887-246c5b9b5a51?w=500",
+        "https://images.unsplash.com/photo-1605812860427-4024433a70fd?w=500",
+        "https://images.unsplash.com/photo-1638247025967-b4e38f787b76?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 7,
+      "rating": 4.3,
+      "reviewCount": 5,
+      "sizes": ["6", "7", "8", "9", "10"],
+      "tax": 0.08,
+      "keywords": ["ankle boots", "suede", "women", "shoes"],
+      "sales": 98,
+      "createdAt": "2025-05-17T14:30:00Z",
+      "views": 1650,
+      "relatedProductIds": [48, 55, 62, 69, 90]
+    },
+    {
+      "id": 90,
+      "name": "Woven Espadrilles",
+      "description": "Breathable woven espadrilles with jute sole and canvas upper.",
+      "price": 34.99,
+      "discountPrice": 28.99,
+      "images": [
+        "https://images.unsplash.com/photo-1525966222134-fcfa99b8ae77?w=500",
+        "https://images.unsplash.com/photo-1549298916-b41d501d3772?w=500",
+        "https://images.unsplash.com/photo-1560769629-975ec94e6a86?w=500",
+        "https://images.unsplash.com/photo-1460353581641-37baddab0fa2?w=500"
+      ],
+      "categoryId": 6,
+      "shopId": 7,
+      "rating": 4.2,
+      "reviewCount": 5,
+      "sizes": ["6", "7", "8", "9", "10", "11"],
+      "tax": 0.08,
+      "keywords": ["espadrilles", "woven", "summer", "shoes"],
+      "sales": 155,
+      "createdAt": "2025-05-18T16:15:00Z",
+      "views": 1400,
+      "relatedProductIds": [48, 55, 62, 69, 88]
+    },
+    {
+      "id": 91,
+      "name": "Speed Jump Rope",
+      "description": "Professional speed jump rope with ball bearings and adjustable cable length.",
+      "price": 14.99,
+      "discountPrice": 11.99,
+      "images": [
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500",
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500",
+        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500",
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 8,
+      "rating": 4.5,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["jump rope", "speed", "cardio", "fitness"],
+      "sales": 320,
+      "createdAt": "2025-05-19T09:00:00Z",
+      "views": 2100,
+      "relatedProductIds": [49, 56, 63, 70, 92]
+    },
+    {
+      "id": 92,
+      "name": "Rubber Dumbbell Set",
+      "description": "Pair of rubber-coated dumbbells with ergonomic chrome grip, available in multiple weights.",
+      "price": 59.99,
+      "discountPrice": 49.99,
+      "images": [
+        "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=500",
+        "https://images.unsplash.com/photo-1586401100295-7a8096fd231a?w=500",
+        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500",
+        "https://images.unsplash.com/photo-1598289431512-b97b0917affc?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 8,
+      "rating": 4.7,
+      "reviewCount": 5,
+      "sizes": ["10lb", "15lb", "20lb", "25lb"],
+      "tax": 0.08,
+      "keywords": ["dumbbell", "weights", "strength", "fitness"],
+      "sales": 195,
+      "createdAt": "2025-05-20T12:30:00Z",
+      "views": 1850,
+      "relatedProductIds": [49, 56, 63, 70, 93]
+    },
+    {
+      "id": 93,
+      "name": "Cork Yoga Block",
+      "description": "Sustainable cork yoga block with beveled edges for comfortable support and stability.",
+      "price": 19.99,
+      "discountPrice": 16.99,
+      "images": [
+        "https://images.unsplash.com/photo-1601925260368-ae2f83cf8b7f?w=500",
+        "https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=500",
+        "https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=500",
+        "https://images.unsplash.com/photo-1599058917212-d750089bc07e?w=500"
+      ],
+      "categoryId": 7,
+      "shopId": 8,
+      "rating": 4.4,
+      "reviewCount": 5,
+      "sizes": [],
+      "tax": 0.08,
+      "keywords": ["yoga", "block", "cork", "support"],
+      "sales": 165,
+      "createdAt": "2025-05-21T15:15:00Z",
+      "views": 1400,
+      "relatedProductIds": [49, 56, 63, 70, 91]
     }
   ],
   "reviews": [

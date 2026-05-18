@@ -1,10 +1,14 @@
+"use client";
 import React from "react";
 import DownHomeImage from "@/../public/images/down-home.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import Link from "next/link";
+import { removeAllSelectedCategory } from "@/features/shop/categorySlice";
+import { useDispatch } from "react-redux";
 
 const CollectionItems = () => {
+  const dispatch = useDispatch();
   return (
     <div className="hidden md:block relative w-full h-[437px]">
       <Image
@@ -25,7 +29,14 @@ const CollectionItems = () => {
           Starting from: $59.99
         </p>
         <Link href={"/shop"}>
-          <Button className="rounded-3xl w-1/2">Shop Now</Button>
+          <Button
+            className="rounded-3xl w-1/2"
+            onClick={() => {
+              dispatch(removeAllSelectedCategory());
+            }}
+          >
+            Shop Now
+          </Button>
         </Link>
       </div>
     </div>

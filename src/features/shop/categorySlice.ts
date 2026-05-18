@@ -22,6 +22,9 @@ export const categorySlice = createSlice({
         (item: any) => item !== action.payload
       );
     },
+    removeAllSelectedCategory: (state) => {
+      state.selectedCategory = [];
+    },
     setPriceValue: (state, action: any) => {
       state.priceValue = action.payload;
     },
@@ -45,6 +48,7 @@ export const {
   addSelectedCategory,
   addSelectedCategoryFromExploring,
   removeSelectedCategory,
+  removeAllSelectedCategory,
   setPriceValue,
   setSortValue,
   setMaxPrice,

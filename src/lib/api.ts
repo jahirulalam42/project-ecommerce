@@ -144,3 +144,17 @@ export const createReturn = async (data: {
     throw error;
   }
 };
+
+export async function searchProducts(query: string) {
+  try {
+    const response = await axios.get(
+      `${
+        process.env.NEXT_PUBLIC_URL
+      }/api/products/search?q=${encodeURIComponent(query)}`
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
