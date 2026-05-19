@@ -17,7 +17,7 @@ import React from "react";
 import { toast } from "sonner";
 import z from "zod";
 
-const page = () => {
+const LoginPage = () => {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
   const formSchema = z.object({
@@ -165,4 +165,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default LoginPage;

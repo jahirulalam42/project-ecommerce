@@ -13,7 +13,7 @@ interface CartState {
   taxtotal: number;
   ordertotal: number;
   summaryProducts: any;
-  loading: String;
+  loading: string;
 }
 
 export const fetchCart = createAsyncThunk(

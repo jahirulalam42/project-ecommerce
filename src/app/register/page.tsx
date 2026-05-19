@@ -18,7 +18,7 @@ import React from "react";
 import { toast } from "sonner";
 import z from "zod";
 
-const page = () => {
+const RegisterPage = () => {
   const router = useRouter();
   const [loading, setLoading] = React.useState(false);
 
@@ -211,4 +211,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default RegisterPage;
