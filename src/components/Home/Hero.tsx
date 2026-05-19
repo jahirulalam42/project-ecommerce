@@ -18,6 +18,10 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 import HeroImage from "@/../public/images/hero-image.png";
+import HeroImageTwo from "@/../public/images/hero-imageTwo.png";
+import HeroImageThree from "@/../public/images/hero-imageThree.png";
+import HeroImageFour from "@/../public/images/hero-imageFour.png";
+import HeroImageFive from "@/../public/images/hero-imageFive.png";
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { CircleDollarSign, Globe, Recycle, Search, Truck } from "lucide-react";
@@ -37,19 +41,19 @@ const Hero = () => {
       alt: "Hero Image 1",
     },
     {
-      src: HeroImage,
+      src: HeroImageTwo,
       alt: "Hero Image 2",
     },
     {
-      src: HeroImage,
+      src: HeroImageThree,
       alt: "Hero Image 3",
     },
     {
-      src: HeroImage,
+      src: HeroImageFour,
       alt: "Hero Image 4",
     },
     {
-      src: HeroImage,
+      src: HeroImageFive,
       alt: "Hero Image 5",
     },
   ];
