@@ -2,7 +2,9 @@ import axios from "axios";
 
 export async function getProducts() {
   try {
-    const response = await axios.get("http://localhost:3000/api/products");
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL}/api/products`
+    );
     return response;
     // console.log(response);
   } catch (error) {
@@ -13,7 +15,7 @@ export async function getProducts() {
 export async function getSingleProduct(id: string) {
   try {
     const response = await axios.get(
-      `http://localhost:3000/api/products/${id}`
+      `${process.env.NEXT_PUBLIC_URL}/api/products/${id}`
     );
     return response;
     // console.log(response);
@@ -24,7 +26,9 @@ export async function getSingleProduct(id: string) {
 
 export async function getCategories() {
   try {
-    const response = await axios.get("http://localhost:3000/api/categories");
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL}/api/categories`
+    );
     return response;
     // console.log(response);
   } catch (error) {
@@ -41,7 +45,7 @@ export async function registerUser({
 }) {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/users",
+      `${process.env.NEXT_PUBLIC_URL}/api/users`,
       { email, password },
       {
         headers: {
@@ -66,7 +70,7 @@ export async function loginUser({
 }) {
   try {
     const response = await axios.post(
-      "http://localhost:3000/api/login",
+      `${process.env.NEXT_PUBLIC_URL}/api/login`,
       { email, password },
       {
         headers: {
