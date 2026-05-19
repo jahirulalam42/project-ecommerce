@@ -176,11 +176,7 @@ const MyOrdersPage = () => {
 
                 {/* Right side: Actions */}
                 <div className="flex items-center gap-2 self-end sm:self-center">
-                  <Link
-                    href={`/order-tracking?orderId=${
-                      order._id || order.orderId
-                    }`}
-                  >
+                  <Link href={`/order-tracking?orderId=${order.orderId}`}>
                     <Button
                       variant="outline"
                       size="sm"
