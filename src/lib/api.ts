@@ -149,6 +149,18 @@ export const createReturn = async (data: {
   }
 };
 
+export async function getReturn(id: string) {
+  try {
+    const response = await axios.get(
+      `${process.env.NEXT_PUBLIC_URL}/api/returns/${id}`
+    );
+    return response;
+  } catch (error) {
+    console.error(error);
+    throw error;
+  }
+}
+
 export async function searchProducts(query: string) {
   try {
     const response = await axios.get(

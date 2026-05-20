@@ -48,7 +48,6 @@ const RecommendedProducts = async ({ relatedProducts }: any) => {
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselDotsBottom />
         </Carousel>
       </div>
     </div>

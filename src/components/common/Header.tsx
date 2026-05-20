@@ -58,10 +58,15 @@ const Header = () => {
   const [suggestions, setSuggestions] = useState<any[]>([]);
   const [showDropdown, setShowDropdown] = useState(false);
   const [searchLoading, setSearchLoading] = useState(false);
+  const [selectedIndex, setSelectedIndex] = useState<number>(-1);
   const searchRef = useRef<HTMLDivElement>(null);
   const debounceTimer = useRef<NodeJS.Timeout | null>(null);
+  const suggestionRefs = useRef<(HTMLDivElement | null)[]>([]);
 
-  // console.log("Cart Item", cartItem);
+  // Reset selected index when suggestions change
+  useEffect(() => {
+    setSelectedIndex(-1);
+  }, [suggestions]);
 
   useEffect(() => {
     if (debounceTimer.current) clearTimeout(debounceTimer.current);
@@ -107,11 +112,55 @@ const Header = () => {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+  // Scroll selected item into view
+  useEffect(() => {
+    if (selectedIndex >= 0 && suggestionRefs.current[selectedIndex]) {
+      suggestionRefs.current[selectedIndex]?.scrollIntoView({
+        block: "nearest",
+      });
+    }
+  }, [selectedIndex]);
+
   const handleSuggestionClick = (productId: string) => {
     setShowDropdown(false);
     setSearchQuery("");
-    // Navigate to the product detail page – adjust path as needed
-    router.push(`/product/${productId}`); // or wherever your product page is
+    setSelectedIndex(-1);
+    router.push(`/shop/${productId}`);
+  };
+
+  const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!showDropdown || suggestions.length === 0) return;
+
+    switch (e.key) {
+      case "ArrowDown":
+        e.preventDefault();
+        setSelectedIndex((prev) =>
+          prev < suggestions.length - 1 ? prev + 1 : prev
+        );
+        break;
+      case "ArrowUp":
+        e.preventDefault();
+        setSelectedIndex((prev) => (prev > 0 ? prev - 1 : -1));
+        break;
+      case "Enter":
+        e.preventDefault();
+        if (selectedIndex >= 0 && suggestions[selectedIndex]) {
+          handleSuggestionClick(suggestions[selectedIndex].id);
+        } else if (searchQuery.trim()) {
+          // Optional: handle direct search (e.g., navigate to /search?q=...)
+          // router.push(`/search?q=${encodeURIComponent(searchQuery)}`);
+          // For now, just close dropdown
+          setShowDropdown(false);
+        }
+        break;
+      case "Escape":
+        e.preventDefault();
+        setShowDropdown(false);
+        setSelectedIndex(-1);
+        break;
+      default:
+        break;
+    }
   };
 
   const cartCount = mounted ? cartItem?.length || 0 : 0;
@@ -158,6 +207,7 @@ const Header = () => {
                 onFocus={() => {
                   if (suggestions.length > 0) setShowDropdown(true);
                 }}
+                onKeyDown={handleKeyDown}
               />
               <InputGroupAddon>
                 <Search strokeWidth={1.5} />
@@ -167,13 +217,19 @@ const Header = () => {
             {/* Dropdown suggestions */}
             {showDropdown && suggestions.length > 0 && (
               <div className="absolute top-full mt-1 left-0 w-full bg-white border rounded-md shadow-lg z-50 max-h-64 overflow-y-auto">
-                {suggestions.map((product: any) => (
+                {suggestions.map((product: any, idx: number) => (
                   <div
                     key={product._id}
-                    onClick={() => handleSuggestionClick(product._id)}
-                    className="flex items-center gap-3 px-4 py-2 hover:bg-gray-100 cursor-pointer transition-colors"
+                    ref={(el) => {
+                      suggestionRefs.current[idx] = el;
+                    }}
+                    onClick={() => handleSuggestionClick(product.id)}
+                    className={`flex items-center gap-3 px-4 py-2 cursor-pointer transition-colors ${
+                      selectedIndex === idx
+                        ? "bg-gray-100"
+                        : "hover:bg-gray-100"
+                    }`}
                   >
-                    {/* Optional: product thumbnail */}
                     {product.images?.[0] && (
                       <img
                         src={product.images[0]}
@@ -187,14 +243,14 @@ const Header = () => {
               </div>
             )}
 
-            {/* Optional: loading indicator */}
+            {/* Loading indicator */}
             {searchLoading && (
               <div className="absolute top-full mt-1 left-0 w-full bg-white border rounded-md shadow-lg z-50 p-3 text-center text-sm text-gray-500">
                 Searching...
               </div>
             )}
 
-            {/* No results (when query exists but no matches) */}
+            {/* No results */}
             {!searchLoading &&
               showDropdown &&
               searchQuery.trim().length >= 2 &&
@@ -223,24 +279,7 @@ const Header = () => {
               </DropdownMenuContent>
             ) : (
               <DropdownMenuContent>
-                {/* <DropdownMenuGroup>
-                  <DropdownMenuLabel>My Account</DropdownMenuLabel>
-                  <DropdownMenuItem>
-                    Profile
-                    <DropdownMenuShortcut>⇧⌘P</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Billing
-                    <DropdownMenuShortcut>⌘B</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem>
-                    Settings
-                    <DropdownMenuShortcut>⌘S</DropdownMenuShortcut>
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator /> */}
                 <Link href={"/my-orders"}>
-                  {" "}
                   <DropdownMenuItem>My Orders</DropdownMenuItem>
                 </Link>
                 <DropdownMenuItem onClick={handleLogout}>

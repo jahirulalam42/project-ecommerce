@@ -32,8 +32,14 @@ const ProductCart = ({
   const dispatch = useDispatch();
   const [productCount, setProductCount] = React.useState(1);
   const [selectedSize, setSelectedSize] = React.useState(sizes?.[0] || null);
-  const totalPrice = discountPrice * productCount;
-  const totalTax = tax * productCount;
+
+  // Ensure numeric values
+  const numericDiscountPrice = Number(discountPrice) || 0;
+  const numericTax = Number(tax) || 0;
+  const numericPrice = Number(price) || 0;
+
+  const totalPrice = numericDiscountPrice * productCount;
+  const totalTax = numericTax * productCount;
   const total = totalPrice + totalTax;
 
   const handleAddToCart = () => {
@@ -63,8 +69,6 @@ const ProductCart = ({
     }
   };
 
-  // console.log(session, "session");
-
   return (
     <div>
       <Card className="w-full">
@@ -81,10 +85,10 @@ const ProductCart = ({
           </CardTitle>
           <CardAction>
             <h3 className="scroll-m-20 text-2xl font-semibold tracking-tight">
-              ${discountPrice}
+              ${numericDiscountPrice.toFixed(2)}
             </h3>
             <p className="leading-7 line-through text-gray-500 font-semibold">
-              ${price}
+              ${numericPrice.toFixed(2)}
             </p>
           </CardAction>
         </CardHeader>
@@ -145,26 +149,26 @@ const ProductCart = ({
         </CardContent>
         <CardFooter className="flex-col gap-2">
           <span className="w-full flex justify-between">
-            <span className="leading-7  text-gray-500 font-semibold">
-              ${discountPrice} x {productCount}
+            <span className="leading-7 text-gray-500 font-semibold">
+              ${numericDiscountPrice.toFixed(2)} x {productCount}
             </span>
-            <span className="leading-7  text-gray-500 font-semibold">
-              ${totalPrice}{" "}
-            </span>
-          </span>
-
-          <span className="w-full flex justify-between">
-            <span className="leading-7  text-gray-500 font-semibold">
-              Tax extimate
-            </span>
-            <span className="leading-7  text-gray-500 font-semibold">
-              ${totalTax}
+            <span className="leading-7 text-gray-500 font-semibold">
+              ${totalPrice.toFixed(2)}
             </span>
           </span>
 
           <span className="w-full flex justify-between">
-            <span className="leading-7  font-semibold">Total</span>
-            <span className="leading-7  font-semibold">${total}</span>
+            <span className="leading-7 text-gray-500 font-semibold">
+              Tax estimate
+            </span>
+            <span className="leading-7 text-gray-500 font-semibold">
+              ${totalTax.toFixed(2)}
+            </span>
+          </span>
+
+          <span className="w-full flex justify-between">
+            <span className="leading-7 font-semibold">Total</span>
+            <span className="leading-7 font-semibold">${total.toFixed(2)}</span>
           </span>
         </CardFooter>
       </Card>

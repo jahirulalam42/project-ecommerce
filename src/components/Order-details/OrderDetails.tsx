@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { getOrder } from "@/lib/api";
+import { getOrder, getReturn } from "@/lib/api";
 import { LoginSpinner } from "@/components/ui/spinner";
 import { CheckCircle2, Package, Truck, Clock, Home } from "lucide-react";
 
@@ -46,7 +46,9 @@ const OrderDetails = () => {
   const searchParams = useSearchParams();
   const orderId = searchParams.get("orderId");
   const [order, setOrder] = useState<any>(null);
+  const [returnStatus, setReturnStatus] = useState<any>(null);
   const [loading, setLoading] = useState(true);
+  let returnItemIds: number[] = [];
 
   useEffect(() => {
     if (!orderId) {
@@ -57,14 +59,31 @@ const OrderDetails = () => {
       try {
         const response = await getOrder(orderId);
         setOrder(response?.data);
+        console.log("Order status:", response?.data);
       } catch (error) {
         console.error("Error fetching order:", error);
       } finally {
         setLoading(false);
       }
     };
+
+    const fetchReturnStatus = async () => {
+      try {
+        const response = await getReturn(orderId);
+        setReturnStatus(response?.data);
+        console.log("Return status:", response?.data);
+      } catch (error) {
+        console.error("Error fetching return status:", error);
+      }
+    };
+
     fetchOrder();
+    fetchReturnStatus();
   }, [orderId]);
+
+  console.log(
+    order?.items === returnStatus?.items ? "Items match" : "Items do not match"
+  );
 
   if (loading) {
     return (
@@ -244,13 +263,26 @@ const OrderDetails = () => {
           </Button>
         </Link>
         {/* If status allows, add a Return/Exchange button */}
-        {order.status === "delivered" && (
-          <Link href={`/return?orderId=${order.orderId}`}>
-            <Button className="rounded-full w-full sm:w-auto">
-              Return / Exchange
-            </Button>
-          </Link>
-        )}
+        {order.status === "delivered" &&
+          (returnStatus !== null ? (
+            order?.items === returnStatus?.items ? (
+              <Button className="rounded-full w-full sm:w-auto" disabled>
+                Return / Exchange
+              </Button>
+            ) : (
+              <Link href={`/return?orderId=${order.orderId}`}>
+                <Button className="rounded-full w-full sm:w-auto">
+                  Return / Exchange
+                </Button>
+              </Link>
+            )
+          ) : (
+            <Link href={`/return?orderId=${order.orderId}`}>
+              <Button className="rounded-full w-full sm:w-auto">
+                Return / Exchange
+              </Button>
+            </Link>
+          ))}
       </div>
     </div>
   );
