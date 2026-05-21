@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -48,7 +48,6 @@ const OrderDetails = () => {
   const [order, setOrder] = useState<any>(null);
   const [returnStatus, setReturnStatus] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  let returnItemIds: number[] = [];
 
   useEffect(() => {
     if (!orderId) {
@@ -81,9 +80,33 @@ const OrderDetails = () => {
     fetchReturnStatus();
   }, [orderId]);
 
-  console.log(
-    order?.items === returnStatus?.items ? "Items match" : "Items do not match"
-  );
+  const returnItemIds = useMemo(() => {
+    if (!returnStatus) return [];
+    const ids: number[] = [];
+    for (const ret of returnStatus) {
+      for (const item of ret?.items || []) {
+        ids.push(item.itemId);
+      }
+    }
+    return ids;
+  }, [returnStatus]);
+
+  const uniqueReturnItemIds = useMemo(() => {
+    if (!returnItemIds) return [];
+
+    let unique: any = [];
+
+    // Iterate over the array to get unique values
+    for (let i = 0; i < returnItemIds.length; i++) {
+      // Check if the element exist in the new array
+      if (!unique.includes(returnItemIds[i])) {
+        // If not then push the element to new array
+        unique.push(returnItemIds[i]);
+      }
+    }
+    return unique;
+  }, [returnItemIds]);
+  console.log("Unique Return Item Ids", uniqueReturnItemIds);
 
   if (loading) {
     return (
