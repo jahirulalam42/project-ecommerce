@@ -1,36 +1,191 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Project E-Commerce
 
-## Getting Started
+A modern and scalable e-commerce application built with **Next.js 15**, **React 19**, **TypeScript**, **MongoDB**, and **NextAuth**.
 
-First, run the development server:
+The project focuses on delivering a fast, responsive, and user-friendly shopping experience while following modern development practices and clean architecture.
+
+---
+
+## Tech Stack
+
+### Frontend
+
+- Next.js 15 (App Router)
+- React 19
+- TypeScript
+- Tailwind CSS v4
+- ShadCN UI
+- Radix UI
+- Lucide React
+
+### State Management
+
+- Redux Toolkit
+- React Redux
+
+### Backend & Database
+
+- Next.js API Routes
+- MongoDB
+- NextAuth.js v5
+
+### Validation & Forms
+
+- Zod
+- TanStack React Form
+
+### Additional Tools
+
+- Axios
+- Sonner
+- Embla Carousel
+- Vaul
+
+---
+
+## Features
+
+### Authentication
+
+- User Registration
+- User Login
+- Protected Routes
+- Session Management with NextAuth
+
+### Shopping Experience
+
+- Product Listing
+- Product Details Page
+- Category Browsing
+- Responsive Design
+- Dark / Light Theme Support
+
+### Development Features
+
+- Type-Safe Development
+- Reusable Components
+- Clean Project Structure
+- Form Validation
+- API Integration
+- MongoDB Integration
+
+---
+
+## Project Structure
+
+```text
+src/
+├── app/
+├── components/
+├── hooks/
+├── lib/
+├── features/
+├── store/
+└── utils/
+```
+
+---
+
+## Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/jahirulalam42/project-ecommerce.git
+```
+
+### Navigate to Project
+
+```bash
+cd project-ecommerce
+```
+
+### Install Dependencies
+
+```bash
+npm install
+```
+
+### Configure Environment Variables
+
+Create a `.env.local` file in the root directory:
+
+```env
+MONGODB_URI=your_mongodb_connection_string
+AUTH_SECRET=your_secret_key
+AUTH_URL=http://localhost:3000
+```
+
+---
+
+## Running the Application
+
+### Development Server
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```text
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Production Build
 
-## Learn More
+```bash
+npm run build
+npm start
+```
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Responsive Design
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+The application is optimized for:
 
-## Deploy on Vercel
+- Desktop
+- Tablet
+- Mobile Devices
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+---
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Security
+
+- Secure Authentication
+- Protected Routes
+- Session-Based Access Control
+- Input Validation using Zod
+
+---
+
+## Deployment
+
+Deploy easily on Vercel:
+
+```bash
+npm run build
+```
+
+Configure your environment variables in the deployment platform before publishing.
+
+---
+
+## Future Enhancements
+
+- Wishlist Functionality
+- Product Reviews & Ratings
+- Payment Gateway Integration with Stripe
+<!-- * Order Tracking -->
+- Admin Dashboard
+- Inventory Management
+- Email Notifications
+
+---
+
+## Author
+
+**Jahirul Alam**
+
+GitHub: https://github.com/jahirulalam42
