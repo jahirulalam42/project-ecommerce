@@ -39,7 +39,7 @@ The project focuses on delivering a fast, responsive, and user-friendly shopping
 - Axios
 - Sonner
 - Embla Carousel
-- Vaul
+<!-- - Vaul -->
 
 ---
 
@@ -177,15 +177,15 @@ Configure your environment variables in the deployment platform before publishin
 - Wishlist Functionality
 - Product Reviews & Ratings
 - Payment Gateway Integration with Stripe
-<!-- * Order Tracking -->
 - Admin Dashboard
 - Inventory Management
 - Email Notifications
+<!-- * Order Tracking -->
 
 ---
 
 ## Author
 
-**Jahirul Alam**
+**MD.Jahirul Alam Sarkar**
 
 GitHub: https://github.com/jahirulalam42
